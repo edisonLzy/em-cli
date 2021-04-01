@@ -1,7 +1,7 @@
 {
-  "name": "e-cli",
-  "version": "0.0.1",
-  "description": "",
+  "name": "ee-cli",
+  "version": "1.0.0",
+  "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
     "e-cli": "./bin/e-cli"
@@ -16,7 +16,7 @@
     "move:taro": "cpr lib/commander/add-taro/template dist/commander/add-taro/template",
     "lint:ts": "eslint --fix"
   },
-  "author": "",
+  "author": "evan",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.13.14",
