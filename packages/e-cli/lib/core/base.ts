@@ -10,7 +10,6 @@ export default class BaseClass extends EventEmitter {
   logChalk = logger.chalk()
   // Loading
   loadingStart = spin.start
-  loadingEnd = spin.end
   constructor() {
     super();
     this.on('error',e=>{
