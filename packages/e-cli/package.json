@@ -1,10 +1,10 @@
 {
-  "name": "ee-cli",
+  "name": "em-cli",
   "version": "1.0.0",
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
-    "e-cli": "./bin/e-cli"
+    "em-cli": "./bin/em-cli"
   },
   "scripts": {
     "clean": "rimraf dist",

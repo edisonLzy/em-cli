@@ -1,10 +1,10 @@
 import {CommandAddTaro} from './commander';
-import ECli from './core';
+import EmCli from './core';
 
-const cli = new ECli();
+const emCli = new EmCli();
 
-cli
+emCli
   .addCommand(CommandAddTaro)
 ;
 
-cli.run();
+emCli.run();

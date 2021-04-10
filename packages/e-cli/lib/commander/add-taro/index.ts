@@ -2,10 +2,9 @@ import ejs from 'ejs';
 import fs from 'fs-extra';
 import path from 'path';
 import * as core from '@babel/core';
-import generator from '@babel/generator';
 import * as t from 'babel-types';
 import { resolvePwd} from './../../helper/path';
-import {formate} from './../../helper/eslint';
+import { formate } from './../../helper/eslint';
 import { BaseCommand, Options,Command} from '../../core/command';
 interface IResultType {
     name:string
@@ -51,24 +50,24 @@ export class CommandAddTaro extends BaseCommand {
      
      async asyncConfigTs(){
        const fileContentBf  = await fs.promises.readFile(this.outputConfig.appJsonPath); 
-       const fileContent = fileContentBf.toString();        
-       const ast = core.parse(fileContent,{
+       const fileContent = fileContentBf.toString();  
+       // transform  
+       const result = core.transform(fileContent,{
          filename:'',
-         sourceType:'module',
-         plugins:[require.resolve('@babel/plugin-transform-typescript')]
-       });
-       core.traverse(ast,{
-         ObjectProperty:(path)=>{
-           const pageNode:any = path.get('key');          
-           if(pageNode.node.name=== 'pages'){
-             // 将新的path 加到 pages 数组下面  
-             const el:any = path.get('value').node; 
-             el.elements.push(t.stringLiteral(`pages/${this.moduleName}/index`));               
+         plugins:[require.resolve('@babel/plugin-transform-typescript'),{
+           visitor:{
+             ObjectProperty:(path:any)=>{
+               const pageNode:any = path.get('key');          
+               if(pageNode.node.name=== 'pages'){
+                 // 将新的path 加到 pages 数组下面  
+                 const el:any = path.get('value').node; 
+                 el.elements.push(t.stringLiteral(`pages/${this.moduleName}/index`));               
+               }
+             }
            }
-         }
-       });
-       const {code} = generator(ast!);
-       return code;
+         }]
+       });              
+       return result!.code;
      }
      async generatorFile(){
        const allTemplats = await fs.readdir(this.templatePath);
