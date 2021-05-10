@@ -86,7 +86,7 @@ export class CommandAddTaro extends BaseCommand {
        });
        // 得到app.config.ts 结果
        const appConfig = await this.asyncConfigTs();
-       this.output(results,appConfig);   
+       this.output(results,appConfig!);   
      } 
      run(args: string[],optonsArgs:Record<string, any>, Command: Command) {
        const {title} = optonsArgs;
