@@ -11,7 +11,7 @@
     "outDir": "./lib",
     "strict": true,
     "pretty": true,
-    "target": "ESNext",
+    "target":"ES2015",
     "noImplicitThis": false,
     "baseUrl": "./",
     "paths": {
