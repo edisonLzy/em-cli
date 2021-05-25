@@ -1,6 +1,6 @@
 {
   "name": "e-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
@@ -18,7 +18,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@e-cli/shared": "^0.0.3",
+    "@e-cli/shared": "^0.0.4",
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
   },
