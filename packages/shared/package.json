@@ -1,5 +1,5 @@
 {
-  "name": "@em-cli/shared",
+  "name": "@e-cli/shared",
   "version": "0.0.3",
   "description": "脚手架工具方法包",
   "keywords": [
@@ -17,7 +17,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.npm.taobao.org/"
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "build": "tsc",
@@ -36,5 +36,5 @@
     "log-symbols": "^4.1.0",
     "ora": "^5.4.0"
   },
-  "gitHead": "948851070ac4776710fdb6b4588588b98ba7580e"
+  "gitHead": "63e976f3d407bf94f57f2bb713e8378651670264"
 }

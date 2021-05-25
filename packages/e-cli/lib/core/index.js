@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const commander_1 = require("commander");
 const base_1 = tslib_1.__importDefault(require("./base"));
-class EmCli extends base_1.default {
+class ECli extends base_1.default {
     constructor() {
         super();
         this.CommandCtors = [];
@@ -75,4 +75,4 @@ ${this.logChalk.blueBright(command.examples.join('\n'))}
         });
     }
 }
-exports.default = EmCli;
+exports.default = ECli;

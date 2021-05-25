@@ -8,9 +8,9 @@
     "bootstrap": "lerna bootstrap",
     "prepublish":"lerna run build",
     "publish": "lerna publish",
-    "clean": "lerna clean",
+    "clean": "lerna clean && rimraf node_modules",
     "build": "lerna run build",
-    "start": "lerna exec --scope em-cli -- yarn start "
+    "start": "lerna exec --scope e-cli -- yarn start "
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.17.0",

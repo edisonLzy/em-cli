@@ -4,9 +4,9 @@ import { BaseCommand } from './command';
 
 interface PluginCtor {
   installed: boolean
-  new(CliInstance: EmCli): BaseCommand
+  new(CliInstance: ECli): BaseCommand
 }
-class EmCli extends BaseClass {
+class ECli extends BaseClass {
   private program: commander.Command
   private CommandCtors: PluginCtor[] = []
   constructor() {
@@ -79,4 +79,4 @@ ${this.logChalk.blueBright(command.examples.join('\n'))}
     this.runCommand();
   }
 }
-export default EmCli;
+export default ECli;

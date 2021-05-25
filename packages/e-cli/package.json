@@ -1,10 +1,10 @@
 {
-  "name": "em-cli",
+  "name": "e-cli",
   "version": "1.0.3",
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
-    "em-cli": "./bin/em-cli"
+    "e-cli": "./bin/e-cli"
   },
   "scripts": {
     "clean": "rimraf lib",
@@ -13,11 +13,14 @@
     "dev": "ts-node lib/index.ts"
   },
   "author": "Evanzyli <656603136@qq.com>",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "license": "ISC",
   "dependencies": {
-    "@em-cli/shared": "^0.0.3",
+    "@e-cli/shared": "^0.0.3",
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
   },
-  "gitHead": "948851070ac4776710fdb6b4588588b98ba7580e"
+  "gitHead": "63e976f3d407bf94f57f2bb713e8378651670264"
 }

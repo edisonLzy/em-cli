@@ -2,9 +2,9 @@ import BaseClass from './base';
 import { BaseCommand } from './command';
 interface PluginCtor {
     installed: boolean;
-    new (CliInstance: EmCli): BaseCommand;
+    new (CliInstance: ECli): BaseCommand;
 }
-declare class EmCli extends BaseClass {
+declare class ECli extends BaseClass {
     private program;
     private CommandCtors;
     constructor();
@@ -13,4 +13,4 @@ declare class EmCli extends BaseClass {
     addCommand(command: PluginCtor): this;
     run(): Promise<void>;
 }
-export default EmCli;
+export default ECli;
