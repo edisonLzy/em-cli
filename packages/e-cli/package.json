@@ -18,9 +18,9 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@e-cli/shared": "^0.0.5",
+    "@lizhiyu/cli-shared": "^0.0.6",
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
   },
-  "gitHead": "bd849c441f1a3b390fc285b65646ee2cabdf663c"
+  "gitHead": "a321067fb117c5f4d705a872a3b294fe4f4d18d0"
 }
