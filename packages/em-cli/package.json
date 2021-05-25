@@ -12,11 +12,12 @@
     "build": "npm run clean && tsc",
     "dev": "ts-node lib/index.ts"
   },
-  "author": "evan",
+  "author": "Evanzyli <656603136@qq.com>",
   "license": "ISC",
   "dependencies": {
     "@em-cli/shared": "^0.0.2",
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
-  }
+  },
+  "gitHead": "948851070ac4776710fdb6b4588588b98ba7580e"
 }
