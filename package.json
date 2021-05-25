@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "publishConfig": {
+    "access": "public"
+ },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "prepublish":"lerna run build",

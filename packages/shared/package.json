@@ -17,7 +17,8 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "scripts": {
     "build": "tsc",
@@ -36,5 +37,5 @@
     "log-symbols": "^4.1.0",
     "ora": "^5.4.0"
   },
-  "gitHead": "e00da776a190020777158815d832c1dbb89dc03f"
+  "gitHead": "fb590f3b9ccde5ea891ea9d9a960c7d0032ca99d"
 }
