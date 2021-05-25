@@ -5,7 +5,7 @@
   "keywords": [
     "工具方法"
   ],
-  "author": "Evanzyli <656603136@qq.com>",
+  "author": "lizhiyu <656603136@qq.com>",
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
@@ -37,5 +37,5 @@
     "log-symbols": "^4.1.0",
     "ora": "^5.4.0"
   },
-  "gitHead": "fb590f3b9ccde5ea891ea9d9a960c7d0032ca99d"
+  "gitHead": "698a64878716e3c50b987fb8411c5a6303fffe09"
 }

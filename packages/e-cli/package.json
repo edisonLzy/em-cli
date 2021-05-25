@@ -12,7 +12,7 @@
     "build": "npm run clean && tsc",
     "dev": "ts-node lib/index.ts"
   },
-  "author": "Evanzyli <656603136@qq.com>",
+  "author": "lizhiyu <656603136@qq.com>",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -22,5 +22,5 @@
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
   },
-  "gitHead": "fb590f3b9ccde5ea891ea9d9a960c7d0032ca99d"
+  "gitHead": "698a64878716e3c50b987fb8411c5a6303fffe09"
 }

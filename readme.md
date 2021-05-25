@@ -12,3 +12,13 @@ lerna import [path]
 # ex1
 lerna import /Users/evanzyli/Desktop/owner/e-cli  
 ```
+
+**lerna ERR! E402 You must sign up for private packages**
+
+> https://www.yuque.com/iyum9i/uur0qi/iyg4fz: 作用域包需要 "access": "public"
+
+## 常用命令
+
+```shell
+lerna publish from-package
+```
