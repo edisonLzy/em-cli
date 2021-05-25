@@ -1,0 +1,22 @@
+{
+  "name": "em-cli",
+  "version": "1.0.0",
+  "description": "make cli easier",
+  "main": "lib/index.js",
+  "bin": {
+    "em-cli": "./bin/em-cli"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "start": "npm run clean && tsc --watch",
+    "build": "npm run clean && tsc",
+    "dev": "ts-node lib/index.ts"
+  },
+  "author": "evan",
+  "license": "ISC",
+  "dependencies": {
+    "@em-cli/shared": "^0.0.0",
+    "commander": "^7.1.0",
+    "enquirer": "^2.3.6"
+  }
+}
