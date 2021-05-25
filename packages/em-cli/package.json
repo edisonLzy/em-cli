@@ -1,6 +1,6 @@
 {
   "name": "em-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
@@ -15,7 +15,7 @@
   "author": "evan",
   "license": "ISC",
   "dependencies": {
-    "@em-cli/shared": "^0.0.0",
+    "@em-cli/shared": "^0.0.1",
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
   }
