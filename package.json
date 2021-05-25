@@ -1,11 +1,15 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "publish": "lerna publish",
     "clean": "lerna clean",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "start":"lerna exec --scope em-cli -- yarn start "
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
