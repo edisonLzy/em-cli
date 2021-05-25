@@ -1,5 +1,5 @@
 {
-  "name": "@lizhiyu/shared",
+  "name": "@e-cli/shared",
   "version": "0.0.5",
   "description": "脚手架工具方法包",
   "keywords": [
@@ -37,5 +37,5 @@
     "log-symbols": "^4.1.0",
     "ora": "^5.4.0"
   },
-  "gitHead": "57b743168b80419b6ff80f626e27237d4251f071"
+  "gitHead": "b454742afc71dc49b9c8eb6c44f5334be89c3b14"
 }
