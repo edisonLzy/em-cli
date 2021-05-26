@@ -1,10 +1,10 @@
 {
-  "name": "@ecli/e-cli",
+  "name": "@em-cli/em-cli",
   "version": "1.0.0",
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
-    "e-cli": "./bin/e-cli"
+    "em-cli": "./bin/em-cli"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -23,5 +23,5 @@
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
   },
-  "gitHead": "875afc29893f2dad4178175301a6b79e4d4b8c94"
+  "gitHead": "64446c0a7fcbb2fa668edfae28b2e521bc2957c4"
 }

@@ -10,7 +10,7 @@
 # cmd
 lerna import [path]
 # ex1
-lerna import /Users/evanzyli/Desktop/owner/e-cli  
+lerna import /Users/evanzyli/Desktop/owner/em-cli  
 ```
 
 **lerna ERR! E402 You must sign up for private packages**
