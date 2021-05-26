@@ -19,7 +19,7 @@
   "author": "lizhiyu <656603136@qq.com>",
   "license": "ISC",
   "dependencies": {
-    "@ecli/shared": "^0.0.1",
+    "@em-cli/shared": "^0.0.1",
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
   },

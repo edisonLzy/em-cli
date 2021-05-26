@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const events_1 = tslib_1.__importDefault(require("events"));
-const shared_1 = require("@ecli/shared");
+const shared_1 = require("@em-cli/shared");
 class BaseClass extends events_1.default {
     constructor() {
         super();

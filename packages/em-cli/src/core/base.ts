@@ -1,5 +1,5 @@
 import EventEmitter from 'events';
-import { logger,spin } from '@ecli/shared';
+import { logger,spin } from '@em-cli/shared';
 export default class BaseClass extends EventEmitter {
   static commandInstallFlag: boolean
   // 日志输出
