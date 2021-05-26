@@ -16,10 +16,6 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
@@ -37,5 +33,5 @@
     "log-symbols": "^4.1.0",
     "ora": "^5.4.0"
   },
-  "gitHead": "a321067fb117c5f4d705a872a3b294fe4f4d18d0"
+  "gitHead": "59c9ad7425d17ccff3710ddfdab82539fd69133e"
 }

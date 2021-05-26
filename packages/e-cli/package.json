@@ -1,5 +1,5 @@
 {
-  "name": "e-cli",
+  "name": "@ecli/e-cli",
   "version": "1.0.0",
   "description": "make cli easier",
   "main": "lib/index.js",
@@ -13,14 +13,11 @@
     "dev": "ts-node lib/index.ts"
   },
   "author": "lizhiyu <656603136@qq.com>",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "license": "ISC",
   "dependencies": {
     "@ecli/shared": "^0.0.1",
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
   },
-  "gitHead": "a321067fb117c5f4d705a872a3b294fe4f4d18d0"
+  "gitHead": "59c9ad7425d17ccff3710ddfdab82539fd69133e"
 }
