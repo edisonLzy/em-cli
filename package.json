@@ -10,7 +10,7 @@
     "publish": "lerna publish",
     "clean": "lerna clean && rimraf node_modules",
     "build": "lerna run build",
-    "start": "lerna exec --scope @ecli/em-cli -- yarn start "
+    "start": "lerna exec --scope @em-cli/em-cli -- yarn start "
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.17.0",
