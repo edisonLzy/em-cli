@@ -42,6 +42,16 @@ lerna import /Users/evanzyli/Desktop/owner/em-cli
  # 删除本地的所有的tag 
  git tag | xargs git tag -d
 ```
+**发布含有bin的npm包的时请确保bin目录在发布的文件中**
+
+> 通过 package.json 的files字段指定
+
+```json
+ "files": [
+    "lib",
+    "bin"
+  ],
+```
 ## 常用命令
 
 ```shell
