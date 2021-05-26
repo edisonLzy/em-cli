@@ -6,6 +6,9 @@
   "bin": {
     "em-cli": "./bin/em-cli"
   },
+  "files": [
+    "lib"
+  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
@@ -23,5 +26,5 @@
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
   },
-  "gitHead": "64446c0a7fcbb2fa668edfae28b2e521bc2957c4"
+  "gitHead": "f5bc3bcf1473dbc2e67330cae2c4fc609b11de98"
 }
