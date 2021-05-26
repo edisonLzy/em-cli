@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/shared",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "脚手架工具方法包",
   "keywords": [
     "工具方法"
