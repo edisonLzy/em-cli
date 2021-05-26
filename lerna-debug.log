@@ -1,0 +1,8 @@
+44 warn complete Waiting for 1 child process to exit. CTRL-C to exit immediately.
+45 error Error: Command failed with exit code 128: git tag @em-cli/shared@0.0.2 -m @em-cli/shared@0.0.2
+45 error fatal: tag '@em-cli/shared@0.0.2' already exists
+45 error     at makeError (/Users/evanzyli/Desktop/mono-cli/node_modules/execa/lib/error.js:59:11)
+45 error     at handlePromise (/Users/evanzyli/Desktop/mono-cli/node_modules/execa/index.js:114:26)
+45 error     at processTicksAndRejections (internal/process/task_queues.js:97:5)
+45 error     at async Promise.all (index 1)
+45 error     at async Promise.all (index 0)
