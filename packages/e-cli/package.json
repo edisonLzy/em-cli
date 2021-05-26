@@ -6,6 +6,10 @@
   "bin": {
     "e-cli": "./bin/e-cli"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "clean": "rimraf lib",
     "start": "npm run clean && tsc --watch",
@@ -19,5 +23,5 @@
     "commander": "^7.1.0",
     "enquirer": "^2.3.6"
   },
-  "gitHead": "59c9ad7425d17ccff3710ddfdab82539fd69133e"
+  "gitHead": "875afc29893f2dad4178175301a6b79e4d4b8c94"
 }

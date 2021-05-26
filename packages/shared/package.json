@@ -16,6 +16,10 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
