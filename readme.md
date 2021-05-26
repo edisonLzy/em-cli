@@ -33,6 +33,15 @@ lerna import /Users/evanzyli/Desktop/owner/em-cli
     "access": "public"
   },
 ```
+
+**fatal: tag '@em-cli/shared@0.0.2' already exists**
+
+> lerna 每次发布都会打个 git tag
+
+```shell
+ # 删除本地的所有的tag 
+ git tag | xargs git tag -d
+```
 ## 常用命令
 
 ```shell
