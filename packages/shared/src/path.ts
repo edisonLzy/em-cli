@@ -1,5 +1,5 @@
 import path from 'path';
-function resolvePath(base: string) {
+export function resolvePath(base: string) {
   return function (p: string) {
     return path.resolve(base, p);
   };

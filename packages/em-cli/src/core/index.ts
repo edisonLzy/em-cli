@@ -1,7 +1,11 @@
 import commander, { createCommand } from 'commander';
 import BaseClass from './base';
 import { BaseCommand } from './command';
+import {logger} from '@em-cli/shared';
+import path from 'path';
+import readPkg from 'read-pkg';
 
+const {version,name} = readPkg.sync({cwd:path.resolve(__dirname,'../../')});
 interface PluginCtor {
   installed: boolean
   new(CliInstance: ECli): BaseCommand
@@ -14,11 +18,12 @@ class ECli extends BaseClass {
     this.program = this.createProgram(); // 创建program
   }
   private createProgram(): commander.Command {
-    const program = createCommand();
-    program.version('0.0.1');
+    const program = createCommand();    
+    program.version(logger.info(`${version}`,name,false));
+    program.usage('<command> [options]');
     program.configureOutput({
       writeErr:str=>{
-        this.logError(str);
+        logger.error(str);
       }
     });
     program.passThroughOptions();
@@ -40,10 +45,6 @@ class ECli extends BaseClass {
           cmd.option(...option);
         }
       }
-      // 添加别名
-      if(command.alias){
-        cmd.alias(command.alias);
-      }
       // 添加helpText
       if(command.examples && command.examples.length !== 0){
         command.examples = command.examples.map(it=>`  ${it}`);
@@ -51,7 +52,7 @@ class ECli extends BaseClass {
           `
 Examples:
 
-${this.logChalk.blueBright(command.examples.join('\n'))}
+${logger.info(command.examples.join('\n'))}
           `);
       }
       cmd.action((...args: any[]) => {

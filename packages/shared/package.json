@@ -35,7 +35,9 @@
     "eslint": "^7.27.0",
     "fs-extra": "^10.0.0",
     "log-symbols": "^4.1.0",
-    "ora": "^5.4.0"
+    "ora": "^5.4.0",
+    "readline": "^1.3.0",
+    "strip-ansi": "^6.0.0"
   },
   "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8"
 }

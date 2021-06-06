@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "yarn",
     "prepublish":"lerna run build",
     "publish": "lerna publish",
     "clean": "lerna clean && rimraf node_modules",
