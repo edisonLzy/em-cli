@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-cli",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
