@@ -23,6 +23,7 @@
   "author": "lizhiyu <656603136@qq.com>",
   "license": "ISC",
   "dependencies": {
+    "@em-cli/em-init": "^0.0.1",
     "@em-cli/shared": "^0.0.6",
     "@types/ejs": "^3.0.6",
     "@types/prettier": "^2.3.0",
