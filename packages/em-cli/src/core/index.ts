@@ -4,7 +4,6 @@ import { BaseCommand } from './command';
 import {logger} from '@em-cli/shared';
 import path from 'path';
 import readPkg from 'read-pkg';
-
 const {version,name} = readPkg.sync({cwd:path.resolve(__dirname,'../../')});
 interface PluginCtor {
   installed: boolean

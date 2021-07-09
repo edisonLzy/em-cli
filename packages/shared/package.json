@@ -26,6 +26,7 @@
     "start": "npm run clean && tsc --watch"
   },
   "devDependencies": {
+    "@types/progress": "^2.0.4",
     "@types/eslint": "^7.2.11",
     "@types/fs-extra": "^9.0.11",
     "ts-node": "^10.0.0"
@@ -37,7 +38,9 @@
     "log-symbols": "^4.1.0",
     "ora": "^5.4.0",
     "readline": "^1.3.0",
-    "strip-ansi": "^6.0.0"
+    "strip-ansi": "^6.0.0",
+    "execa": "^5.1.1",
+    "progress": "^2.0.3"
   },
   "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8"
 }

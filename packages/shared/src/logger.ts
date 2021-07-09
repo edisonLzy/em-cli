@@ -43,7 +43,7 @@ export const error = (msg = '', tag = '',output = true) => {
   return _m;
 };
 
-export const clearConsole = (title:string) => {
+export const clearConsole = (title:string ='') => {
   if (process.stdout.isTTY) {
     const blank = '\n'.repeat(process.stdout.rows);
     console.log(blank);

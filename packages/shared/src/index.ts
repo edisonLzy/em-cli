@@ -4,3 +4,5 @@ export * as  logger  from './logger';
 export * as  spin  from './spin';
 export * as pathHelper from './path';
 export {formate} from './eslint';
+export {makeProgress} from './progress';
+export {install} from './installDeps';
