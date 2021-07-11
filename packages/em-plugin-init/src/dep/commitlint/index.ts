@@ -23,6 +23,7 @@ class CommitLintInstall extends Dep {
 
     logger.info('正在初始化 husky');
     await execa('npx',['husky','install']);
+    await fs.ensureDir(path.join(this.cwd,'.husky'));
     await execa('npx',['husky','add','.husky/pre-commit','"npm run lint"']);
     await execa('npx',['husky','add','.husky/pre-push','"npm run lint"']);
     logger.done('husky 初始化完成');
