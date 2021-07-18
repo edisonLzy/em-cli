@@ -6,6 +6,7 @@
   "bin": {
     "ee": "./bin/em-cli"
   },
+  "typings": "./lib/typings",
   "files": [
     "lib",
     "bin"
