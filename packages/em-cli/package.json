@@ -4,7 +4,7 @@
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
-    "em-cli": "./bin/em-cli"
+    "ee": "./bin/em-cli"
   },
   "files": [
     "lib",

@@ -63,6 +63,10 @@ ${logger.info(command.examples.join('\n'))}
         const commandArg:string[] = [...args]; 
         command.run(commandArg,optionsArgs, commandInstance);
       });
+
+      cmd.on('--help',function(){
+        console.log('xxx');
+      });
     }
     // 必须在parse之前完成命令的注册
     this.program.parse(process.argv);
