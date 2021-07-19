@@ -1,13 +1,28 @@
 import commander from 'commander';
-import BaseClass from './base';
 export type Options = [directive: string, description?: string, defaultValue?: string | boolean | undefined];
 export type Command = commander.Command
-export abstract class BaseCommand extends BaseClass {
-  static installed: boolean = false
-  abstract id: string
-  option: Options[] = []
-  args = ''
-  description = ''
-  examples: string[] = []
-  abstract run(args?: string[],optionsArgs?:Record<string, any>, Command?: Command): any
+
+export type CommandRun  = (args: string[],optionsArgs:Record<string, any>, Command: Command) => void
+export interface CommandConfig {
+  /**
+   * 命令的标示 比如: init
+   */
+  id: string
+  /**
+   * options 参数
+   */
+   option?: Options[]
+   /**
+    * 参数 比如: <params>
+    */
+   args?: string
+   /**
+    * description
+    */
+   description?: string
+   examples?: string[]
+   run: CommandRun
+}
+export function defineCommand(config:CommandConfig){
+  return config;
 }

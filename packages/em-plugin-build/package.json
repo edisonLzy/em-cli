@@ -1,9 +1,11 @@
 {
-  "name": "@em-cli/em-plugin-init",
+  "name": "@em-cli/em-plugin-build",
   "version": "0.0.1",
-  "description": "项目初始化",
+  "description": "构建",
   "keywords": [
-    "项目初始化"
+    "webpack",
+    "rollup",
+    "gulp"
   ],
   "author": "lizhiyu <656603136@qq.com>",
   "homepage": "",

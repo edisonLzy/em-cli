@@ -1,2 +1,4 @@
 #!/usr/bin/env node
-require('../lib');
+const { run } = require('../lib');
+const isDev = process.env.isDev === 'true';
+run(isDev);

@@ -4,9 +4,9 @@
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
-    "ee": "./bin/em-cli"
+    "ee": "bin/em-cli"
   },
-  "typings": "./lib/typings",
+  "typings": "lib/types",
   "files": [
     "lib",
     "bin"
@@ -24,6 +24,8 @@
   "author": "lizhiyu <656603136@qq.com>",
   "license": "ISC",
   "dependencies": {
+    "@em-cli/em-plugin-build": "^0.0.1",
+    "@em-cli/em-plugin-dev": "^0.0.1",
     "@em-cli/em-plugin-init": "^0.0.1",
     "@em-cli/shared": "^0.0.6",
     "@types/ejs": "^3.0.6",
@@ -37,6 +39,7 @@
   "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
   "devDependencies": {
     "@types/read-pkg": "^5.1.0",
+    "cross-env": "^7.0.3",
     "rimraf": "^3.0.2"
   }
 }

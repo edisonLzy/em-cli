@@ -1,8 +1,8 @@
 import { defineCommand } from '@em-cli/em-cli';
 
 export default defineCommand({
-  id: 'init',
+  id: 'build',
   run(args,options,command){
-    console.log('xxx');
+    console.log('build');
   }
 });

@@ -9,6 +9,7 @@
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
+  "typings": "./lib/typings",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -26,7 +27,6 @@
     "start": "npm run clean && tsc --watch"
   },
   "devDependencies": {
-    "@em-cli/em-cli": "^1.0.6",
     "@types/eslint": "^7.2.11",
     "@types/fs-extra": "^9.0.11",
     "@types/progress": "^2.0.4",

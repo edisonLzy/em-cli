@@ -1,9 +1,9 @@
 {
-  "name": "@em-cli/em-plugin-init",
+  "name": "@em-cli/em-plugin-dev",
   "version": "0.0.1",
-  "description": "项目初始化",
+  "description": "本地开发服务器",
   "keywords": [
-    "项目初始化"
+    "vite","webpack"
   ],
   "author": "lizhiyu <656603136@qq.com>",
   "homepage": "",
