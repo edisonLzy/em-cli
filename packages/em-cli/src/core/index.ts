@@ -1,7 +1,8 @@
 import commander, { createCommand } from 'commander';
+import { logger } from '@em-cli/shared';
+import {createInquire} from './inquirer';
 import BaseClass from './base';
 import { CommandConfig } from './command';
-import { logger } from '@em-cli/shared';
 import path from 'path';
 import readPkg from 'read-pkg';
 const { version, name } = readPkg.sync({
@@ -50,14 +51,20 @@ class ECli extends BaseClass {
               `
         );
       }
-      cmd.action((...args: any[]) => {
+      cmd.action(async (...args: any[]) => {
+        const inquirerAnswers = await this.addInquirer(command);  
         // 获取 command 实例
         const commandInstance: commander.Command = args.pop();
         // 获取 options 参数
         const optionsArgs: Record<string, any> = args.pop();
         // command 命令参数
         const commandArg: string[] = [...args];
-        command.run(commandArg, optionsArgs, commandInstance);
+        command.run({
+          args:commandArg,
+          optionsArgs, 
+          command:commandInstance,
+          answers:inquirerAnswers
+        });
       });
     }
     // 必须在parse之前完成命令的注册
@@ -71,6 +78,13 @@ class ECli extends BaseClass {
     this.CommandIds.add(id);
     this.CommandCtors.push(command);
     return this;
+  }
+  private  async addInquirer(command: CommandConfig){
+    let answers = {};    
+    if(command.prompting){      
+      answers = await createInquire(command.prompting);
+    }
+    return answers;
   }
   async run () {
     // 注册命令
