@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@em-cli/shared": "^0.0.6",
-    "em-pipeline": "^0.0.2",
+    "em-pipeline": "^0.0.7",
     "fs-extra": "^10.0.0"
   },
   "peerDependencies": {
