@@ -1,6 +1,5 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { Dep } from '../base';
 import { install,logger } from '@em-cli/shared';
 import { eslintIgnore,eslint } from './template';
 
@@ -21,7 +20,7 @@ const deps = [
   'eslint-plugin-unicorn',
   'prettier',
 ];
-class EslintInstall extends Dep {
+class EslintInstall {
   cwd!:string
   files = [['.eslintignore',eslintIgnore],['.eslintrc.js',eslint]]
   async install () {

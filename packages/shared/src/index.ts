@@ -6,3 +6,5 @@ export * as pathHelper from './path';
 export {formate} from './eslint';
 export {makeProgress} from './progress';
 export {install} from './installDeps';
+export {default as inquirer} from './inquirer';
+export {default as pkgEnhance} from './pkgEnhance';

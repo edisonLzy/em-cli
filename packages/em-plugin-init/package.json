@@ -28,12 +28,15 @@
   },
   "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
   "devDependencies": {
+    "@types/shelljs": "^0.8.9",
+    "em-pipeline": "^0.0.8",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "@em-cli/shared": "^0.0.6",
-    "em-pipeline": "^0.0.7",
-    "fs-extra": "^10.0.0"
+    "em-pipeline": "^0.0.8",
+    "fs-extra": "^10.0.0",
+    "shelljs": "^0.8.4"
   },
   "peerDependencies": {
     "@em-cli/em-cli": "^1.0.6"

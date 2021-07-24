@@ -1,7 +1,7 @@
 import commander, { createCommand } from 'commander';
+import { logger } from '@em-cli/shared';
 import BaseClass from './base';
 import { CommandConfig } from './command';
-import { logger } from '@em-cli/shared';
 import path from 'path';
 import readPkg from 'read-pkg';
 const { version, name } = readPkg.sync({
@@ -50,23 +50,26 @@ class ECli extends BaseClass {
               `
         );
       }
-      cmd.action((...args: any[]) => {
+      cmd.action(async (...args: any[]) => {
         // 获取 command 实例
         const commandInstance: commander.Command = args.pop();
         // 获取 options 参数
         const optionsArgs: Record<string, any> = args.pop();
         // command 命令参数
         const commandArg: string[] = [...args];
-        command.run(commandArg, optionsArgs, commandInstance);
+        command.run({
+          args: commandArg,
+          optionsArgs
+        });
       });
     }
     // 必须在parse之前完成命令的注册
     this.program.parse(process.argv);
   }
   addCommand (command: CommandConfig) {
-    const id =  command.id;
-    if(this.CommandIds.has(id)){
-      return this; 
+    const id = command.id;
+    if (this.CommandIds.has(id)) {
+      return this;
     }
     this.CommandIds.add(id);
     this.CommandCtors.push(command);

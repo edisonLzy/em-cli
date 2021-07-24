@@ -1,13 +1,8 @@
 import commander from 'commander';
+import type {QuestionCollection} from 'inquirer';
 export type Options = [directive: string, description?: string, defaultValue?: string | boolean | undefined];
 export type Command = commander.Command
-
-export type CommandRun  = (args: string[],optionsArgs:Record<string, any>, Command: Command) => void
-
-export type CommandPrompting = (prompt:unknown)=>void
-
-export type CommandInstallDep = (prompt:unknown)=>void
-export interface CommandConfig {
+export interface CommandConfig{
   /**
    * 命令的标示 比如: init
    */
@@ -16,6 +11,11 @@ export interface CommandConfig {
    * options 参数
    */
    option?: Options[]
+   /**
+    * prompting 用户交互信息收集
+    *
+    */
+   prompting?:QuestionCollection[]
    /**
     * 参数 比如: <params>
     */
@@ -28,12 +28,10 @@ export interface CommandConfig {
     * examples
     */
    examples?: string[]
-   /**
-    * 匹配到对象的命令执行的函数
-    */
-   run: CommandRun
-
-
+   run: (args:{
+     args: string[],
+     optionsArgs:Record<string, any>
+   })=>void
 }
 export function defineCommand(config:CommandConfig){
   return config;

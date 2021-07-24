@@ -41,7 +41,9 @@ export default defineCommand({
   id: 'add-cmd',
   args : '<commandName>',
   description: 'quick add cli command',
-  async run(args, optionsArgs) {
+  async run({
+    args, optionsArgs
+  }) {
     const [commandName] = args;
     const content = renderTemplate(commandName);
     outputFile(content,path.join(context,'./src/command',commandName,'index.ts'),commandName);
