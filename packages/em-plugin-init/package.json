@@ -34,8 +34,10 @@
   },
   "dependencies": {
     "@em-cli/shared": "^0.0.6",
+    "@types/jsonfile": "^6.0.1",
     "em-pipeline": "^0.0.8",
     "fs-extra": "^10.0.0",
+    "jsonfile": "^6.1.0",
     "shelljs": "^0.8.4"
   },
   "peerDependencies": {

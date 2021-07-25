@@ -2,13 +2,13 @@ import ora from 'ora';
 import chalk from 'chalk';
 
 const spinner = ora();
-let lastMsg:{
-  symbol: string,
-  text: string
+let lastMsg: {
+  symbol: string;
+  text: string;
 } | null = null;
 let isPaused = false;
 
-export const logWithSpinner = (symbol:string, msg:string) => {
+export const logWithSpinner = (symbol: string, msg: string) => {
   if (!msg) {
     msg = symbol;
     symbol = chalk.green('✔');
@@ -16,18 +16,18 @@ export const logWithSpinner = (symbol:string, msg:string) => {
   if (lastMsg) {
     spinner.stopAndPersist({
       symbol: lastMsg.symbol,
-      text: lastMsg.text
+      text: lastMsg.text,
     });
   }
   spinner.text = ' ' + msg;
   lastMsg = {
     symbol: symbol + ' ',
-    text: msg
+    text: msg,
   };
   spinner.start();
 };
 
-export const stopSpinner = (persist:boolean = false) => {
+export const stopSpinner = (persist: boolean = false) => {
   if (!spinner.isSpinning) {
     return;
   }
@@ -35,7 +35,7 @@ export const stopSpinner = (persist:boolean = false) => {
   if (lastMsg && persist !== false) {
     spinner.stopAndPersist({
       symbol: lastMsg.symbol,
-      text: lastMsg.text
+      text: lastMsg.text,
     });
   } else {
     spinner.stop();
@@ -57,7 +57,6 @@ export const resumeSpinner = () => {
   }
 };
 
-export const failSpinner = (text:string) => {
+export const failSpinner = (text: string) => {
   spinner.fail(text);
 };
-

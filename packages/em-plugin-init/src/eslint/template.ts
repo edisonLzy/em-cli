@@ -1,144 +1,56 @@
-export const eslintIgnore = `
-dist/*
+export const eslintIgnore = `dist/*
 doc/*
 node_modules/*
 `;
 
-export const eslint = `
-
-const reactRules = {
-  'jsx-quotes': ['error', 'prefer-double'],
-  'react-hooks/rules-of-hooks': 'error',
-  'react-hooks/exhaustive-deps': 'warn',
-  'react/jsx-curly-newline': 'off',
-  'react/jsx-indent': 'off',
-  'react/jsx-handler-names': 'off',
-  'react/react-in-jsx-scope': 'off',
-}
-
-module.exports = {
+export const eslint = `module.exports = {
+  root: true,
   env: {
     browser: true,
-    es6: true,
+    es2021: true,
     node: true,
-    jest: true,
   },
-  extends: [
-    'standard',
-    'standard-jsx',
-    'standard-react',
-    'prettier',
-    'plugin:prettier/recommended',
-  ].filter(Boolean),
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
+    ecmaVersion: '2020',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    'react-hooks',
-    'prettier',
-    'unicorn',
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:prettier/recommended',
   ],
-  rules: {
-    'prettier/prettier': 'error',
-    'standard/no-callback-literal': 'off',
-    'unicorn/filename-case': [
-      'error',
-      {
-        case: 'kebabCase',
-      },
-    ],
-    ...reactRules,
-  },
   settings: {
-    react: {
-      version: 'detect',
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts', '.json'],
+      },
+      typescript: {},
     },
+    'import/extensions': ['.js', '.ts', '.mjs'],
   },
   overrides: [
     {
-      files: ['**/*.ts?(x)'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true,
-        },
-        warnOnUnsupportedTypeScriptVersion: true,
-      },
-      extends: [
-        'standard',
-       'standard-jsx',
-       'standard-react',
-        'prettier',
-        'plugin:prettier/recommended',
-        'plugin:@typescript-eslint/recommended',
-      ],
-      plugins: [
-       'react',
-       'react-hooks',
-        'prettier',
-        'unicorn',
-        '@typescript-eslint',
-      ],
+      files: ['*.ts', '*.tsx'],
       rules: {
-        // TypeScript's noFallthroughCasesInSwitch option is more robust (#6906)
-        'default-case': 'off',
-        // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
-        'no-dupe-class-members': 'off',
-        // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
-        'no-undef': 'off',
-
-        // Add TypeScript specific rules (and turn off ESLint equivalents)
-        '@typescript-eslint/consistent-type-assertions': 'warn',
-        'no-array-constructor': 'off',
-        '@typescript-eslint/no-array-constructor': 'warn',
-        '@typescript-eslint/no-namespace': 'error',
         'no-use-before-define': 'off',
-        '@typescript-eslint/no-use-before-define': [
-          'error',
-          {
-            functions: false,
-            classes: false,
-            variables: false,
-            typedefs: false,
-          },
-        ],
+        'import/no-duplicates': 'off',
+      },
+    },
+    {
+      files: ['*.d.ts'],
+      rules: {
         'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': [
-          'error',
-          {
-            args: 'none',
-            ignoreRestSiblings: true,
-          },
-        ],
-        'no-useless-constructor': 'off',
-        '@typescript-eslint/no-useless-constructor': 'warn',
-        'prettier/prettier': 'error',
-        'react/prop-types': 'off',
-        ...reactRules,
-        'standard/no-callback-literal': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/member-delimiter-style': 'off',
-        '@typescript-eslint/no-explicit-any': 'off',
-        'unicorn/filename-case': [
-          'error',
-          {
-            case: 'kebabCase',
-          },
-        ],
       },
     },
   ],
+};`;
+
+export const prettier = `{ 
+  "singleQuote": true,   
+  "bracketSpacing": true 
 }
+`;
+
+export const prettierignore = `node_modules
 `;

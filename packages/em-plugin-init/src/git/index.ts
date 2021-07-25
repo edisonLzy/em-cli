@@ -31,15 +31,15 @@ index.html
 `;
 
 export default {
-  tips:'正在初始化 git',
-  fn:async function(cwd:string){
-    if(!shell.which('git')){
+  tips: '正在初始化 git',
+  fn: async function (cwd: string) {
+    if (!shell.which('git')) {
       shell.echo('this script need git');
       shell.exit(1);
-    }else{
+    } else {
       shell.cd(cwd);
       shell.exec('git init');
       shell.exec(`echo '${gitignore}' > .gitignore`);
     }
-  }
+  },
 };

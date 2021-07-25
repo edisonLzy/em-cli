@@ -5,14 +5,17 @@ import initCi from './ci';
 import initGit from './git';
 import initEditor from './editor';
 import initCommitLint from './commitlint';
+import initEslint from './eslint';
+import typescriptInit from './typescript';
+import jestInit from './jest';
 const presets = {
   git: initGit,
   ci: initCi,
   editor: initEditor,
   commitlint: initCommitLint,
-  // 'eslint',
-  // 'typescript',
-  // 'jest',
+  eslint: initEslint,
+  typescript: typescriptInit,
+  jest: jestInit,
   // 'travis',
 };
 export default defineCommand({
@@ -32,18 +35,15 @@ export default defineCommand({
       {
         type: 'checkbox',
         name: 'presets',
-        default: ['ci', 'git'],
+        default: ['ci', 'git', 'eslint'],
         choices: Object.keys(presets),
       },
     ]);
     const tasks = new PipeLine();
     // 根据preset注册任务
-    for (const preset of answers.presets) {
-      const { tips, fn } = presets[preset as keyof typeof presets];
-      tasks.tap(tips, async (app, { next }) => {
-        await fn(project);
-        next();
-      });
+    for await (const preset of answers.presets) {
+      const { fn } = presets[preset as keyof typeof presets];
+      await fn(project);
     }
     tasks.run({});
   },
