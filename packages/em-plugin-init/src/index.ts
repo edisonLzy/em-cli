@@ -8,6 +8,7 @@ import initCommitLint from './commitlint';
 import initEslint from './eslint';
 import typescriptInit from './typescript';
 import jestInit from './jest';
+import travisInit from './travis';
 const presets = {
   git: initGit,
   ci: initCi,
@@ -16,7 +17,7 @@ const presets = {
   eslint: initEslint,
   typescript: typescriptInit,
   jest: jestInit,
-  // 'travis',
+  travis: travisInit,
 };
 export default defineCommand({
   id: 'init',
