@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-cli",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
@@ -24,10 +24,10 @@
   "author": "lizhiyu <656603136@qq.com>",
   "license": "ISC",
   "dependencies": {
-    "@em-cli/em-plugin-build": "^0.0.1",
-    "@em-cli/em-plugin-dev": "^0.0.1",
-    "@em-cli/em-plugin-init": "^0.0.1",
-    "@em-cli/shared": "^0.0.6",
+    "@em-cli/em-plugin-build": "^0.1.0",
+    "@em-cli/em-plugin-dev": "^0.1.0",
+    "@em-cli/em-plugin-init": "^0.1.0",
+    "@em-cli/shared": "^0.1.0",
     "commander": "^7.1.0",
     "ejs": "^3.1.6",
     "prettier": "^2.3.1",
@@ -35,10 +35,10 @@
   },
   "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
   "devDependencies": {
-    "@types/inquirer": "^7.3.3",
-    "@types/read-pkg": "^5.1.0",
     "@types/ejs": "^3.0.6",
+    "@types/inquirer": "^7.3.3",
     "@types/prettier": "^2.3.0",
+    "@types/read-pkg": "^5.1.0",
     "cross-env": "^7.0.3",
     "rimraf": "^3.0.2"
   }

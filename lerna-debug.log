@@ -1,20 +1,33 @@
-0 silly argv {
-0 silly argv   _: [ 'add' ],
-0 silly argv   scope: '@em-cli/em-cli',
-0 silly argv   dev: true,
-0 silly argv   D: true,
-0 silly argv   globs: [],
-0 silly argv   lernaVersion: '4.0.0',
-0 silly argv   '$0': '/Users/zhiyu/Desktop/owner/em-cli/node_modules/.bin/lerna',
-0 silly argv   pkg: '@types/inquirer'
-0 silly argv }
-1 notice cli v4.0.0
-2 verbose rootPath /Users/zhiyu/Desktop/owner/em-cli
-3 info versioning independent
-4 error FetchError: request to https://registry.npmjs.org/@types%2finquirer failed, reason: Client network socket disconnected before secure TLS connection was established
-4 error     at ClientRequest.<anonymous> (/Users/zhiyu/Desktop/owner/em-cli/node_modules/minipass-fetch/lib/index.js:97:14)
-4 error     at ClientRequest.emit (events.js:376:20)
-4 error     at TLSSocket.socketErrorListener (_http_client.js:475:9)
-4 error     at TLSSocket.emit (events.js:388:22)
-4 error     at emitErrorNT (internal/streams/destroy.js:106:8)
-4 error     at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+87 error Error: Command failed with exit code 1: git commit -F /private/var/folders/x6/n895_zqx6znchcxgflxbv5hw0000gn/T/20ef3747-94f9-4a73-b285-7714035c87f9/lerna-commit.txt
+87 error [STARTED] Preparing...
+87 error [SUCCESS] Preparing...
+87 error [STARTED] Running tasks...
+87 error [STARTED] Running tasks for *.{js,jsx,ts,tsx}
+87 error [STARTED] Running tasks for *.{d.ts,json,md}
+87 error [SKIPPED] No staged files match *.{js,jsx,ts,tsx}
+87 error [STARTED] prettier --write
+87 error [SUCCESS] prettier --write
+87 error [SUCCESS] Running tasks for *.{d.ts,json,md}
+87 error [SUCCESS] Running tasks...
+87 error [STARTED] Applying modifications...
+87 error [SUCCESS] Applying modifications...
+87 error [STARTED] Cleaning up...
+87 error [SUCCESS] Cleaning up...
+87 error ⧗   input: Publish
+87 error
+87 error  - @em-cli/em-cli@1.1.0
+87 error  - @em-cli/em-plugin-build@0.1.0
+87 error  - @em-cli/em-plugin-dev@0.1.0
+87 error  - @em-cli/em-plugin-init@0.1.0
+87 error  - @em-cli/shared@0.1.0
+87 error ✖   subject may not be empty [subject-empty]
+87 error ✖   type may not be empty [type-empty]
+87 error
+87 error ✖   found 2 problems, 0 warnings
+87 error ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+87 error
+87 error husky - commit-msg hook exited with code 1 (error)
+87 error     at makeError (/Users/evanzyli/Desktop/owner/em-cli/node_modules/execa/lib/error.js:59:11)
+87 error     at handlePromise (/Users/evanzyli/Desktop/owner/em-cli/node_modules/execa/index.js:114:26)
+87 error     at processTicksAndRejections (internal/process/task_queues.js:93:5)
+87 error     at async Promise.all (index 0)
