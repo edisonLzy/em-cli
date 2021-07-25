@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-init",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "项目初始化",
   "keywords": [
     "项目初始化"
@@ -33,7 +33,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@em-cli/shared": "^0.1.0",
+    "@em-cli/shared": "^0.2.0",
     "@types/jsonfile": "^6.0.1",
     "em-pipeline": "^0.0.8",
     "fs-extra": "^10.0.0",
