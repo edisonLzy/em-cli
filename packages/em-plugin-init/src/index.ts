@@ -9,7 +9,7 @@ const presets = {
   git: initGit,
   ci: initCi,
   editor: initEditor,
-  commitlint: initCommitLint
+  commitlint: initCommitLint,
   // 'eslint',
   // 'typescript',
   // 'jest',
@@ -19,10 +19,10 @@ export default defineCommand({
   id: 'init',
   option: [
     ['-t,--template [template]', '模版项目地址'],
-    ['-p,--project [project]', '当前工作目录', process.cwd()]
+    ['-p,--project [project]', '当前工作目录', process.cwd()],
   ],
   description: '初始化项目',
-  async run ({ optionsArgs }) {
+  async run({ optionsArgs }) {
     const { template, project } = optionsArgs;
     if (template) {
       // 拉取模版
@@ -33,8 +33,8 @@ export default defineCommand({
         type: 'checkbox',
         name: 'presets',
         default: ['ci', 'git'],
-        choices: Object.keys(presets)
-      }
+        choices: Object.keys(presets),
+      },
     ]);
     const tasks = new PipeLine();
     // 根据preset注册任务
@@ -46,5 +46,5 @@ export default defineCommand({
       });
     }
     tasks.run({});
-  }
+  },
 });

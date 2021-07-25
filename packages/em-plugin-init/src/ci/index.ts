@@ -16,10 +16,10 @@ const jenkinsfile = `pipeline {
 `;
 
 export default {
-  fn: async function (cwd:string){  
+  fn: async function (cwd: string) {
     shell.cd(cwd);
     shell.exec(`echo '${dockerFile}' > DockerFile`);
     shell.exec(`echo '${jenkinsfile}' > Jenkinsfile`);
   },
-  tips:'初始化jenkins 和 docker'
+  tips: '初始化jenkins 和 docker',
 };

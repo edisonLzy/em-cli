@@ -3,43 +3,40 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
   },
-  extends: ['standard'],
   parserOptions: {
     ecmaVersion: '2020',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
-  extends: ['plugin:@typescript-eslint/eslint-recommended'],
+  extends: [
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:prettier/recommended',
+  ],
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.ts', '.json']
+        extensions: ['.js', '.ts', '.json'],
       },
-      typescript: {}
+      typescript: {},
     },
-    'import/extensions': ['.js', '.ts', '.mjs']
+    'import/extensions': ['.js', '.ts', '.mjs'],
   },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
       rules: {
         'no-use-before-define': 'off',
-        'import/no-duplicates': 'off'
-      }
+        'import/no-duplicates': 'off',
+      },
     },
     {
       files: ['*.d.ts'],
       rules: {
-        'no-unused-vars': 'off'
-      }
-    }
+        'no-unused-vars': 'off',
+      },
+    },
   ],
-  rules: {
-    indent: ['error', 2],
-    quotes: ['error', 'single'],
-    semi: ['error', 'always']
-  }
 };
