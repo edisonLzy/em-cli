@@ -33,8 +33,9 @@
   },
   "dependencies": {
     "@em-cli/shared": "^0.2.0",
-    "em-pipeline": "^0.0.2",
-    "fs-extra": "^10.0.0"
+    "em-pipeline": "^0.1.0",
+    "fs-extra": "^10.0.0",
+    "vite": "^2.4.3"
   },
   "peerDependencies": {
     "@em-cli/em-cli": "^1.0.6"
