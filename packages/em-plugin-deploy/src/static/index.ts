@@ -51,8 +51,14 @@ async function fetchRemote(remote: string, { cacheDir }: typeof globalConfig) {
   try {
     const repoName = path.parse(remote).name;
     const dir = path.join(cacheDir, repoName);
-    await git.clone(remote);
-    signale.success('缓存远程仓库到本地');
+    if (await fs.pathExists(dir)) {
+      await git.cwd(dir);
+      await git.pull();
+      signale.success('更新仓程仓库到本地');
+    } else {
+      await git.clone(remote, dir);
+      signale.success('缓存远程仓库到本地');
+    }
     return dir;
   } catch (e) {
     signale.error(`缓存失败: ${e}`);
@@ -74,7 +80,7 @@ async function uploadFileToContent(
     const content = await (await fs.readFile(dir)).toString();
     signale.pending('导入文件:' + dir);
     await fs.ensureFile(filename);
-    await fs.writeFile(filename, formateContent(content));
+    await fs.writeFile(filename, formateContent(content, name));
     signale.success('文件写入成功:' + filename);
   }
 }

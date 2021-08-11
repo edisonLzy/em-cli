@@ -1963,6 +1963,13 @@
   resolved "https://registry.nlark.com/@tsconfig/node16/download/@tsconfig/node16-1.0.1.tgz"
   integrity sha1-pspqmg/zZq9DP0L18OEkeU/2uPE=
 
+"@types/commander@^2.12.2":
+  version "2.12.2"
+  resolved "https://registry.nlark.com/@types/commander/download/@types/commander-2.12.2.tgz#183041a23842d4281478fa5d23c5ca78e6fd08ae"
+  integrity sha1-GDBBojhC1CgUePpdI8XKeOb9CK4=
+  dependencies:
+    commander "*"
+
 "@types/configstore@*":
   version "5.0.1"
   resolved "https://registry.npmjs.org/@types/configstore/-/configstore-5.0.1.tgz#7be34d28ce29a408c98e717ada0488664eaf6173"
@@ -2107,8 +2114,8 @@
 
 "@types/read-pkg@^5.1.0":
   version "5.1.0"
-  resolved "https://registry.npmjs.org/@types/read-pkg/-/read-pkg-5.1.0.tgz"
-  integrity sha512-YOrcNByG1rPqIMhEMC1xU4SeFHcvQmHkl8yT6M4qPr+8eM1OBxRFJWog2uO+kx5Ept48Wdv+DuriUAVMC+LbQA==
+  resolved "https://registry.nlark.com/@types/read-pkg/download/@types/read-pkg-5.1.0.tgz#5e0ba3323defbea679d645cd6f9985ea6ec8cb59"
+  integrity sha1-XgujMj3vvqZ51kXNb5mF6m7Iy1k=
   dependencies:
     read-pkg "*"
 
@@ -3218,6 +3225,11 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   integrity sha1-w9RaizT9cwYxoRCoolIGgrMdWn8=
   dependencies:
     delayed-stream "~1.0.0"
+
+commander@*:
+  version "8.1.0"
+  resolved "https://registry.nlark.com/commander/download/commander-8.1.0.tgz?cache=0&sync_timestamp=1627358203890&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcommander%2Fdownload%2Fcommander-8.1.0.tgz#db36e3e66edf24ff591d639862c6ab2c52664362"
+  integrity sha1-2zbj5m7fJP9ZHWOYYsarLFJmQ2I=
 
 commander@^2.20.0, commander@^2.8.1:
   version "2.20.3"

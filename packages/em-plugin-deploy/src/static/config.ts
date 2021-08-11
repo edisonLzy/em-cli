@@ -1,6 +1,5 @@
-const base = '/Users/evanzyli/Desktop/owner/cli-test/deploy';
+import path from 'path';
 export default {
-  //   cacheDir: process.env.HOME,
-  cacheDir: base,
+  cacheDir: path.join(process.env.HOME!, '.ee'),
   storeFileDir: 'content/blog',
 };

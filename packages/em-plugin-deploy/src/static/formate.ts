@@ -1,10 +1,21 @@
+import prettier from 'prettier';
+
+const removeMarkdownh1 = /# (.+?)\n/s;
 function getNow() {
   return new Date().toISOString();
 }
-export function formateContent(content: string) {
-  // 添加时间
-  return content.replace(/(---)(.+?)(---)/s, function (...args) {
-    const [, $1, $2, $3] = args;
-    return $1 + $2 + `date: ${getNow()}` + '\n' + $3 + '\n';
-  });
+
+export function formateContent(content: string, filename: string) {
+  const res = content.replace(
+    removeMarkdownh1,
+    `
+  ---
+     title: ${filename}
+     date: ${getNow()}
+     description: ${filename} 
+  ---
+ `
+  );
+
+  return prettier.format(res, { parser: 'markdown' });
 }
