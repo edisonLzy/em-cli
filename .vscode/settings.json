@@ -1,7 +1,12 @@
 {
-    "cSpell.words": [
-        "evanzyli",
-        "lizhiyu",
-        "vite"
-    ],
+  "cSpell.words": [
+    "Esbuild",
+    "corejs",
+    "evanzyli",
+    "globby",
+    "lizhiyu",
+    "postbuild",
+    "signale",
+    "vite"
+  ]
 }

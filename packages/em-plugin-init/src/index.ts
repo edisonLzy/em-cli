@@ -9,6 +9,8 @@ import initEslint from './eslint';
 import typescriptInit from './typescript';
 import jestInit from './jest';
 import travisInit from './travis';
+import updateNotifier from 'update-notifier';
+
 const presets = {
   git: initGit,
   ci: initCi,
@@ -27,6 +29,8 @@ export default defineCommand({
   ],
   description: '初始化项目',
   async run({ optionsArgs }) {
+    // notify for update
+    updateNotifier({ pkg: require('../package.json') }).notify();
     const { template, project } = optionsArgs;
     if (template) {
       // 拉取模版

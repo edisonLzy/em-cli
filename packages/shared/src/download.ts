@@ -1,4 +1,4 @@
-import {promisify} from 'util';
+import { promisify } from 'util';
 /**
  *  下载github仓库
  *  download(`github:edisonLzy/${templateId}-learn`,target)

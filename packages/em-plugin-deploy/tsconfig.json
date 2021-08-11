@@ -3,8 +3,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "declarationDir": "./lib/typings",
-    "outDir": "./lib",
-    "emitDeclarationOnly": true
+    "outDir": "./lib"
   },
   "include": ["src/**/*"],
   "exclude": ["bin/*", "lib/**/*"]

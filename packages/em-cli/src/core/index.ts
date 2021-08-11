@@ -4,31 +4,34 @@ import BaseClass from './base';
 import { CommandConfig } from './command';
 import path from 'path';
 import readPkg from 'read-pkg';
-const { version, name } = readPkg.sync({
-  cwd: path.resolve(__dirname, '../../')
+
+const pkg = readPkg.sync({
+  cwd: path.resolve(__dirname, '../../'),
 });
+
 class ECli extends BaseClass {
-  private program: commander.Command
-  private CommandCtors: CommandConfig[] = []
-  private CommandIds = new Set<string>()
-  constructor () {
+  private program: commander.Command;
+  private CommandCtors: CommandConfig[] = [];
+  private CommandIds = new Set<string>();
+  constructor() {
     super();
     this.program = this.createProgram(); // 创建program
   }
-  private createProgram (): commander.Command {
+  private createProgram(): commander.Command {
     const program = createCommand();
-    program.version(logger.info(`${version}`, name, false));
+    program.version(logger.info(`${pkg.version}`, pkg.name, false));
     program.usage('<command> [options]');
     program.passThroughOptions();
     program.allowExcessArguments(false);
     return program;
   }
-  private runCommand () {
+  private runCommand() {
     for (const command of this.CommandCtors) {
-      const nameAndArgs = `${command.id} ${
-        command.args ? `${command.args}` : ''
-      }`;
-      const cmd = this.program.command(nameAndArgs);
+      const cmd = this.program.command(command.id);
+
+      if (command.args) {
+        cmd.arguments(command.args);
+      }
       if (command.description) {
         cmd.description(command.description);
       }
@@ -40,7 +43,7 @@ class ECli extends BaseClass {
       }
       // 添加helpText
       if (command.examples && command.examples.length !== 0) {
-        command.examples = command.examples.map(it => `  ${it}`);
+        command.examples = command.examples.map((it) => `  ${it}`);
         cmd.addHelpText(
           'after',
           `
@@ -51,22 +54,22 @@ class ECli extends BaseClass {
         );
       }
       cmd.action(async (...args: any[]) => {
-        // 获取 command 实例
-        const commandInstance: commander.Command = args.pop();
+        // 弹出 command install
+        args.pop();
         // 获取 options 参数
         const optionsArgs: Record<string, any> = args.pop();
         // command 命令参数
-        const commandArg: string[] = [...args];
+        const commandArg: string[] = args;
         command.run({
-          args: commandArg,
-          optionsArgs
+          args: commandArg || [],
+          optionsArgs,
         });
       });
     }
     // 必须在parse之前完成命令的注册
     this.program.parse(process.argv);
   }
-  addCommand (command: CommandConfig) {
+  addCommand(command: CommandConfig) {
     const id = command.id;
     if (this.CommandIds.has(id)) {
       return this;
@@ -75,7 +78,7 @@ class ECli extends BaseClass {
     this.CommandCtors.push(command);
     return this;
   }
-  async run () {
+  async run() {
     // 注册命令
     this.runCommand();
   }
