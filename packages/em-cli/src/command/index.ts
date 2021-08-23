@@ -1,1 +1,1 @@
-export {default as CommandAddCmd} from './add-cmd';     
+export { default as CommandAddCmd } from './add-cmd';

@@ -1,16 +1,15 @@
 {
-    "compilerOptions": {
-      "downlevelIteration": true,
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
-      "declaration": true,
-      "module": "CommonJS",
-      "strict": true,
-      "pretty": true,
-      "target": "ES2015",
-      "noImplicitThis": false
-    }
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "module": "CommonJS",
+    "strict": true,
+    "pretty": true,
+    "target": "ES2015",
+    "noImplicitThis": false
   }
-  
+}

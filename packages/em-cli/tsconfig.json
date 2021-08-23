@@ -1,11 +1,13 @@
 {
-    "extends": "../../tsconfig.base.json",
-    "compilerOptions": {
-      "baseUrl": "./",
-      "outDir": "lib",
-      "declarationDir": "lib/typings"
-    },
-    "include": ["src/**/*"],
-    "exclude": ["bin/*","lib/**/*"]
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./lib",
+    "declarationDir": "./lib/typings",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["./lib/**/*"]
 }
-  
