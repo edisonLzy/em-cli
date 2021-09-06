@@ -1,0 +1,46 @@
+{
+  "name": "@em-cli/em-plugin-link",
+  "version": "0.0.1",
+  "description": "本地 link",
+  "keywords": [
+    "debug"
+  ],
+  "author": "lizhiyu <656603136@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "typings": "./lib/typings",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "start": "npm run clean && tsc --watch"
+  },
+  "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
+  "devDependencies": {
+    "@types/read-pkg": "^5.1.0",
+    "@types/shelljs": "^0.8.9",
+    "@types/signale": "^1.4.2",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@em-cli/shared": "^0.2.1",
+    "fast-glob": "^3.2.7",
+    "fs-extra": "^10.0.0",
+    "read-pkg": "^5.1.1",
+    "shelljs": "^0.8.4",
+    "signale": "^1.4.0"
+  },
+  "peerDependencies": {
+    "@em-cli/em-cli": "^1.0.6"
+  }
+}

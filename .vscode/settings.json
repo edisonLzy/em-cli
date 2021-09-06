@@ -1,10 +1,11 @@
 {
   "cSpell.words": [
-    "Esbuild",
     "corejs",
+    "Esbuild",
     "evanzyli",
     "globby",
     "lizhiyu",
+    "pkgs",
     "postbuild",
     "signale",
     "vite",

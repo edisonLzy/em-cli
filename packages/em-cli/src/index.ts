@@ -4,6 +4,8 @@ import CommandInit from '@em-cli/em-plugin-init'; // 插件中因为以来 @em-c
 import CommandDev from '@em-cli/em-plugin-dev';
 import CommandBuild from '@em-cli/em-plugin-build';
 import CommandDeploy from '@em-cli/em-plugin-deploy';
+import CommandCreate from '@em-cli/em-plugin-create';
+import CommandLink from '@em-cli/em-plugin-link';
 
 import { CommandAddCmd } from '@/command';
 import ECli from '@/core';
@@ -13,7 +15,9 @@ export function run(isDev: boolean) {
     .addCommand(CommandInit)
     .addCommand(CommandDev)
     .addCommand(CommandBuild)
-    .addCommand(CommandDeploy);
+    .addCommand(CommandDeploy)
+    .addCommand(CommandCreate)
+    .addCommand(CommandLink);
   if (isDev) {
     eCli.addCommand(CommandAddCmd);
   }
