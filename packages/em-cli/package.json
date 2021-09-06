@@ -37,7 +37,8 @@
     "module-alias": "^2.2.2",
     "prettier": "^2.3.1",
     "read-pkg": "^5.1.1",
-    "update-notifier": "^5.1.0"
+    "update-notifier": "^5.1.0",
+    "userhome": "^1.0.0"
   },
   "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
   "devDependencies": {

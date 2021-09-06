@@ -5,6 +5,6 @@
     "declarationDir": "./lib/typings",
     "outDir": "./lib"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../em-cli/src/global.d.ts"],
   "exclude": ["bin/*", "lib/**/*"]
 }

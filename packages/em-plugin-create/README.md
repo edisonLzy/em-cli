@@ -1,5 +1,19 @@
 # `@em-cli/em-plugin-create`
 
-> TODO: description
+```shell
+ee create <type> [args]
+```
 
-- [] https://www.npmjs.com/package/markdown
+## type
+
+* plugin
+
+```shell
+ee create plugin <name>
+```
+
+* link
+
+```shell
+ee create link
+```

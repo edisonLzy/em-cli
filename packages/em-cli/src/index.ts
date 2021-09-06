@@ -5,9 +5,7 @@ import CommandDev from '@em-cli/em-plugin-dev';
 import CommandBuild from '@em-cli/em-plugin-build';
 import CommandDeploy from '@em-cli/em-plugin-deploy';
 import CommandCreate from '@em-cli/em-plugin-create';
-import CommandLink from '@em-cli/em-plugin-link';
-
-import { CommandAddCmd } from '@/command';
+import { CommandAddCmd, CommandAdminConfig } from '@/command';
 import ECli from '@/core';
 export function run(isDev: boolean) {
   const eCli = new ECli();
@@ -17,7 +15,7 @@ export function run(isDev: boolean) {
     .addCommand(CommandBuild)
     .addCommand(CommandDeploy)
     .addCommand(CommandCreate)
-    .addCommand(CommandLink);
+    .addCommand(CommandAdminConfig);
   if (isDev) {
     eCli.addCommand(CommandAddCmd);
   }
