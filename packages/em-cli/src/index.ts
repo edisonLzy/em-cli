@@ -5,7 +5,13 @@ import CommandDev from '@em-cli/em-plugin-dev';
 import CommandBuild from '@em-cli/em-plugin-build';
 import CommandDeploy from '@em-cli/em-plugin-deploy';
 import CommandCreate from '@em-cli/em-plugin-create';
-import { CommandAddCmd, CommandAdminConfig } from '@/command';
+import CommandTemplate from '@em-cli/em-plugin-template';
+import {
+  CommandAddCmd,
+  CommandAdminConfig,
+  CONFIG_PATH,
+  getConfigKey,
+} from '@/command';
 import ECli from '@/core';
 export function run(isDev: boolean) {
   const eCli = new ECli();
@@ -15,10 +21,11 @@ export function run(isDev: boolean) {
     .addCommand(CommandBuild)
     .addCommand(CommandDeploy)
     .addCommand(CommandCreate)
-    .addCommand(CommandAdminConfig);
+    .addCommand(CommandAdminConfig)
+    .addCommand(CommandTemplate);
   if (isDev) {
     eCli.addCommand(CommandAddCmd);
   }
   eCli.run();
 }
-export { defineCommand, CommandConfig };
+export { defineCommand, CommandConfig, CONFIG_PATH, getConfigKey };

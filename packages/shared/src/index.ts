@@ -9,3 +9,4 @@ export { install } from './installDeps';
 export { default as inquirer } from './inquirer';
 export { default as pkgEnhance } from './pkgEnhance';
 export { download } from './download';
+export { default as elog } from './npmlog';

@@ -1,8 +1,11 @@
 import { defineCommand } from '@/core/command';
 import fs from 'fs-extra';
-import path from 'path';
 import userhome from 'userhome';
-import { CONFIG_FILENAME } from '../../const';
+import { elog } from '@em-cli/shared';
+import { getConfigKey, setConfigKey } from './utils';
+import { CONFIG_FILENAME, CONFIG_GET, CONFIG_SET } from '../../const';
+
+export { getConfigKey, setConfigKey };
 /**
  * 该命令用来管理全局的配置文件
  * .eeconf.json
@@ -26,13 +29,24 @@ async function initConfigFile() {
 }
 export default defineCommand({
   id: 'config',
-  args: '[type]',
-  option: [
-    ['-k,--key <key>', 'key'],
-    ['-v,--value [value]', 'value'],
-  ],
+  args: '[action] [key] [value]',
   description: 'maintains ee cli config file',
   async run({ args, optionsArgs }) {
-    const content = await initConfigFile();
+    const [action, key, value] = args;
+    if (!action) {
+      const content = await initConfigFile();
+      // ee config
+      elog.info('config = %s', content);
+    }
+    if (action === CONFIG_GET) {
+      // ee config get
+      const value = await getConfigKey(key);
+      elog.info('%s=%s', key, value);
+    }
+    if (action === CONFIG_SET) {
+      // ee config set key value
+      await setConfigKey(key, value);
+      elog.info('success set %s in configFile', key);
+    }
   },
 });

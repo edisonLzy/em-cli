@@ -30,6 +30,7 @@
     "@em-cli/em-plugin-dev": "^0.2.1",
     "@em-cli/em-plugin-init": "^0.2.1",
     "@em-cli/em-plugin-link": "^0.0.2",
+    "@em-cli/em-plugin-template": "^0.0.1",
     "@em-cli/shared": "^0.2.1",
     "@types/module-alias": "^2.0.1",
     "commander": "^7.1.0",
