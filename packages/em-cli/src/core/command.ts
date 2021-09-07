@@ -32,6 +32,10 @@ export interface CommandConfig {
    * examples
    */
   examples?: string[];
+  /**
+   * subcommand: 注册子命令
+   */
+  subCommands?: this[];
   run: (args: { args: string[]; optionsArgs: Record<string, any> }) => void;
 }
 export function defineCommand(config: CommandConfig) {
