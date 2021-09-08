@@ -13,7 +13,6 @@ class ECli extends BaseClass {
   private program: commander.Command;
   private CommandCtors: CommandConfig[] = [];
   private CommandIds = new Set<string>();
-  private beenParsed = false;
   constructor() {
     super();
     this.program = this.createProgram(); // 创建program
@@ -76,14 +75,8 @@ class ECli extends BaseClass {
     for (const command of commands) {
       this.registerCommand(command, program);
     }
-    this.parseArgs();
   }
   private parseArgs() {
-    if (this.beenParsed) {
-      return;
-    }
-    this.beenParsed = true;
-    //! 必须在parse之前完成命令的注册,且只能注册 parse一次,parse多次 可能会导致 action执行多次
     this.program.parse(process.argv);
   }
   addCommand(command: CommandConfig) {
@@ -96,8 +89,9 @@ class ECli extends BaseClass {
     return this;
   }
   async run() {
-    // 注册命令
     this.registerCommands(this.CommandCtors, this.program);
+    //! 必须在parse之前完成命令的注册,且只能注册 parse一次,parse多次 可能会导致 action执行多次
+    this.parseArgs();
   }
 }
 export default ECli;

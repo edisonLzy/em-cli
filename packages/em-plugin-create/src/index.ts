@@ -1,9 +1,8 @@
 import { defineCommand } from '@em-cli/em-cli';
-import create, { CreateType } from './core';
-
+import { elog } from '@em-cli/shared';
+import { createLink } from './core/link';
 export default defineCommand({
   id: 'create',
-  description: 'create something',
   subCommands: [
     {
       id: 'plugin',
@@ -16,12 +15,15 @@ export default defineCommand({
     {
       id: 'link',
       description: '创建 link',
+      option: [['-w,--workinDir [workinDir]', '当前工作目录', process.cwd()]],
       run({ args, optionsArgs }) {
-        console.log('link');
+        const { workinDir } = optionsArgs;
+        createLink(workinDir);
       },
     },
   ],
+  description: 'create something',
   async run({ optionsArgs, args }) {
-    console.log('xxx');
+    elog.info('use plugin or link to create', '');
   },
 });

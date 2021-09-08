@@ -11,6 +11,7 @@ import {
   CommandAdminConfig,
   CONFIG_PATH,
   getConfigKey,
+  setConfigKey,
 } from '@/command';
 import ECli from '@/core';
 export function run(isDev: boolean) {
@@ -28,4 +29,10 @@ export function run(isDev: boolean) {
   }
   eCli.run();
 }
-export { defineCommand, CommandConfig, CONFIG_PATH, getConfigKey };
+export {
+  defineCommand,
+  CommandConfig,
+  CONFIG_PATH,
+  getConfigKey,
+  setConfigKey,
+};

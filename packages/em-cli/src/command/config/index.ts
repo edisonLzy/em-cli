@@ -2,8 +2,9 @@ import { defineCommand } from '@/core/command';
 import fs from 'fs-extra';
 import userhome from 'userhome';
 import { elog } from '@em-cli/shared';
-import { getConfigKey, setConfigKey } from './utils';
-import { CONFIG_FILENAME, CONFIG_GET, CONFIG_SET } from '../../const';
+import { getConfigKey, setConfigKey, deleteConfigKey } from './utils';
+import pMap from 'p-map';
+import { CONFIG_FILENAME } from '../../const';
 
 export { getConfigKey, setConfigKey };
 /**
@@ -29,24 +30,44 @@ async function initConfigFile() {
 }
 export default defineCommand({
   id: 'config',
-  args: '[action] [key] [value]',
   description: 'maintains ee cli config file',
+  subCommands: [
+    {
+      id: 'get',
+      args: '<key>',
+      description: '获取指定 key 的配置',
+      async run({ args }) {
+        const [key] = args;
+        const value = await getConfigKey(key);
+        elog.info('%s=%s', key, value);
+      },
+    },
+    {
+      id: 'set',
+      args: '<key> <value>',
+      description: 'set a value to config',
+      async run({ args }) {
+        const [key, value] = args;
+        await setConfigKey(key, value);
+        elog.info('success set %s in configFile', key);
+      },
+    },
+    {
+      id: 'delete',
+      args: '<keys...>',
+      description: 'delete key in config',
+      async run({ args }) {
+        const [keys] = args;
+        await pMap(keys, deleteConfigKey, {
+          concurrency: 1,
+        });
+        elog.info('success delete %s in configFile', keys);
+      },
+    },
+  ],
   async run({ args, optionsArgs }) {
-    const [action, key, value] = args;
-    if (!action) {
-      const content = await initConfigFile();
-      // ee config
-      elog.info('config = %s', content);
-    }
-    if (action === CONFIG_GET) {
-      // ee config get
-      const value = await getConfigKey(key);
-      elog.info('%s=%s', key, value);
-    }
-    if (action === CONFIG_SET) {
-      // ee config set key value
-      await setConfigKey(key, value);
-      elog.info('success set %s in configFile', key);
-    }
+    // 含有子命令不会执行
+    const content = await initConfigFile();
+    elog.info('config = %s', content);
   },
 });
