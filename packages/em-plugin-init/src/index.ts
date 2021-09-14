@@ -1,26 +1,22 @@
+import path from 'path';
+import fg from 'fast-glob';
+import pMap from 'p-map';
 import { defineCommand } from '@em-cli/em-cli';
-import { inquirer } from '@em-cli/shared';
-import { PipeLine } from 'em-pipeline';
-import initCi from './ci';
-import initGit from './git';
-import initEditor from './editor';
-import initCommitLint from './commitlint';
-import initEslint from './eslint';
-import typescriptInit from './typescript';
-import jestInit from './jest';
-import travisInit from './travis';
-import updateNotifier from 'update-notifier';
+import { Creator } from './creator';
 
-const presets = {
-  git: initGit,
-  ci: initCi,
-  editor: initEditor,
-  commitlint: initCommitLint,
-  eslint: initEslint,
-  typescript: typescriptInit,
-  jest: jestInit,
-  travis: travisInit,
-};
+const promptModulesPath = path.resolve(__dirname, 'promptModules');
+
+async function loadFeature(p: string) {
+  const feature = await import(p);
+  return feature.default;
+}
+async function getAllFeature() {
+  const featurePaths = await fg(`${promptModulesPath}/**/index.*`, {
+    onlyFiles: true,
+  });
+  const features = await pMap(featurePaths, loadFeature);
+  return features;
+}
 export default defineCommand({
   id: 'init',
   option: [
@@ -29,27 +25,30 @@ export default defineCommand({
   ],
   description: '初始化项目',
   async run({ optionsArgs }) {
-    // notify for update
-    updateNotifier({ pkg: require('../package.json') }).notify();
-    const { template, project } = optionsArgs;
-    if (template) {
-      // 拉取模版
-    }
-    // 获取用户需要安装的预设
-    const answers = await inquirer([
-      {
-        type: 'checkbox',
-        name: 'presets',
-        default: ['ci', 'git', 'eslint'],
-        choices: Object.keys(presets),
-      },
-    ]);
-    const tasks = new PipeLine();
-    // 根据preset注册任务
-    for await (const preset of answers.presets) {
-      const { fn } = presets[preset as keyof typeof presets];
-      await fn(project);
-    }
-    tasks.run({});
+    const features = await getAllFeature();
+
+    features.forEach((f) => f());
+    const creator = new Creator();
+    await creator.create();
+    // // notify for update
+    // updateNotifier({ pkg: require('../package.json') }).notify();
+    // const { template, project } = optionsArgs;
+    // if (template) {
+    //   // 拉取模版
+    // }
+    // // 获取用户需要安装的预设
+    // const answers = await inquirer([
+    //   {
+    //     type: 'checkbox',
+    //     name: 'presets',
+    //     default: ['ci', 'git', 'eslint'],
+    //     choices: Object.keys(presets),
+    //   },
+    // ]);
+    // // 根据preset注册任务
+    // for await (const preset of answers.presets) {
+    //   const { fn } = presets[preset as keyof typeof presets];
+    //   await fn(project);
+    // }
   },
 });
