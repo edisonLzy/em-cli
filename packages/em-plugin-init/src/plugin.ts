@@ -1,4 +1,4 @@
-import type { QuestionCollection, Question } from 'inquirer';
+import type { QuestionCollection, CheckboxChoiceOptions } from 'inquirer';
 import type { Creator } from './creator';
 export type OnPromptComplete<T = any> = (
   answers: T,
@@ -18,21 +18,18 @@ export class PromptModuleAPI {
     return (instance = new PromptModuleAPI(creator!));
   }
   //插入特性
-  injectFeature(feature: Question) {
-    (this.creator.featurePrompt.choices as any[]).push(feature);
+  injectFeature(feature: CheckboxChoiceOptions) {
+    (this.creator.featurePrompt.choices as any).push(feature);
   }
   //插入选项
   injectPrompt(prompt: QuestionCollection) {
-    this.creator.injectedPrompts.push(prompt!);
+    this.creator.injectedPrompts = this.creator.injectedPrompts.concat(prompt);
   }
   //选择完成后的回调
   onPromptComplete(cb: OnPromptComplete) {
     this.creator.promptCompleteCbs.push(cb);
   }
 }
-interface Plugin {
+export interface Plugin {
   (cli: PromptModuleAPI): void;
-}
-export function definePlugin(plugin: Plugin) {
-  return plugin(PromptModuleAPI.getInstance());
 }

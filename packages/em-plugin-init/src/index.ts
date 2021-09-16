@@ -26,9 +26,7 @@ export default defineCommand({
   description: '初始化项目',
   async run({ optionsArgs }) {
     const features = await getAllFeature();
-
-    features.forEach((f) => f());
-    const creator = new Creator();
+    const creator = new Creator(features);
     await creator.create();
     // // notify for update
     // updateNotifier({ pkg: require('../package.json') }).notify();
