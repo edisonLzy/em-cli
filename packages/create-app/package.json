@@ -1,0 +1,25 @@
+{
+  "name": "@em-cli/create-app",
+  "version": "0.0.0",
+  "description": "easy to create project",
+  "main": "index.js",
+  "bin": {
+    "create-app": "bin/create-app"
+  },
+  "typings": "lib/typings",
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "start": "npm run clean && tsc --watch",
+    "build": "npm run clean && tsc"
+  },
+  "author": "evanzyli",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.2.0",
+    "read-pkg": "5.1.1"
+  }
+}
