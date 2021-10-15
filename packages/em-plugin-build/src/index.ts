@@ -12,8 +12,8 @@ export default defineCommand({
   id: 'build',
   description: 'build',
   option: [
-    ['-p,--project [project]]', '项目地址', process.cwd()],
-    ['-t,--target [target]]', '构建目标', 'lib'],
+    ['-p,--project [project]', '项目地址', process.cwd()],
+    ['-t,--target [target]', '构建目标', 'lib'],
   ],
   async run({ args, optionsArgs }) {
     const { project } = optionsArgs;

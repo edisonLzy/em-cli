@@ -1,7 +1,7 @@
 import commander, { createCommand } from 'commander';
 import { logger } from '@em-cli/shared';
 import BaseClass from './base';
-import { CommandConfig } from './command';
+import { CommandConfig, Options } from './command';
 import path from 'path';
 import readPkg from 'read-pkg';
 
@@ -36,7 +36,8 @@ class ECli extends BaseClass {
     // 添加options
     if (command.option && command.option.length !== 0) {
       for (const option of command.option) {
-        cmd.option(...option);
+        const o: Options = option;
+        cmd.option(...o);
       }
     }
     // 添加helpText
