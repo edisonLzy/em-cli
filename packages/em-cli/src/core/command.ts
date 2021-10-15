@@ -27,6 +27,10 @@ export type GetOptionsDirective<T extends Options> = T[0];
 export type GetOptionsArgs<T> = [T] extends [Options]
   ? UnionToMapping<ExtractArgsName<GetOptionsDirective<T>>>
   : never;
+
+export type GetArgs<T> = {
+  [P in UnwrapBracket<T>]: string;
+};
 export interface CommandConfig<T extends Options = any> {
   /**
    * 命令的标示 比如: init
