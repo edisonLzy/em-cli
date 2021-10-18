@@ -20,14 +20,13 @@ export class Creator {
     const promptModuleAPI = PromptModuleAPI.getInstance(this);
     features.forEach((f) => f(promptModuleAPI));
   }
-  async create() {
-    const projectOptions = await this.promptAndResolve();
-    console.log(projectOptions);
+  async create(project: string) {
+    const projectOptions = await this.promptAndResolve(project);
   }
-  private async promptAndResolve() {
+  private async promptAndResolve(project: string) {
     const prompts = [this.featurePrompt, ...this.injectedPrompts];
     const answers = await prompt(prompts);
-    const projectOptions = { plugins: {} };
+    const projectOptions = { workinDir: project };
     this.promptCompleteCbs.forEach((cb) => cb(answers, projectOptions));
     return projectOptions;
   }

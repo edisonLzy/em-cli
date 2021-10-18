@@ -25,9 +25,10 @@ export default defineCommand({
   ],
   description: '初始化项目',
   async run({ optionsArgs }) {
+    const { project } = optionsArgs;
     const features = await getAllFeature();
     const creator = new Creator(features);
-    await creator.create();
+    await creator.create(project);
     // // notify for update
     // updateNotifier({ pkg: require('../package.json') }).notify();
     // const { template, project } = optionsArgs;

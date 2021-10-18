@@ -9,7 +9,6 @@ const ciPlugin: Plugin = (cli) => {
     {
       name: 'formatTool',
       when: (answers) => {
-        console.log(answers);
         return answers.features.includes('format');
       },
       type: 'checkbox',

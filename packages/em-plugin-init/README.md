@@ -35,3 +35,9 @@
 1. 使用 husky(`pre-commit hook`) 和 lint-stage 进行代码规范检查
 
 2. 使用 husky(`commit-msg hook`) 校验本次的提交的 message 是否符合规范
+
+- [x] monorepo
+
+1. 使用 `pnpm` 管理多包仓库
+
+2. 使用 `yarn workspaces 和 lerna` 管理多包仓库

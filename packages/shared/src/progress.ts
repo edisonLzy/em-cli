@@ -7,25 +7,24 @@ import ProgressBar from 'progress';
  * https://www.npmjs.com/package/progress#tokens
  */
 
-export function makeProgress(){
+export function makeProgress() {
   const total = 100;
   const bar = new ProgressBar('downloading [:bar] :rate/bps :percent :etas', {
     complete: '=',
     incomplete: ' ',
-    total: total
+    total: total,
   });
   return {
-    start(){        
-      const timer = setInterval(()=>{
+    start() {
+      const timer = setInterval(() => {
         bar.tick(20);
-        if(bar.complete){            
+        if (bar.complete) {
           clearInterval(timer);
         }
-      },100);
+      }, 100);
     },
-    end(){     
+    end() {
       bar.curr = total;
-    }
+    },
   };
 }
-  
