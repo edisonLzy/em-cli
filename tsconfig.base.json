@@ -10,6 +10,7 @@
     "strict": true,
     "pretty": true,
     "target": "ES2015",
-    "noImplicitThis": false
+    "noImplicitThis": false,
+    "allowSyntheticDefaultImports": true
   }
 }

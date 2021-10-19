@@ -1,4 +1,5 @@
 import path from 'path';
+import readPkg from 'read-pkg';
 import { writeFile } from 'jsonfile';
 /**
  * 方便修改 pkg.json 文件
@@ -46,4 +47,11 @@ export default async function pkgEnhance(workDir: string, enhanceObj: Enhance) {
   return await writeFile(path.join(workDir, 'package.json'), withCreate, {
     spaces: 2,
   });
+}
+
+export function getPkgInfo(workinDir = process.cwd()) {
+  const pkg = readPkg.sync({
+    cwd: workinDir,
+  });
+  return pkg;
 }
