@@ -5,7 +5,7 @@
     "declarationDir": "./lib/typings",
     "outDir": "./lib",
     "emitDeclarationOnly": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "target": "ES2015",
     "module": "ES2015"
   },

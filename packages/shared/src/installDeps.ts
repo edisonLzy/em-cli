@@ -9,11 +9,11 @@ const { start, end } = makeProgress();
  * 安装依赖
  * @param opt
  */
-export async function install (...opt: string[]) {
+export async function install(...opt: string[]) {
   start();
-  try{
+  try {
     await execa('npm', ['i', ...opt]);
-  }catch(e){
+  } catch (e) {
     console.log(e);
   }
   end();

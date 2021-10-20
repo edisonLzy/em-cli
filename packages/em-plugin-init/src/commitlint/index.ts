@@ -14,7 +14,9 @@ export default {
         //TODO 是否可以交互式初始化
         shell.exec('npm init -y');
       }
-      shell.exec('npm i husky lint-staged @commitlint/config-conventional -D');
+      shell.exec(
+        'npm i husky lint-staged @commitlint/config-conventional commitlint -D'
+      );
       shell.exec('npx husky install');
       shell.exec('npx husky add .husky/pre-commit "npx lint-staged"');
       shell.exec('npx husky add .husky/commit-msg "npx commitlint --edit $1"');

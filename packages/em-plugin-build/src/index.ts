@@ -1,9 +1,9 @@
 import { defineCommand } from '@em-cli/em-cli';
 import { buildWithRollup } from './buildLibWithRollup';
 import type { BuildExtension } from './buildLibWithRollup';
-import { inquirer } from '@em-cli/shared';
 import buildWithWebpack from './buildWithWebpack';
 import './utils/enhanceRequire';
+import buildSFC, { SFCOptions } from './buildSFC';
 const choices = ['webpack', 'rollup', 'gulp', 'esbuild', 'vite'];
 
 const buildMapping = {
@@ -14,17 +14,17 @@ export default defineCommand({
   description: 'build',
   subCommands: [
     {
-      id: 'lib',
-      description: '打包库',
+      id: 'sfc',
+      description: '单文件组件打包',
       option: [
         ['-p,--project [project]', '项目地址', process.cwd()],
-        ['-e,--extension [extension]', '构建文件类型', '.tsx'],
+        ['-t,--target [target]', '构建目标', 'react'],
       ],
       async run({ args, optionsArgs }) {
-        const { project, extension } = optionsArgs;
-        await buildWithRollup({
-          extension: extension as BuildExtension,
-          workinDir: project,
+        const { project: workinDir, target } = optionsArgs;
+        await buildSFC({
+          workinDir,
+          target: target as SFCOptions['target'],
         });
       },
     },

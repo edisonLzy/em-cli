@@ -11,6 +11,7 @@ export async function getDirsInCurrentPath(
 ) {
   const dirs = await fg(`${workinDir}/*`, {
     onlyDirectories: true,
+    ignore: ['node_modules/**/*'],
   });
   return dirs
     .map((dir) => {

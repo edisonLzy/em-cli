@@ -30,6 +30,7 @@ export async function getFilesInCurrentPath(
 ) {
   const files = await fg(`${workinDir}/${glob}`, {
     onlyFiles: true,
+    ignore: ['node_modules/**/*'],
   });
   return files
     .map((file) => {
