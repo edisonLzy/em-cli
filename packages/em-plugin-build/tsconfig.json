@@ -4,7 +4,10 @@
     "baseUrl": "./",
     "declarationDir": "./lib/typings",
     "outDir": "./lib",
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "jsx": "react",
+    "target": "ES2015",
+    "module": "ES2015"
   },
   "include": ["src/**/*"],
   "exclude": ["bin/*", "lib/**/*"]

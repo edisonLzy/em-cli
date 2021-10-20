@@ -2,7 +2,7 @@ import { RollupOptions, OutputOptions, rollup } from 'rollup';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import ts from 'rollup-plugin-typescript2';
-import { getFilesInCurrentPath, getPkgInfo } from '@em-cli/shared';
+import { getFilesInCurrentPath } from '@em-cli/shared';
 import inquirer from 'inquirer';
 import path from 'path';
 export type BuildExtension = '.tsx' | '.ts' | '.vue';
@@ -16,13 +16,14 @@ function getBuildConfig(extension: BuildExtension): RollupOptions {
     return {} as any;
   } else {
     const baseConfig = {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'classnames'],
       plugins: [
         nodeResolve(),
-        babel({
-          babelHelpers: 'external',
-          configFile: path.resolve(__dirname, '../../babel.config.js'),
+        ts({
+          useTsconfigDeclarationDir: true,
+          tsconfig: path.resolve(__dirname, '../../tsconfig.json'),
         }),
+        babel(),
       ],
     };
     return baseConfig;
@@ -55,18 +56,17 @@ async function getEntries(
   return files;
 }
 async function build(entry: string, config: RollupOptions) {
-  const pkgName = getPkgInfo();
   const bundle = await rollup({
     input: entry,
     ...config,
   });
   const defaultOutput: OutputOptions[] = [
     {
-      file: `es/${pkgName}.js`,
+      file: `es/index.js`,
       format: 'es',
     },
     {
-      file: `lib/${pkgName}.js`,
+      file: `lib/index.js`,
       format: 'cjs',
     },
   ];
