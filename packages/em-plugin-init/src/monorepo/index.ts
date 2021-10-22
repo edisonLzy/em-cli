@@ -1,8 +1,8 @@
 import initByPnpm from './pnpm';
-import { Plugin } from '../../plugin';
+import { InjectPrompt } from '../promptModules';
 import { getDirsInCurrentPath } from '@em-cli/shared';
 import initByYarnAndLerna from './yarnAndLerna';
-const monorepoPlugin: Plugin = (cli) => {
+const monorepoPlugin: InjectPrompt = (cli) => {
   cli.injectFeature({
     name: 'MONOREPO',
     value: 'monorepo',
@@ -25,7 +25,7 @@ const monorepoPlugin: Plugin = (cli) => {
           value: 'pnpm',
         },
       ],
-      default: ['pnpm'],
+      default: 'pnpm',
     },
     {
       name: 'workspace',
@@ -44,19 +44,14 @@ const monorepoPlugin: Plugin = (cli) => {
   ]);
   cli.onPromptComplete((answers, projectOptions) => {
     if (answers.features.includes('monorepo')) {
-      if (answers.monorepoTools === 'pnpm') {
-        initByPnpm({
-          workinDir: projectOptions.workinDir,
-          sub: answers.workspace,
-        });
-        return;
-      }
-      if (answers.monorepoTools === 'yarnAndLerna') {
-        initByYarnAndLerna({
-          workinDir: projectOptions.workinDir,
-          sub: answers.workspace,
-        });
-      }
+      projectOptions.plugin['plugin-monorepo'] = {
+        type: answers.monorepoTools,
+        workspace: answers.workspace,
+      };
+      projectOptions.monorepoOptions = {
+        type: answers.monorepoTools,
+        workspace: answers.workspace,
+      };
     }
   });
 };

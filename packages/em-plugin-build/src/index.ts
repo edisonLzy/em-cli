@@ -28,6 +28,14 @@ export default defineCommand({
         });
       },
     },
+    {
+      id: 'lib',
+      description: 'ts库打包',
+      option: [['-p,--project [project]', '项目地址', process.cwd()]],
+      async run({ args, optionsArgs }) {
+        const { project } = optionsArgs;
+      },
+    },
   ],
   async run({ args, optionsArgs }) {
     // const { project } = optionsArgs;

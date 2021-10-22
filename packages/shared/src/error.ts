@@ -1,5 +1,5 @@
 export default class ErrorHandler {
-  constructor () {
-    process.on('uncaughtException', err => {});
+  constructor() {
+    process.on('uncaughtException', (err) => {});
   }
 }

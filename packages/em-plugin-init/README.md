@@ -41,3 +41,18 @@
 1. 使用 `pnpm` 管理多包仓库
 
 2. 使用 `yarn workspaces 和 lerna` 管理多包仓库
+
+## TODO
+
+- [] module 模块
+
+```ts
+import Module from 'module';
+// 在当前项目中加载模块
+// require.resolve
+Module.createRequire();
+```
+
+- [] isBinaryFile
+
+1. https://www.npmjs.com/package/isbinaryfile

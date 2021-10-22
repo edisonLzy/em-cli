@@ -30,6 +30,6 @@ export class PromptModuleAPI {
     this.creator.promptCompleteCbs.push(cb);
   }
 }
-export interface Plugin {
+export interface InjectPrompt {
   (cli: PromptModuleAPI): void;
 }
