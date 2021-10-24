@@ -1,10 +1,12 @@
+import { Creator } from './../creator';
 import { InjectPrompt } from '../promptModules';
-import { InjectPlugin } from '../plugin';
+export type InjectPlugin = (options: ApplyOptions, creator: Creator) => void;
+
 export interface FeatureOptions {
-  name: string;
-  injectPlugin: InjectPlugin;
+  apply: InjectPlugin;
   injectPrompt: InjectPrompt;
 }
+export type ApplyOptions = Record<string, any>;
 export function defineFeature(feature: FeatureOptions) {
   return feature;
 }

@@ -1,10 +1,9 @@
-import { getDirsInCurrentPath } from '@em-cli/shared';
+import { scanDirs } from '@em-cli/shared';
 import { defineFeature } from '../';
 export default defineFeature({
-  name: 'monorepo',
   injectPrompt(cli) {
     cli.injectFeature({
-      name: 'MONOREPO',
+      name: 'Monorepo',
       value: 'monorepo',
     });
     cli.injectPrompt([
@@ -13,7 +12,7 @@ export default defineFeature({
         when: (answers) => {
           return answers.features.includes('monorepo');
         },
-        message: '初始化monorepo的方式',
+        message: '📦 初始化monorepo的方式:',
         type: 'list',
         choices: [
           {
@@ -29,14 +28,14 @@ export default defineFeature({
       },
       {
         name: 'workspace',
-        message: '子包目录',
+        message: '📁 子包目录:',
         type: 'checkbox',
         default: ['packages'],
         when: (answers) => {
-          return answers.features.includes('monorepo');
+          return answers.features.includes('monorepoTools');
         },
         choices: async () => {
-          return getDirsInCurrentPath(process.cwd(), ({ fullPath, dir }) => {
+          return scanDirs(process.cwd(), ({ fullPath, dir }) => {
             return {
               name: dir,
               value: dir,
@@ -58,7 +57,22 @@ export default defineFeature({
       }
     });
   },
-  injectPlugin() {
-    console.log(';yyyy');
+  apply(api, options) {
+    // await pkgEnhance(workinDir, {
+    //   create: {
+    //     private: true,
+    //     workspaces: sub.map((s) => `${s}/*`),
+    //   },
+    //   add: {
+    //     devDependencies: {
+    //       lerna: '^4.0.0',
+    //     },
+    //     scripts: {
+    //       bootstrap: 'yarn',
+    //     },
+    //   },
+    // });
+
+    console.log(api, options);
   },
 });

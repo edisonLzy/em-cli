@@ -1,13 +1,11 @@
-export * as error from './error';
-export * from './file';
 export * as logger from './logger';
 export * as spin from './spin';
 export * as pathHelper from './path';
 export { formate } from './eslint';
 export { makeProgress } from './progress';
 export { install } from './installDeps';
-export { default as inquirer } from './inquirer';
 export { default as pkgEnhance, getPkgInfo } from './pkgEnhance';
 export { download } from './download';
 export { default as elog } from './npmlog';
-export * from './dirs';
+export * from './fileManage';
+export * from './scan';

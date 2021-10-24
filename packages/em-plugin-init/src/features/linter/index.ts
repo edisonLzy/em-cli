@@ -1,17 +1,17 @@
 import { defineFeature } from '../';
 export default defineFeature({
-  name: 'linter',
   injectPrompt(cli) {
     cli.injectFeature({
-      name: 'LINTER',
+      name: 'Linter',
       value: 'linter',
     });
     cli.injectPrompt([
       {
-        name: 'linterOptions',
+        name: 'linterTools',
         when: (answers) => {
           return answers.features.includes('linter');
         },
+        message: '📦 格式化代码的方式',
         type: 'checkbox',
         choices: [
           {
@@ -28,14 +28,13 @@ export default defineFeature({
     ]);
     cli.onPromptComplete((answers, projectOptions) => {
       if (answers.features.includes('linter')) {
-        projectOptions.linterOptions = answers.linterOptions;
         projectOptions.plugins.linter = {
-          tools: answers.linterOptions,
+          linterTools: answers.linterTools,
         };
       }
     });
   },
-  injectPlugin() {
-    console.log(';xxxxx');
+  apply(api, options) {
+    console.log(api, options);
   },
 });
