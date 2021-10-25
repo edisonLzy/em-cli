@@ -7,5 +7,4 @@ export { install } from './installDeps';
 export { default as pkgEnhance, getPkgInfo } from './pkgEnhance';
 export { download } from './download';
 export { default as elog } from './npmlog';
-export * from './fileManage';
 export * from './scan';

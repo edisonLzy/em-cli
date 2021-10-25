@@ -35,6 +35,7 @@
     "@types/gulp-clean-css": "^4.3.0",
     "@types/gulp-less": "^0.0.32",
     "@types/webpack": "^5.28.0",
+    "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {

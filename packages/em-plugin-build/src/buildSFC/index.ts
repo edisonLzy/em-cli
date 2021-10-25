@@ -3,7 +3,6 @@
  * react / vue
  */
 import execa from 'execa';
-import path from 'path';
 import buildVue from './vue';
 type SFCTarget = 'react' | 'vue';
 export interface SFCOptions {

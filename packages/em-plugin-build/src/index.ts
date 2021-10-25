@@ -1,6 +1,7 @@
 import { defineCommand } from '@em-cli/em-cli';
 import { buildWithRollup } from './buildLibWithRollup';
 import type { BuildExtension } from './buildLibWithRollup';
+import buildLib from './buildLib';
 import buildWithWebpack from './buildWithWebpack';
 import './utils/enhanceRequire';
 import buildSFC, { SFCOptions } from './buildSFC';
@@ -33,7 +34,9 @@ export default defineCommand({
       description: 'ts库打包',
       option: [['-p,--project [project]', '项目地址', process.cwd()]],
       async run({ args, optionsArgs }) {
-        const { project } = optionsArgs;
+        const { project: workinDir } = optionsArgs;
+        const inputFile = './src/index.ts';
+        buildLib({ workinDir, inputFile });
       },
     },
   ],

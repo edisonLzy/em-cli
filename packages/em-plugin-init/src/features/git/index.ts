@@ -47,9 +47,8 @@ export default defineFeature({
     const product = new Product('git');
     product.collectFiles([
       {
-        cwd: creator.projectDir,
         path: './.gitignore',
-        contents: Buffer.from(gitignore),
+        value: gitignore,
       },
     ]);
     if (gitTools.includes('husky')) {
