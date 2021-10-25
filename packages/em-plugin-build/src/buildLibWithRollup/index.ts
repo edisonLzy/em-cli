@@ -2,7 +2,7 @@ import { RollupOptions, OutputOptions, rollup } from 'rollup';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import ts from 'rollup-plugin-typescript2';
-import { getFilesInCurrentPath } from '@em-cli/shared';
+import { scanFiles } from '@em-cli/shared';
 import inquirer from 'inquirer';
 import path from 'path';
 export type BuildExtension = '.tsx' | '.ts' | '.vue';
@@ -39,17 +39,13 @@ async function getEntries(
       name: 'files',
       default: `./src/index${extension}`,
       async choices() {
-        return getFilesInCurrentPath(
-          workinDir,
-          `**/*${extension}`,
-          ({ fullPath }) => {
-            const relativePath = path.relative(workinDir, fullPath);
-            return {
-              name: relativePath,
-              value: relativePath,
-            };
-          }
-        );
+        return scanFiles(workinDir, `**/*${extension}`, ({ fullPath }) => {
+          const relativePath = path.relative(workinDir, fullPath);
+          return {
+            name: relativePath,
+            value: relativePath,
+          };
+        });
       },
     },
   ]);

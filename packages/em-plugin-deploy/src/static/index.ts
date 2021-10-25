@@ -1,5 +1,5 @@
 import simpleGit, { SimpleGit } from 'simple-git';
-import { inquirer } from '@em-cli/shared';
+import inquirer from 'inquirer';
 import fg from 'fast-glob';
 import fs from 'fs-extra';
 import path from 'path';
@@ -106,7 +106,7 @@ export async function syncToGithub(
 
 export async function deployStatic(workinDir: string) {
   const fileChoice = await getFileChoice(workinDir);
-  const { remote, files } = await inquirer([
+  const { remote, files } = await inquirer.prompt([
     {
       name: 'files',
       message: '选择需要上传的文件',

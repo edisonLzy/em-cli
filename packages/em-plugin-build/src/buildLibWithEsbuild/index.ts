@@ -1,12 +1,9 @@
 import { build } from 'esbuild';
 import path from 'path';
 import type { BuildOptions } from 'esbuild';
-import { inquirer } from '@em-cli/shared';
 import shell from 'shelljs';
 import { PipeLine } from 'em-pipeline';
 import glob from 'glob';
-// import { globby } from 'globby';
-// function getSourceDir() {}
 export default async function (workDir: string, options?: BuildOptions) {
   const task = new PipeLine<{
     cwd: string;

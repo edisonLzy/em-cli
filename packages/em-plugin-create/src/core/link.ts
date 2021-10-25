@@ -3,7 +3,7 @@ import readPkg from 'read-pkg';
 import shelljs from 'shelljs';
 import path from 'path';
 import fg from 'fast-glob';
-import { inquirer } from '@em-cli/shared';
+import inquirer from 'inquirer';
 
 function getChoices(dirs: string[]) {
   return dirs.map((dir) => {
@@ -29,7 +29,7 @@ export async function createLink(workinDir: string) {
     onlyDirectories: true,
   });
   // 选择 source, target
-  const { source, target } = await inquirer([
+  const { source, target } = await inquirer.prompt([
     {
       name: 'source',
       type: 'list',

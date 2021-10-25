@@ -1,11 +1,11 @@
-import { inquirer } from '@em-cli/shared';
+import inquirer from 'inquirer';
 import { buildReact } from './react';
 const buildMapping = {
   react: buildReact,
 };
 export default async function (workDir: string) {
   // 选择构建目标
-  const { target } = await inquirer([
+  const { target } = await inquirer.prompt([
     {
       type: 'checkbox',
       choices: ['lib', 'react', 'vue'],

@@ -2,7 +2,8 @@ import fs from 'fs-extra';
 import fg from 'fast-glob';
 import path from 'path';
 import ejs from 'ejs';
-import { inquirer, elog } from '@em-cli/shared';
+import { elog } from '@em-cli/shared';
+import inquirer from 'inquirer';
 import { getRepoCacheDir } from '../utils';
 const cacheDir = getRepoCacheDir();
 /**
@@ -34,7 +35,7 @@ async function getAnswersByTemplateAsk(
   const askFilePath = path.join(template, configFile);
   if (fs.pathExistsSync(askFilePath)) {
     const options = await fs.readJSON(askFilePath);
-    const answers = await inquirer(options.inquirer);
+    const answers = await inquirer.prompt(options.inquirer);
     return answers;
   } else {
     elog.info('please check %s is existed in template', configFile);
@@ -69,7 +70,7 @@ export async function createProjectByTemplate(
     const pkgs = await fg(`${cacheDir}/*`, {
       onlyDirectories: true,
     });
-    const { template } = await inquirer([
+    const { template } = await inquirer.prompt([
       {
         name: 'template',
         type: 'list',
@@ -81,7 +82,7 @@ export async function createProjectByTemplate(
         },
       },
     ]);
-    const answers = await getAnswersByTemplateAsk(template);
+    const answers: any = await getAnswersByTemplateAsk(template);
     const files = await getAllFiles(template);
     for await (const file of files) {
       const content = await fs.readFile(file);
