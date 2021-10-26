@@ -1,9 +1,11 @@
+import fg from 'fast-glob';
 import { elog } from '@em-cli/shared';
 import { defineCommand } from '@em-cli/em-cli';
-import fg from 'fast-glob';
+
 import { addTemplate } from './add';
 import { createProjectByTemplate } from './create';
 import { getRepoCacheDir } from './utils';
+
 export default defineCommand({
   id: 'template',
   description: '模板管理',
