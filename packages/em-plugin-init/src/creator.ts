@@ -1,5 +1,4 @@
 import { prompt } from 'inquirer';
-import fs from 'fs-extra';
 import type { CheckboxQuestionOptions, QuestionCollection } from 'inquirer';
 import { ApplyOptions } from './features/index';
 import { FeatureOptions } from './features';
@@ -24,7 +23,7 @@ export class Creator {
   // 注入的项目选项
   projectOptions: Record<string, unknown> = {};
   // 产物
-  products: Product[] = [];
+  product: Product = new Product(this.projectDir);
   constructor(
     public projectName: string,
     public projectDir: string,
@@ -65,16 +64,11 @@ export class Creator {
     return projectOptions;
   }
   private async consumeProducts() {
-    for await (const product of this.products) {
-      const { fileManage, deps, name, shells } = product;
-      await this.processFiles(fileManage);
-    }
-  }
-  collectProduct(product: Product) {
-    this.products.push(product);
+    const { fileManage, deps, name, shells } = this.product;
+    await this.processFiles(fileManage);
   }
   private async processFiles(fileManage: Product['fileManage']) {
-    await fileManage.outFile();
+    await fileManage.outFile(this.projectDir);
   }
   private async processDeps(deps: Product['deps']) {}
   private async processShells(shells: Product['shells']) {}

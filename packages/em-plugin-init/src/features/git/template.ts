@@ -3,7 +3,8 @@ export const commitLint = `module.exports = {
 }
   `;
 
-export const gitignore = `.tmp
+export const gitignore = `
+  .tmp
   .DS_Store
   node_modules
   build
@@ -31,5 +32,4 @@ export const gitignore = `.tmp
   
   .vscode
   *.local.*
-  
   `;

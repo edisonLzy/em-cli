@@ -1,4 +1,5 @@
 import { defineFeature } from '../';
+import { prettier, prettierignore, eslint, eslintIgnore } from './template';
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({
@@ -34,7 +35,27 @@ export default defineFeature({
       }
     });
   },
-  apply(api, options) {
-    console.log(api, options);
+  apply(options, creator) {
+    const { product } = creator;
+    product.collectFiles(
+      [
+        options.linterTools.includes('eslint') && {
+          path: './.eslintrc.js',
+          value: eslint,
+        },
+        options.linterTools.includes('eslint') && {
+          path: './.eslintignore',
+          value: eslintIgnore,
+        },
+        options.linterTools.includes('prettier') && {
+          path: './.prettierignore',
+          value: prettierignore,
+        },
+        options.linterTools.includes('prettier') && {
+          path: './.prettierrc',
+          value: prettier,
+        },
+      ].filter(Boolean)
+    );
   },
 });

@@ -1,4 +1,4 @@
-import { FileManager, VFileOptions } from 'em-fm';
+import { FileManager, FileOptions } from 'em-filemanager';
 export class Product {
   // 产物名称
   name: string = '';
@@ -8,9 +8,11 @@ export class Product {
   shells: string[] = [];
   // 需要输出的文件
   fileManage: FileManager;
-  constructor(name: string) {
-    this.name = name;
-    this.fileManage = new FileManager();
+  constructor(cwd: string) {
+    this.fileManage = new FileManager({
+      cwd: cwd,
+      writeFileMode: 'skip',
+    });
   }
   collectDeps(deps: string[]) {
     this.deps = [...new Set(this.deps.concat(deps))];
@@ -20,8 +22,8 @@ export class Product {
     this.shells = [...new Set(this.shells.concat(shells))];
     return this;
   }
-  collectFiles(files: VFileOptions[]) {
-    files.forEach(this.fileManage.addFile);
+  collectFiles(files: FileOptions[]) {
+    this.fileManage.addFile(files);
     return this;
   }
 }

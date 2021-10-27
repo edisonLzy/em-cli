@@ -1,5 +1,5 @@
 import { defineFeature } from '../';
-
+import { vscodeConfig } from './template';
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({
@@ -31,7 +31,16 @@ export default defineFeature({
       }
     });
   },
-  apply(api, options) {
-    console.log(options);
+  apply(options, creator) {
+    const { product } = creator;
+
+    product.collectFiles(
+      [
+        options.editorTools.includes('vscode') && {
+          path: './.vscode/settings.json',
+          value: vscodeConfig,
+        },
+      ].filter(Boolean)
+    );
   },
 });

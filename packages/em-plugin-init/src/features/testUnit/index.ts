@@ -1,4 +1,5 @@
 import { defineFeature } from '..';
+import { babelConfig, test } from './template';
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({
@@ -43,7 +44,7 @@ export default defineFeature({
       }
     });
   },
-  apply(api, options) {
+  apply(options, creator) {
     // 初始化 babel
     //   shell.exec(`echo "${babelConfig}" > babel.config.js`);
     // 初始化 __tests__
@@ -62,5 +63,19 @@ export default defineFeature({
     //       },
     //     },
     //   });
+
+    const { product } = creator;
+    product.collectFiles(
+      [
+        options.testTools.includes('jest') && {
+          path: './babel.config.js',
+          value: babelConfig,
+        },
+        options.testTools.includes('jest') && {
+          path: './__tests__/sum.spec.ts',
+          value: test,
+        },
+      ].filter(Boolean)
+    );
   },
 });

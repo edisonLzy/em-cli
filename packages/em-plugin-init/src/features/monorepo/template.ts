@@ -18,6 +18,6 @@ export const lernaConfig = {
 export const npmrc = 'shamefully-hoist = true';
 
 // pnpm-workspace.yaml
-const pnpmWorkspace = {
-  //   packages: sub.map((str) => `${str}/**`),
+export const pnpmWorkspace = {
+  packages: ['packages'],
 };

@@ -1,5 +1,6 @@
 import { scanDirs } from '@em-cli/shared';
 import { defineFeature } from '../';
+import { lernaConfig, npmrc, pnpmWorkspace } from './template';
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({
@@ -32,7 +33,7 @@ export default defineFeature({
         type: 'checkbox',
         default: ['packages'],
         when: (answers) => {
-          return answers.features.includes('monorepoTools');
+          return !!answers.monorepoTools;
         },
         choices: async () => {
           return scanDirs(process.cwd(), ({ fullPath, dir }) => {
@@ -57,7 +58,8 @@ export default defineFeature({
       }
     });
   },
-  apply(api, options) {
+  apply(options, creator) {
+    const { product } = creator;
     // await pkgEnhance(workinDir, {
     //   create: {
     //     private: true,
@@ -72,7 +74,25 @@ export default defineFeature({
     //     },
     //   },
     // });
-
-    console.log(api, options);
+    if (options.type === 'yarnAndLerna') {
+      product.collectFiles([
+        {
+          path: './lerna.json',
+          value: lernaConfig,
+        },
+      ]);
+    }
+    if (options.type === 'pnpm') {
+      product.collectFiles([
+        {
+          path: './pnpm-workspace.yaml',
+          value: pnpmWorkspace,
+        },
+        {
+          path: './.npmrc',
+          value: npmrc,
+        },
+      ]);
+    }
   },
 });

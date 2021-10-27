@@ -44,7 +44,7 @@ export default defineFeature({
   },
   apply(options, creator) {
     const { gitTools } = options;
-    const product = new Product('git');
+    const { product } = creator;
     product.collectFiles([
       {
         path: './.gitignore',
@@ -71,13 +71,11 @@ export default defineFeature({
       product
         .collectFiles([
           {
-            cwd: creator.projectDir,
             path: './commitlint.config.js',
-            contents: Buffer.from(commitLint),
+            value: commitLint,
           },
         ])
         .collectDeps(deps['commitlint'].deps);
     }
-    creator.collectProduct(product);
   },
 });

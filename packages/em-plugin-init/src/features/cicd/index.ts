@@ -46,26 +46,22 @@ export default defineFeature({
     });
   },
   apply(options, creator) {
-    const product = new Product('CiCd');
+    const { product } = creator;
     product.collectFiles(
       [
         options.cicdTools.includes('DockerFile') && {
-          cwd: creator.projectDir,
           path: './DockerFile',
-          contents: Buffer.from(dockerFile),
+          value: dockerFile,
         },
         options.cicdTools.includes('Jenkinsfile') && {
-          cwd: creator.projectDir,
           path: './Jenkinsfile',
-          contents: Buffer.from(jenkinsfile),
+          value: jenkinsfile,
         },
         options.cicdTools.includes('travis.yaml') && {
-          cwd: creator.projectDir,
           path: './travis.yaml',
-          contents: Buffer.from(travis),
+          value: travis,
         },
       ].filter(Boolean)
     );
-    creator.collectProduct(product);
   },
 });
