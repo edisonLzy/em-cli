@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path';
 import prettier from 'prettier';
-import { logger } from '@em-cli/shared';
+import { elog } from '@em-cli/shared';
 
 function toJson(content: string) {
   return `{
@@ -18,7 +18,7 @@ export async function env2Json(
   const outPath = path.join(cwd, outputfile);
   const isExist = await fs.pathExists(filePath);
   if (!isExist) {
-    logger.error(`${filePath} not exist`);
+    elog.error('file existed', `${filePath} not exist`);
     return;
   }
   const content = await (await fs.readFile(filePath)).toString();
@@ -29,5 +29,5 @@ export async function env2Json(
       parser: 'json',
     })
   );
-  logger.done(`输出成功 ${outPath}`);
+  elog.success(`输出成功 ${outPath}`);
 }
