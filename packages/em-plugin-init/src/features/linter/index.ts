@@ -1,5 +1,6 @@
 import { defineFeature } from '../';
 import { prettier, prettierignore, eslint, eslintIgnore } from './template';
+import { pkgEnhance } from '@em-cli/shared';
 import { deps } from './deps';
 export default defineFeature({
   injectPrompt(cli) {
@@ -60,5 +61,14 @@ export default defineFeature({
         ].filter(Boolean)
       )
       .collectDeps(deps);
+
+    pkgEnhance(creator.projectDir, {
+      create: {
+        'lint-staged': {
+          '*.{js,jsx,ts,tsx}': ['eslint --fix'],
+          '*.{d.ts,json,md}': ['prettier --write'],
+        },
+      },
+    });
   },
 });

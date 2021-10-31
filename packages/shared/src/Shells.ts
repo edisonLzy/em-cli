@@ -21,7 +21,8 @@ class ShellsManager {
   shells: Shell[] = [];
   static transformDepsToShells(deps: Dep[]) {
     const depShells = deps.join(' ');
-    return `pnpm i ${depShells}`;
+    // TODO 如何判断是否是 monorepo
+    return `pnpm i ${depShells} -w`;
   }
   constructor(private op: ShellsManagerOptions) {}
   private processSingleShell(shell: Shell) {
