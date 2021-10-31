@@ -1,5 +1,6 @@
 import { defineFeature } from '../';
 import { prettier, prettierignore, eslint, eslintIgnore } from './template';
+import { deps } from './deps';
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({
@@ -37,25 +38,27 @@ export default defineFeature({
   },
   apply(options, creator) {
     const { product } = creator;
-    product.collectFiles(
-      [
-        options.linterTools.includes('eslint') && {
-          path: './.eslintrc.js',
-          value: eslint,
-        },
-        options.linterTools.includes('eslint') && {
-          path: './.eslintignore',
-          value: eslintIgnore,
-        },
-        options.linterTools.includes('prettier') && {
-          path: './.prettierignore',
-          value: prettierignore,
-        },
-        options.linterTools.includes('prettier') && {
-          path: './.prettierrc',
-          value: prettier,
-        },
-      ].filter(Boolean)
-    );
+    product
+      .collectFiles(
+        [
+          options.linterTools.includes('eslint') && {
+            path: './.eslintrc.js',
+            value: eslint,
+          },
+          options.linterTools.includes('eslint') && {
+            path: './.eslintignore',
+            value: eslintIgnore,
+          },
+          options.linterTools.includes('prettier') && {
+            path: './.prettierignore',
+            value: prettierignore,
+          },
+          options.linterTools.includes('prettier') && {
+            path: './.prettierrc',
+            value: prettier,
+          },
+        ].filter(Boolean)
+      )
+      .collectDeps(deps);
   },
 });

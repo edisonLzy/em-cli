@@ -1,11 +1,21 @@
 import { FileManager, FileOptions } from 'em-filemanager';
+import { ShellsManager } from '@em-cli/shared';
+
+type Deps =
+  | string[]
+  | Record<
+      string,
+      {
+        deps: string[];
+      }
+    >;
 export class Product {
   // 产物名称
   name: string = '';
   // 需要安装的依赖
-  deps: string[] = [];
+  deps: ShellsManager;
   // 需要执行脚本
-  shells: string[] = [];
+  shells: ShellsManager;
   // 需要输出的文件
   fileManage: FileManager;
   constructor(cwd: string) {
@@ -13,13 +23,26 @@ export class Product {
       cwd: cwd,
       writeFileMode: 'skip',
     });
+    this.deps = new ShellsManager({
+      projectDir: cwd,
+    });
+    this.shells = new ShellsManager({
+      projectDir: cwd,
+    });
   }
-  collectDeps(deps: string[]) {
-    this.deps = [...new Set(this.deps.concat(deps))];
+  collectDeps(deps: Deps) {
+    if (Array.isArray(deps)) {
+      const depShells = ShellsManager.transformDepsToShells(deps);
+      this.deps.addShells([depShells]);
+    } else {
+      Object.values(deps).forEach(({ deps }) => {
+        this.collectDeps(deps);
+      });
+    }
     return this;
   }
   collectShells(shells: string[]) {
-    this.shells = [...new Set(this.shells.concat(shells))];
+    this.shells.addShells(shells);
     return this;
   }
   collectFiles(files: FileOptions[]) {

@@ -2,7 +2,6 @@ import { pkgEnhance } from '@em-cli/shared';
 import { deps } from './deps';
 import { commitLint, gitignore } from './template';
 import { defineFeature } from '../';
-import { Product } from './../../product';
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({
@@ -51,10 +50,12 @@ export default defineFeature({
         value: gitignore,
       },
     ]);
+    product.collectDeps(deps);
     if (gitTools.includes('husky')) {
       product
         .collectDeps(deps['husky'].deps)
         .collectShells([
+          'git init',
           'npx husky install',
           'npx husky add .husky/pre-commit "npx lint-staged"',
           'npx husky add .husky/commit-msg "npx commitlint --edit $1"',

@@ -66,10 +66,16 @@ export class Creator {
   private async consumeProducts() {
     const { fileManage, deps, name, shells } = this.product;
     await this.processFiles(fileManage);
+    await this.processDeps(deps);
+    await this.processShells(shells);
   }
   private async processFiles(fileManage: Product['fileManage']) {
     await fileManage.outFile(this.projectDir);
   }
-  private async processDeps(deps: Product['deps']) {}
-  private async processShells(shells: Product['shells']) {}
+  private async processDeps(deps: Product['deps']) {
+    await deps.runShells();
+  }
+  private async processShells(shells: Product['shells']) {
+    await shells.runShells();
+  }
 }

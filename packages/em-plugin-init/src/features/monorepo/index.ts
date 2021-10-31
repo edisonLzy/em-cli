@@ -1,4 +1,4 @@
-import { scanDirs } from '@em-cli/shared';
+import { pkgEnhance, scanDirs } from '@em-cli/shared';
 import { defineFeature } from '../';
 import { lernaConfig, npmrc, pnpmWorkspace } from './template';
 export default defineFeature({
@@ -59,30 +59,31 @@ export default defineFeature({
     });
   },
   apply(options, creator) {
-    const { product } = creator;
-    // await pkgEnhance(workinDir, {
-    //   create: {
-    //     private: true,
-    //     workspaces: sub.map((s) => `${s}/*`),
-    //   },
-    //   add: {
-    //     devDependencies: {
-    //       lerna: '^4.0.0',
-    //     },
-    //     scripts: {
-    //       bootstrap: 'yarn',
-    //     },
-    //   },
-    // });
-    if (options.type === 'yarnAndLerna') {
+    const { product, projectDir } = creator;
+    const { type, workspace = [] } = options;
+    if (type === 'yarnAndLerna') {
       product.collectFiles([
         {
           path: './lerna.json',
           value: lernaConfig,
         },
       ]);
+      pkgEnhance(projectDir, {
+        create: {
+          private: true,
+          workspaces: workspace.map((w: string) => `${w}/*`),
+        },
+        add: {
+          devDependencies: {
+            lerna: '^4.0.0',
+          },
+          scripts: {
+            bootstrap: 'yarn',
+          },
+        },
+      });
     }
-    if (options.type === 'pnpm') {
+    if (type === 'pnpm') {
       product.collectFiles([
         {
           path: './pnpm-workspace.yaml',
