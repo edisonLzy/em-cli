@@ -1,5 +1,5 @@
 import { getConfigKey, setConfigKey } from '@em-cli/em-cli';
-import { elog } from '@em-cli/shared';
+import { logger } from '@em-cli/shared';
 import { download } from '@em-cli/shared';
 import path from 'path';
 import fs from 'fs-extra';
@@ -15,7 +15,7 @@ async function ensureRemoteRepoInLocal() {
     await setConfigKey(REPO_CACHE_KEY, repoCacheDir);
     // 创建缓存目录
     await fs.mkdir(repoCacheDir);
-    elog.info('success create %s', repoCacheDir);
+    logger.success('success create %s', repoCacheDir);
   }
 }
 
@@ -27,14 +27,14 @@ async function addRepoInConfigFile(remoteUrl: string) {
     if (Array.isArray(data) && !data.includes(remoteUrl)) {
       data.push(remoteUrl);
       await setConfigKey(TEMPLATE_CACHE_KEY, JSON.stringify(data));
-      elog.info('success set repo %s in configFile ', remoteUrl);
+      logger.success('success set repo %s in configFile ', remoteUrl);
     } else {
-      elog.info('%s is already exist', remoteUrl);
+      logger.warn('%s is already exist', remoteUrl);
     }
   } else {
     const data = [remoteUrl];
     await setConfigKey(TEMPLATE_CACHE_KEY, JSON.stringify(data));
-    elog.info('success set repo %s in configFile ', remoteUrl);
+    logger.success('success set repo %s in configFile ', remoteUrl);
   }
 }
 function getDirname(remoteUrl: string) {
@@ -49,6 +49,6 @@ export async function addTemplate(remoteUrl: string) {
   await ensureRemoteRepoInLocal();
   // 下载模版到缓存中
   await download(remoteUrl, dirname);
-  elog.info('success download %s in %s', remoteUrl, dirname);
-  elog.info('your can get template list by ee template', '');
+  logger.success('success download %s in %s', remoteUrl, dirname);
+  logger.info('your can get template list by ee template', '');
 }

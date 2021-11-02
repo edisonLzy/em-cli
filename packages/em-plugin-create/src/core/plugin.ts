@@ -1,7 +1,7 @@
 import { getConfigKey } from '@em-cli/em-cli';
 import fs from 'fs-extra';
 import path from 'path';
-import { elog, formate } from '@em-cli/shared';
+import { logger, formate } from '@em-cli/shared';
 import { renderMain, renderPkg, renderRm, renderTsConfig } from './template';
 interface Opt {
   name: string;
@@ -12,14 +12,14 @@ async function outputFile(p: string, content: string) {
   if (!(path.extname(p) === '.json')) {
     await formate(p);
   }
-  elog.info('success create %s', p);
+  logger.info('success create %s', p);
 }
 export async function createPlugin({ name }: Opt) {
   // 获取cli地址
   const pluginUrl = await getConfigKey('CLI_PLUGIN_DIR');
   const outDir = path.join(pluginUrl, `em-plugin-${name}`);
   await fs.ensureDir(outDir);
-  elog.info('success create %s', outDir);
+  logger.info('success create %s', outDir);
   // 输出main 文件
   const mainPath = path.join(outDir, 'src', 'index.ts');
   const mainContent = renderMain(name);

@@ -1,7 +1,7 @@
 import { defineCommand } from '@/core/command';
 import fs from 'fs-extra';
 import userhome from 'userhome';
-import { elog } from '@em-cli/shared';
+import { logger } from '@em-cli/shared';
 import { getConfigKey, setConfigKey, deleteConfigKey } from './utils';
 import pMap from 'p-map';
 import { CONFIG_FILENAME } from '../../const';
@@ -39,7 +39,7 @@ export default defineCommand({
       async run({ args }) {
         const [key] = args;
         const value = await getConfigKey(key);
-        elog.info('%s=%s', key, value);
+        logger.success('%s = %s', key, value);
       },
     },
     {
@@ -49,7 +49,7 @@ export default defineCommand({
       async run({ args }) {
         const [key, value] = args;
         await setConfigKey(key, value);
-        elog.info('success set %s in configFile', key);
+        logger.success('success set %s in configFile', key);
       },
     },
     {
@@ -61,13 +61,13 @@ export default defineCommand({
         await pMap(keys, deleteConfigKey, {
           concurrency: 1,
         });
-        elog.info('success delete %s in configFile', keys);
+        logger.success('success delete %s in configFile', keys);
       },
     },
   ],
   async run({ args, optionsArgs }) {
     // 含有子命令不会执行
     const content = await initConfigFile();
-    elog.info('config = %s', content);
+    logger.json(content);
   },
 });

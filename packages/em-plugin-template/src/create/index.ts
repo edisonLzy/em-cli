@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import fg from 'fast-glob';
 import path from 'path';
 import ejs from 'ejs';
-import { elog } from '@em-cli/shared';
+import { logger } from '@em-cli/shared';
 import inquirer from 'inquirer';
 import { getRepoCacheDir } from '../utils';
 const cacheDir = getRepoCacheDir();
@@ -38,7 +38,7 @@ async function getAnswersByTemplateAsk(
     const answers = await inquirer.prompt(options.inquirer);
     return answers;
   } else {
-    elog.info('please check %s is existed in template', configFile);
+    logger.warn('please check %s is existed in template', configFile);
   }
 }
 
@@ -89,7 +89,7 @@ export async function createProjectByTemplate(
       const replaced = renderer(content.toString(), answers);
       const outputPath = getOutputPath(template, file, outDir);
       await fs.outputFile(outputPath, replaced);
-      elog.info('success create file to %s', outputPath);
+      logger.success('success create file to %s', outputPath);
     }
   } catch (e) {}
 }

@@ -1,5 +1,5 @@
 import fg from 'fast-glob';
-import { elog } from '@em-cli/shared';
+import { logger } from '@em-cli/shared';
 import { defineCommand } from '@em-cli/em-cli';
 
 import { addTemplate } from './add';
@@ -37,8 +37,6 @@ export default defineCommand({
     const pkgs = await fg(`${repoCacheDir}/*`, {
       onlyDirectories: true,
     });
-    pkgs.forEach((pkg, idx) => {
-      elog.info('%s. %s ', idx + 1 + '', pkg);
-    });
+    logger.array(pkgs);
   },
 });

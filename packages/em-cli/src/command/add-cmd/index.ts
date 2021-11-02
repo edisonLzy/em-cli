@@ -1,7 +1,7 @@
 import { render } from 'ejs';
 import fs from 'fs-extra';
 import path from 'path';
-import { elog } from '@em-cli/shared';
+import { logger } from '@em-cli/shared';
 import { defineCommand } from '@/core/command';
 
 const context = path.resolve(__dirname, '../../../');
@@ -17,20 +17,20 @@ function renderTemplate(commandName: string) {
 function outputFile(content: string, filePath: string, commandName: string) {
   fs.ensureFileSync(filePath);
   fs.writeFileSync(filePath, content);
-  elog.success(filePath, '输出文件'); // 输出文件
+  logger.success(filePath, '输出文件'); // 输出文件
   const commandEntryPath = path.join(context, './src/command/index.ts');
   const commandEntry = fs.readFileSync(commandEntryPath).toString();
   const exportStatement = `export { default as Command${toFirstWordsUpperCase(
     commandName
   )} } from './${commandName}'`;
   if (commandEntry.indexOf(exportStatement) !== -1) {
-    elog.error('file existed', `${commandName} is already existed`);
+    logger.error('file existed', `${commandName} is already existed`);
     return;
   }
   const outputContent = `${commandEntry} \n ${exportStatement}`;
   fs.writeFileSync(commandEntryPath, outputContent);
-  elog.success(commandEntryPath, '替换文件'); // 替换文件
-  elog.success(`成功生成命令 ${commandName}`);
+  logger.success(commandEntryPath, '替换文件'); // 替换文件
+  logger.success(`成功生成命令 ${commandName}`);
 }
 
 function toFirstWordsUpperCase(str: string) {

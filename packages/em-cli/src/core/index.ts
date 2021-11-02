@@ -19,7 +19,7 @@ class ECli extends BaseClass {
   }
   private createProgram(): commander.Command {
     const program = createCommand();
-    program.version(logger.info(`${pkg.version}`, pkg.name, false));
+    program.version(pkg.version);
     program.usage('<command> [subCommand] [options]');
     program.passThroughOptions();
     program.allowExcessArguments(false);

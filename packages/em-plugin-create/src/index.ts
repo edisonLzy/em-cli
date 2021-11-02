@@ -1,5 +1,5 @@
 import { defineCommand } from '@em-cli/em-cli';
-import { elog } from '@em-cli/shared';
+import { logger } from '@em-cli/shared';
 import { createLink } from './core/link';
 export default defineCommand({
   id: 'create',
@@ -24,6 +24,6 @@ export default defineCommand({
   ],
   description: 'create something',
   async run({ optionsArgs, args }) {
-    elog.info('use plugin or link to create', '');
+    logger.info('use plugin or link to create', '');
   },
 });

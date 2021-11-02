@@ -24,7 +24,8 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "start": "npm run clean && tsc --watch"
+    "start": "npm run clean && tsc --watch",
+    "dev": "ts-node-dev --inspect --respawn  ./local/logger.ts"
   },
   "devDependencies": {
     "@types/eslint": "^7.2.11",
