@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-build",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "构建",
   "keywords": [
     "webpack",
@@ -45,7 +45,7 @@
     "@babel/preset-env": "^7.14.8",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
-    "@em-cli/shared": "^0.3.0",
+    "@em-cli/shared": "^0.4.0",
     "@em-presets/babel": "^0.0.2",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",

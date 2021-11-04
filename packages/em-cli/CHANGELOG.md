@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-cli@1.3.0...@em-cli/em-cli@1.4.0) (2021-11-04)
+
+### Features
+
+- **create-app:** modify pkg ([803ff95](https://github.com/edisonLzy/mono-cli/commit/803ff95fcba3816e49a99ea037b69b0ba7ca1f32))
+
 # [1.3.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-cli@1.2.2...@em-cli/em-cli@1.3.0) (2021-11-04)
 
 ### Features

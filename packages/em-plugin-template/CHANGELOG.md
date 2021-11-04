@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-template@0.1.0...@em-cli/em-plugin-template@0.2.0) (2021-11-04)
+
+### Features
+
+- **create-app:** modify pkg ([803ff95](https://github.com/edisonLzy/mono-cli/commit/803ff95fcba3816e49a99ea037b69b0ba7ca1f32))
+
 # 0.1.0 (2021-11-04)
 
 ### Features
