@@ -1,4 +1,4 @@
-import { FileManager, FileOptions } from 'em-filemanager';
+import { FileManager, FileOptions } from '@etools/fm';
 import { ShellsManager } from '@em-cli/shared';
 
 type Deps =

@@ -41,7 +41,8 @@
     "p-map": "4.0.0",
     "shelljs": "^0.8.4",
     "vinyl": "^2.2.1",
-    "yaml": "^1.10.2"
+    "yaml": "^1.10.2",
+    "@etools/fm": "latest"
   },
   "peerDependencies": {
     "@em-cli/em-cli": "^1.0.6"
