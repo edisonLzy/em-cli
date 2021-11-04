@@ -41,7 +41,7 @@
     "update-notifier": "^5.1.0",
     "userhome": "^1.0.0"
   },
-  "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
+  "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
   "devDependencies": {
     "@types/commander": "^2.12.2",
     "@types/ejs": "^3.0.6",

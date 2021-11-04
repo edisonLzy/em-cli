@@ -28,7 +28,7 @@
     "clean": "rimraf dist",
     "start": "npm run clean && tsc --watch"
   },
-  "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
+  "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
   "devDependencies": {
     "@types/globby": "^9.1.0",
     "@types/signale": "^1.4.2",
