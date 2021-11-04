@@ -1,0 +1,13 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.1.0 (2021-11-04)
+
+### Features
+
+- add create-app pkg for npm init @em-cli/app ([1c9e710](https://github.com/edisonLzy/mono-cli/commit/1c9e710a169a5e60d8003d5da186da093ced1e1b))
+- add target ([ab9df96](https://github.com/edisonLzy/mono-cli/commit/ab9df96baed7a4cb31652ef830fb9aef11796cab))
+- 优化 definePlugin 类型提示 ([5580884](https://github.com/edisonLzy/mono-cli/commit/5580884cf54c63e8429a00cf8805d0901c8c4f69))
+- **create-app:** add 参数解析 ([742e8e9](https://github.com/edisonLzy/mono-cli/commit/742e8e960f0411862111442e9b1a6facc13e333e))

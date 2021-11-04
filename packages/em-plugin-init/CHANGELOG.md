@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-init@0.2.1...@em-cli/em-plugin-init@0.3.0) (2021-11-04)
+
+### Features
+
+- add init ([95363f5](https://github.com/edisonLzy/mono-cli/commit/95363f551f6260131a9138ac3de87fce084dded9))
+- add ShellsManager ([dfe16e8](https://github.com/edisonLzy/mono-cli/commit/dfe16e857ffda37ee17a0f7baeab9274c54cac16))
+- finish build sfc ([af0531f](https://github.com/edisonLzy/mono-cli/commit/af0531fe90b34d16a42a211ce5800acc90c58ec0))
+- finish init ([3fb82e9](https://github.com/edisonLzy/mono-cli/commit/3fb82e9ae7136558eb1a8df16ee43838b62b3673))
+- init 命令 新增 初始化 monorepo 项目 ([25f3eaa](https://github.com/edisonLzy/mono-cli/commit/25f3eaa20dabe38b58b0027d109844c4ee774cda))
+- init 命令 插件化改造 ([294bb44](https://github.com/edisonLzy/mono-cli/commit/294bb44a57758243908a6e1777a4d3510e646883))
+- remove fm ([c914e8a](https://github.com/edisonLzy/mono-cli/commit/c914e8aefd79dbf1fd30f848a483a4c21322b810))
+- 完成 init 命令重构 ([5859688](https://github.com/edisonLzy/mono-cli/commit/5859688f2e9f0a5a6de3b02ad83ed559c241f548))
+- 重构 init ([4d03aaa](https://github.com/edisonLzy/mono-cli/commit/4d03aaa6bf1c8b9e68412034ddd8d241ccf771c7))
+- 重构 init 70% ([e395cc4](https://github.com/edisonLzy/mono-cli/commit/e395cc4c7edd96d7b55d7096e270f78e08bfb699))
+- 集成 em-filemanager ([1518e8f](https://github.com/edisonLzy/mono-cli/commit/1518e8f99af5f651742c6966fabebedf9eb4de5a))
+
 # 0.2.0 (2021-07-25)
 
 ### Features

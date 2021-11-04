@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-cli@1.2.2...@em-cli/em-cli@1.3.0) (2021-11-04)
+
+### Features
+
+- add config & create command ([360cce2](https://github.com/edisonLzy/mono-cli/commit/360cce2055824602ea705a7de6a57e3d39249718))
+- add subCommands ([2123fd0](https://github.com/edisonLzy/mono-cli/commit/2123fd0e78f7b1f9d43f7f31fc33c5f76c2f93ae))
+- add template plugin ([056fa59](https://github.com/edisonLzy/mono-cli/commit/056fa591344847f7ba799827360a0ce9d189753f))
+- finish init ([3fb82e9](https://github.com/edisonLzy/mono-cli/commit/3fb82e9ae7136558eb1a8df16ee43838b62b3673))
+- remove link & integrate link to create & init config command ([95a5367](https://github.com/edisonLzy/mono-cli/commit/95a53677575d8a5c81942b401191fd96cb9fd803))
+- try GetArgs in command ([e1850ba](https://github.com/edisonLzy/mono-cli/commit/e1850bad8ff4d62496e7b7dc9f98f874c36b127c))
+- 优化 definePlugin 类型提示 ([5580884](https://github.com/edisonLzy/mono-cli/commit/5580884cf54c63e8429a00cf8805d0901c8c4f69))
+- 更新日志插件使用方式 ([d2db17b](https://github.com/edisonLzy/mono-cli/commit/d2db17bb5a4c4a5f48681ce57932936794110cb5))
+
 ## [1.2.2](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-cli@1.2.1...@em-cli/em-cli@1.2.2) (2021-09-06)
 
 ### Features

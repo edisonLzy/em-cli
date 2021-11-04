@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-init",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "项目初始化",
   "keywords": [
     "项目初始化"
@@ -33,7 +33,8 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@em-cli/shared": "^0.2.1",
+    "@em-cli/shared": "^0.3.0",
+    "@etools/fm": "latest",
     "@types/jsonfile": "^6.0.1",
     "em-pipeline": "^0.0.8",
     "fs-extra": "^10.0.0",
@@ -41,8 +42,7 @@
     "p-map": "4.0.0",
     "shelljs": "^0.8.4",
     "vinyl": "^2.2.1",
-    "yaml": "^1.10.2",
-    "@etools/fm": "latest"
+    "yaml": "^1.10.2"
   },
   "peerDependencies": {
     "@em-cli/em-cli": "^1.0.6"

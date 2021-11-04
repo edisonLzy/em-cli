@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-create@0.0.2...@em-cli/em-plugin-create@0.1.0) (2021-11-04)
+
+### Features
+
+- add config & create command ([360cce2](https://github.com/edisonLzy/mono-cli/commit/360cce2055824602ea705a7de6a57e3d39249718))
+- add subCommands ([2123fd0](https://github.com/edisonLzy/mono-cli/commit/2123fd0e78f7b1f9d43f7f31fc33c5f76c2f93ae))
+- add template plugin ([056fa59](https://github.com/edisonLzy/mono-cli/commit/056fa591344847f7ba799827360a0ce9d189753f))
+- remove inquire from shared ([f435c41](https://github.com/edisonLzy/mono-cli/commit/f435c416f6bd1c331b59843b24b753dd7aaca4db))
+- remove link & integrate link to create & init config command ([95a5367](https://github.com/edisonLzy/mono-cli/commit/95a53677575d8a5c81942b401191fd96cb9fd803))
+
 ## 0.0.2 (2021-09-06)
 
 ### Features
