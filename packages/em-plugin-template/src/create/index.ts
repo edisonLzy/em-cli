@@ -88,8 +88,6 @@ export async function createProjectByTemplate(
     ]);
     const answers: any = await getAnswersByTemplateAsk(template);
     const files = await getAllFiles(template);
-    console.log(files);
-
     for (const file of files) {
       const content = await fs.readFile(file);
       const replaced = renderer(content.toString(), answers);
