@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-template@0.2.0...@em-cli/em-plugin-template@0.3.0) (2021-11-05)
+
+### Features
+
+- **template:** fix fast-glob can not match hidden files ([b96d6e1](https://github.com/edisonLzy/mono-cli/commit/b96d6e180fda91e7b8fec5e444ec4313646d790d))
+
 # [0.2.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-template@0.1.0...@em-cli/em-plugin-template@0.2.0) (2021-11-04)
 
 ### Features
