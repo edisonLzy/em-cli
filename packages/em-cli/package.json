@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-cli",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
@@ -30,7 +30,7 @@
     "@em-cli/em-plugin-dev": "^0.3.0",
     "@em-cli/em-plugin-init": "^0.4.0",
     "@em-cli/em-plugin-link": "^0.0.2",
-    "@em-cli/em-plugin-template": "^0.3.0",
+    "@em-cli/em-plugin-template": "^0.4.0",
     "@em-cli/shared": "^0.4.0",
     "@types/module-alias": "^2.0.1",
     "commander": "^7.1.0",
