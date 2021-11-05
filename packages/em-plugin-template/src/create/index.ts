@@ -4,7 +4,9 @@ import path from 'path';
 import ejs from 'ejs';
 import { logger } from '@em-cli/shared';
 import inquirer from 'inquirer';
+import { FileManager, FileOptions } from '@etools/fm';
 import { getRepoCacheDir } from '../utils';
+const fm = new FileManager();
 const cacheDir = getRepoCacheDir();
 /**
  * 选择模版进行项目创建
@@ -46,9 +48,9 @@ async function getAnswersByTemplateAsk(
  *
  * @param filePath
  */
-function getOutputPath(from: string, to: string, project: string) {
+function getRelativePath(from: string, to: string) {
   const relative = path.relative(from, to);
-  return path.join(project, relative);
+  return relative;
 }
 
 /**
@@ -57,7 +59,9 @@ function getOutputPath(from: string, to: string, project: string) {
  * @returns
  */
 async function getAllFiles(template: string) {
-  let files = await fg(`${template}/**/*`);
+  let files = await fg(`${template}/**/*`, {
+    dot: true,
+  });
   files = files.filter((file) => path.basename(file) !== 'ask.json');
   return files;
 }
@@ -84,12 +88,17 @@ export async function createProjectByTemplate(
     ]);
     const answers: any = await getAnswersByTemplateAsk(template);
     const files = await getAllFiles(template);
-    for await (const file of files) {
+    console.log(files);
+
+    for (const file of files) {
       const content = await fs.readFile(file);
       const replaced = renderer(content.toString(), answers);
-      const outputPath = getOutputPath(template, file, outDir);
-      await fs.outputFile(outputPath, replaced);
-      logger.success('success create file to %s', outputPath);
+      const relativePath = getRelativePath(template, file);
+      fm.addFile({
+        path: relativePath,
+        value: replaced,
+      });
     }
+    fm.outFile(outDir);
   } catch (e) {}
 }
