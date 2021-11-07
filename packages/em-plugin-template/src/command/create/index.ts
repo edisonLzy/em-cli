@@ -5,7 +5,7 @@ import ejs from 'ejs';
 import { logger } from '@em-cli/shared';
 import inquirer from 'inquirer';
 import { FileManager, FileOptions } from '@etools/fm';
-import { getRepoCacheDir } from '../utils';
+import { getRepoCacheDir } from '../../utils';
 const cacheDir = getRepoCacheDir();
 /**
  * 选择模版进行项目创建
@@ -68,37 +68,35 @@ export async function createProjectByTemplate(
   project: string,
   workinDir: string
 ) {
-  try {
-    const outDir = path.join(workinDir, project);
-    const pkgs = await fg(`${cacheDir}/*`, {
-      onlyDirectories: true,
-    });
-    const { templatePath } = await inquirer.prompt([
-      {
-        name: 'templatePath',
-        type: 'list',
-        message: 'please select template',
-        choices: getChoices(pkgs),
-        validate: (val) => {
-          if (val) return 'please select template';
-          return true;
-        },
+  const outDir = path.join(workinDir, project);
+  const pkgs = await fg(`${cacheDir}/*`, {
+    onlyDirectories: true,
+  });
+  const { templatePath } = await inquirer.prompt([
+    {
+      name: 'templatePath',
+      type: 'list',
+      message: 'please select template',
+      choices: getChoices(pkgs),
+      validate: (val) => {
+        if (val) return 'please select template';
+        return true;
       },
-    ]);
-    const answers: any = await getAnswersByTemplateAsk(templatePath);
-    const files = await getAllFiles(templatePath);
-    const fm = new FileManager({
-      base: templatePath,
+    },
+  ]);
+  const answers: any = await getAnswersByTemplateAsk(templatePath);
+  const files = await getAllFiles(templatePath);
+  const fm = new FileManager({
+    base: templatePath,
+  });
+  for (const file of files) {
+    const content = await fs.readFile(file);
+    const replaced = renderer(content.toString(), answers);
+    const relativePath = getRelativePath(templatePath, file);
+    fm.addFile({
+      path: relativePath,
+      value: replaced,
     });
-    for (const file of files) {
-      const content = await fs.readFile(file);
-      const replaced = renderer(content.toString(), answers);
-      const relativePath = getRelativePath(templatePath, file);
-      fm.addFile({
-        path: relativePath,
-        value: replaced,
-      });
-    }
-    fm.outFile(outDir);
-  } catch (e) {}
+  }
+  await fm.outFile(outDir);
 }

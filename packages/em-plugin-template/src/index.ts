@@ -1,9 +1,9 @@
 import fg from 'fast-glob';
 import { logger } from '@em-cli/shared';
 import { defineCommand } from '@em-cli/em-cli';
-
-import { addTemplate } from './add';
-import { createProjectByTemplate } from './create';
+import { addTemplate } from './command/add';
+import { updateTemplate } from './command/update';
+import { createProjectByTemplate } from './command/create';
 import { getRepoCacheDir } from './utils';
 
 export default defineCommand({
@@ -21,6 +21,13 @@ export default defineCommand({
       },
     },
     {
+      id: 'update',
+      description: 'update template in local ',
+      async run() {
+        updateTemplate().catch(logger.error);
+      },
+    },
+    {
       id: 'create',
       args: '<project>',
       option: [['-w,--workinDir <workinDir>', '工作目录', process.cwd()]],
@@ -28,7 +35,7 @@ export default defineCommand({
       async run({ args, optionsArgs }) {
         const { workinDir } = optionsArgs;
         const [project] = args;
-        await createProjectByTemplate(project, workinDir);
+        createProjectByTemplate(project, workinDir).catch(logger.error);
       },
     },
   ],

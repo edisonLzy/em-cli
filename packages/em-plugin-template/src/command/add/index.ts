@@ -3,8 +3,8 @@ import { logger } from '@em-cli/shared';
 import { download } from '@em-cli/shared';
 import path from 'path';
 import fs from 'fs-extra';
-import { REPO_CACHE_KEY, TEMPLATE_CACHE_KEY } from '../constant';
-import { getRepoCacheDir } from '../utils';
+import { REPO_CACHE_KEY, TEMPLATE_CACHE_KEY } from '../../constant';
+import { getRepoCacheDir } from '../../utils';
 
 const repoCacheDir = getRepoCacheDir();
 
