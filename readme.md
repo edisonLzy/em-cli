@@ -1,3 +1,27 @@
+## 调试
+
+1. tsconfig.json 添加 `sourceMap:true`
+
+```json
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "declarationDir": "./lib/typings",
+    "outDir": "./lib",
+    "sourceMap": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["bin/*", "lib/**/*"]
+}
+```
+
+2. 在 Javascript Debug Terminal 中执行命令
+
+```shell
+ee template create test
+```
+
 ## 开始
 
 1. 使用 lerna 初始化项目和发布项目
@@ -84,19 +108,19 @@ lerna publish from-package
 **导出文件**
 
 ```ts
-export * from './core/command'
-export * from './core/base'
+export * from './core/command';
+export * from './core/base';
 ```
 
 **导入文件**
 
 ```ts
-import { defineCommand } from '@em-cli/em-cli'
+import { defineCommand } from '@em-cli/em-cli';
 // defineCommand is undefined
 export default defineCommand({
   id: 'init',
-  run (args, options, command) {
-    console.log('xxx')
-  }
-})
+  run(args, options, command) {
+    console.log('xxx');
+  },
+});
 ```

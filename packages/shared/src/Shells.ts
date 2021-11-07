@@ -1,5 +1,5 @@
 import shelljs from 'shelljs';
-import signale from 'signale';
+import logger from './logger';
 type Shell = string;
 type Dep = string;
 type ShellSuccess = {
@@ -49,7 +49,7 @@ class ShellsManager {
     if (this.shells.length === 0) {
       return;
     }
-    signale.pending('begin to run shells');
+    logger.pending('begin to run shells');
     for (const shell of this.shells) {
       const res = await this.processSingleShell(shell);
       const type = res.type;
@@ -61,12 +61,11 @@ class ShellsManager {
     }
     // 输出日志
     const errorLogs = this.error.map((it) => {
-      return it.shell + '\r\n';
+      return it.shell;
     });
-    signale.success(`🙆‍♂️ success run ${this.success.length} shells`);
-    signale.error(`🙅 error run ${this.error.length} shells,you can exec your shelf
-    ${errorLogs}
-    `);
+    logger.success(`🙆‍♂️ success run ${this.success.length} shells.`);
+    logger.error(`🙅 error run ${this.error.length} shells.`);
+    errorLogs.length && logger.array(errorLogs, '❌ try exec yourself.');
   }
 }
 export default ShellsManager;

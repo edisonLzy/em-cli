@@ -20,7 +20,7 @@ export class Product {
   fileManage: FileManager;
   constructor(cwd: string) {
     this.fileManage = new FileManager({
-      cwd: cwd,
+      base: cwd,
       writeFileMode: 'skip',
     });
     this.deps = new ShellsManager({

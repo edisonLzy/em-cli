@@ -6,7 +6,6 @@ import { logger } from '@em-cli/shared';
 import inquirer from 'inquirer';
 import { FileManager, FileOptions } from '@etools/fm';
 import { getRepoCacheDir } from '../utils';
-const fm = new FileManager();
 const cacheDir = getRepoCacheDir();
 /**
  * 选择模版进行项目创建
@@ -54,7 +53,7 @@ function getRelativePath(from: string, to: string) {
 }
 
 /**
- *  排除 ask.json
+ * 排除 ask.json
  * @param template
  * @returns
  */
@@ -74,9 +73,9 @@ export async function createProjectByTemplate(
     const pkgs = await fg(`${cacheDir}/*`, {
       onlyDirectories: true,
     });
-    const { template } = await inquirer.prompt([
+    const { templatePath } = await inquirer.prompt([
       {
-        name: 'template',
+        name: 'templatePath',
         type: 'list',
         message: 'please select template',
         choices: getChoices(pkgs),
@@ -86,12 +85,15 @@ export async function createProjectByTemplate(
         },
       },
     ]);
-    const answers: any = await getAnswersByTemplateAsk(template);
-    const files = await getAllFiles(template);
+    const answers: any = await getAnswersByTemplateAsk(templatePath);
+    const files = await getAllFiles(templatePath);
+    const fm = new FileManager({
+      base: templatePath,
+    });
     for (const file of files) {
       const content = await fs.readFile(file);
       const replaced = renderer(content.toString(), answers);
-      const relativePath = getRelativePath(template, file);
+      const relativePath = getRelativePath(templatePath, file);
       fm.addFile({
         path: relativePath,
         value: replaced,

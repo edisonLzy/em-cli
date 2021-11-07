@@ -42,7 +42,7 @@ class Logger extends Signale {
     ${os.EOL}${content}
     `);
   }
-  array(arr: any[]) {
+  array(arr: any[], tips: string = '') {
     let content = '';
     if (arr.length === 0) {
       content = 'empty';
@@ -51,7 +51,7 @@ class Logger extends Signale {
         .map((it, idx) => `${idx + 1}. ${chalk.green(it)}`)
         .join(os.EOL);
     }
-    this.note(`
+    this.note(`${tips}
     ${os.EOL}${content}
     `);
   }

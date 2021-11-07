@@ -5,13 +5,15 @@
     "packages/*"
   ],
   "scripts": {
+    "preinstall": "npx only-allow yarn",
     "prepare": "husky install",
     "bootstrap": "yarn",
     "prepublishOnly": "lerna run build",
     "publish": "lerna publish",
     "clean": "lerna clean && rimraf node_modules",
     "build": "lerna run build",
-    "start": "lerna exec --scope @em-cli/em-cli -- yarn start"
+    "start": "lerna exec --scope @em-cli/em-cli -- yarn start",
+    "debug": "ee template create test"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^13.1.0",
