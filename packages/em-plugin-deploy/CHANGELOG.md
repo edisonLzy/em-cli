@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-deploy@0.2.0...@em-cli/em-plugin-deploy@0.2.1) (2021-11-07)
+
+**Note:** Version bump only for package @em-cli/em-plugin-deploy
+
 # [0.2.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-deploy@0.1.0...@em-cli/em-plugin-deploy@0.2.0) (2021-11-04)
 
 ### Features
