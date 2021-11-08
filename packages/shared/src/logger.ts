@@ -25,7 +25,7 @@ class Logger extends Signale {
       },
     });
   }
-  json(data: Record<string, any>) {
+  json(data: Record<string, any>, log = true) {
     const keys = Object.keys(data);
     let content = '';
     if (keys.length === 0) {
@@ -38,11 +38,12 @@ class Logger extends Signale {
         })
         .join(os.EOL);
     }
+    if (!log) return content;
     this.star(`
     ${os.EOL}${content}
     `);
   }
-  array(arr: any[], tips: string = '') {
+  array(arr: any[], tips: string = '', log = true) {
     let content = '';
     if (arr.length === 0) {
       content = 'empty';
@@ -51,6 +52,7 @@ class Logger extends Signale {
         .map((it, idx) => `${idx + 1}. ${chalk.green(it)}`)
         .join(os.EOL);
     }
+    if (!log) return content;
     this.note(`${tips}
     ${os.EOL}${content}
     `);

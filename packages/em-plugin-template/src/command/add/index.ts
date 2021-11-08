@@ -4,9 +4,7 @@ import { download } from '@em-cli/shared';
 import path from 'path';
 import fs from 'fs-extra';
 import { REPO_CACHE_KEY, TEMPLATE_CACHE_KEY } from '../../constant';
-import { getRepoCacheDir } from '../../utils';
-
-const repoCacheDir = getRepoCacheDir();
+import { repoCacheDir, getDirnameByRemoteUrl } from '../../utils';
 
 async function ensureRemoteRepoInLocal() {
   const repoInfo = await getConfigKey(REPO_CACHE_KEY);
@@ -37,12 +35,8 @@ async function addRepoInConfigFile(remoteUrl: string) {
     logger.success('success set repo %s in configFile ', remoteUrl);
   }
 }
-function getDirname(remoteUrl: string) {
-  const [, name] = remoteUrl.split('/');
-  return path.join(repoCacheDir, name);
-}
 export async function addTemplate(remoteUrl: string) {
-  const dirname = getDirname(remoteUrl);
+  const dirname = getDirnameByRemoteUrl(remoteUrl);
   // 添加模版到配置文件中
   await addRepoInConfigFile(remoteUrl);
   // 添加缓存目录

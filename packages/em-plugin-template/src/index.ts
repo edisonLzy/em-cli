@@ -22,9 +22,13 @@ export default defineCommand({
     },
     {
       id: 'update',
-      description: 'update template in local ',
-      async run() {
-        updateTemplate().catch(logger.error);
+      description: 'update template in local',
+      option: [['-a,--all [all]', '是否更新所有模版', false]],
+      async run({ optionsArgs }) {
+        const { all } = optionsArgs;
+        await updateTemplate({
+          updateAll: !!all,
+        });
       },
     },
     {
@@ -35,7 +39,7 @@ export default defineCommand({
       async run({ args, optionsArgs }) {
         const { workinDir } = optionsArgs;
         const [project] = args;
-        createProjectByTemplate(project, workinDir).catch(logger.error);
+        await createProjectByTemplate(project, workinDir);
       },
     },
   ],
