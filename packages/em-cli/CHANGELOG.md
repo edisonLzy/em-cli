@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.4](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-cli@1.4.3...@em-cli/em-cli@1.4.4) (2021-11-08)
+
+**Note:** Version bump only for package @em-cli/em-cli
+
 ## [1.4.3](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-cli@1.4.2...@em-cli/em-cli@1.4.3) (2021-11-07)
 
 **Note:** Version bump only for package @em-cli/em-cli

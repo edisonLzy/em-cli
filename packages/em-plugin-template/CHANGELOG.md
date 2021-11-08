@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-template@0.4.1...@em-cli/em-plugin-template@0.5.0) (2021-11-08)
+
+### Features
+
+- **template:** add update command ([8867a46](https://github.com/edisonLzy/mono-cli/commit/8867a4612f7cccbcd8e4c38a858a96f56b28e4b7))
+- **template:** add update command ([84ab0a4](https://github.com/edisonLzy/mono-cli/commit/84ab0a4c9671faf6d327398086e027589af8d1ad))
+
 ## [0.4.1](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-template@0.4.0...@em-cli/em-plugin-template@0.4.1) (2021-11-07)
 
 **Note:** Version bump only for package @em-cli/em-plugin-template
