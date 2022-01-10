@@ -3,7 +3,13 @@ import { Product } from './../../product';
 // shell.exec(`echo '${jenkinsfile}' > Jenkinsfile`);
 
 import { defineFeature } from '../';
-import { dockerFile, jenkinsfile, travis } from './template';
+import {
+  dockerFile,
+  jenkinsfile,
+  travis,
+  dockerIgnore,
+  nginx,
+} from './template';
 
 export default defineFeature({
   injectPrompt(cli) {
@@ -32,6 +38,10 @@ export default defineFeature({
             name: 'travis',
             value: 'travis.yaml',
           },
+          {
+            name: 'nginx',
+            value: 'nginx',
+          },
         ],
         default: ['Jenkinsfile', 'DockerFile'],
       },
@@ -50,8 +60,16 @@ export default defineFeature({
     product.collectFiles(
       [
         options.cicdTools.includes('DockerFile') && {
-          path: './DockerFile',
+          path: './Dockerfile',
           value: dockerFile,
+        },
+        options.cicdTools.includes('DockerFile') && {
+          path: './.dockerignore',
+          value: dockerIgnore,
+        },
+        options.cicdTools.includes('nginx') && {
+          path: './default.conf',
+          value: nginx,
         },
         options.cicdTools.includes('Jenkinsfile') && {
           path: './Jenkinsfile',

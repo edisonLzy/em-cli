@@ -42,7 +42,6 @@ export async function createLink(workinDir: string) {
       message: '目标包',
       choices: getChoices(pkgs),
       validate: (val, answers) => {
-        console.log(val, answers);
         const { source } = answers ?? {};
         if (source === val) {
           return '目标包和源包的地址不能相同';
