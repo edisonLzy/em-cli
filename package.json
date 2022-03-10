@@ -1,13 +1,9 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "preinstall": "npx only-allow yarn",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
-    "bootstrap": "yarn",
     "prepublishOnly": "lerna run build",
     "publish": "lerna publish",
     "clean": "lerna clean && rimraf node_modules",
