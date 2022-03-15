@@ -9,7 +9,7 @@ export default defineCommand({
       // 任何合法的用户配置选项，加上 `mode` 和 `configFile`
       root: process.cwd(),
       server: {
-        port: 1337,
+        port: 8080,
       },
     });
     await server.listen();
