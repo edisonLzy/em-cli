@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-create",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "创建插件包",
   "keywords": [
     "create"
