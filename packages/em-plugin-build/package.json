@@ -26,7 +26,7 @@
     "prebuild": "npm run clean && tsc",
     "build": "babel src --out-dir lib --extensions .ts ",
     "clean": "rimraf lib",
-    "start": "npm run clean && npm run build -- --watch"
+    "start": "npm run build -- --watch"
   },
   "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
   "devDependencies": {

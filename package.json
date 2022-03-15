@@ -5,7 +5,6 @@
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
     "prepublishOnly": "lerna run build",
-    "publish": "lerna publish",
     "clean": "lerna clean && rimraf node_modules",
     "build": "lerna run build",
     "start": "lerna exec --scope @em-cli/em-cli -- yarn start",
