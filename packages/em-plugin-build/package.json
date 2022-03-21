@@ -28,7 +28,7 @@
     "clean": "rimraf lib",
     "start": "npm run build -- --watch"
   },
-  "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
+  "gitHead": "0b080ede5c9d04528239c736a51900d8c7a27cbb",
   "devDependencies": {
     "@em-cli/em-cli": "^1.4.7",
     "@types/gulp": "^4.0.9",
