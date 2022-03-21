@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-build",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "构建",
   "keywords": [
     "webpack",
@@ -30,7 +30,7 @@
   },
   "gitHead": "95a512ae41870b700a155a14d6385b8b637b1d43",
   "devDependencies": {
-    "@em-cli/em-cli": "^1.4.9",
+    "@em-cli/em-cli": "^1.4.10",
     "@types/gulp": "^4.0.9",
     "@types/gulp-autoprefixer": "^0.0.33",
     "@types/gulp-clean-css": "^4.3.0",
