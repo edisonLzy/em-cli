@@ -50,11 +50,11 @@ importers:
 
   packages/em-cli:
     specifiers:
-      '@em-cli/em-plugin-build': ^0.4.2
-      '@em-cli/em-plugin-create': ^0.2.2
+      '@em-cli/em-plugin-build': ^0.5.4
+      '@em-cli/em-plugin-create': ^0.3.0
       '@em-cli/em-plugin-deploy': ^0.2.2
       '@em-cli/em-plugin-dev': ^0.3.2
-      '@em-cli/em-plugin-init': ^0.4.2
+      '@em-cli/em-plugin-init': ^0.5.0
       '@em-cli/em-plugin-link': ^0.0.2
       '@em-cli/em-plugin-template': ^0.5.0
       '@em-cli/shared': ^0.5.0
@@ -109,7 +109,7 @@ importers:
       '@babel/preset-env': ^7.14.8
       '@babel/preset-react': ^7.14.5
       '@babel/preset-typescript': ^7.14.5
-      '@em-cli/em-cli': ^1.4.6
+      '@em-cli/em-cli': ^1.4.10
       '@em-cli/shared': ^0.5.0
       '@em-presets/babel': ^0.0.2
       '@rollup/plugin-babel': ^5.3.0
