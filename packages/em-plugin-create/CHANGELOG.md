@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-plugin-create@0.2.2...@em-cli/em-plugin-create@0.3.0) (2022-03-21)
+
+### Features
+
+- 修改 init dockerFile 脚本 ([d8f0aa4](https://github.com/edisonLzy/em-cli/commit/d8f0aa4424ba60252d2cd9c6d20d209183e2fc17))
+
 ## [0.2.2](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-create@0.2.1...@em-cli/em-plugin-create@0.2.2) (2021-11-08)
 
 **Note:** Version bump only for package @em-cli/em-plugin-create
