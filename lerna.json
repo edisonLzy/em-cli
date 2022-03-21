@@ -1,8 +1,6 @@
 {
   "packages": ["packages/*"],
-  "npmClient": "yarn",
   "version": "independent",
-  "useWorkspaces": true,
   "ignoreChanges": ["**/__tests__/**", "**/*.md", "**/package-log.json"],
   "command": {
     "publish": {
