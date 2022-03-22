@@ -1,5 +1,5 @@
 import { Listr } from 'listr2';
-import { getConfigKey } from '@em-cli/em-cli';
+import { getConfigKey } from '@em-cli/core';
 import { download, logger } from '@em-cli/shared';
 import chalk from 'chalk';
 import { TEMPLATE_CACHE_KEY } from '../../constant';

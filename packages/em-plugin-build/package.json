@@ -7,8 +7,6 @@
     "rollup",
     "gulp"
   ],
-  "author": "lizhiyu <656603136@qq.com>",
-  "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
   "typings": "./lib/typings",
@@ -19,18 +17,14 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "prebuild": "npm run clean && tsc",
     "build": "babel src --out-dir lib --extensions .ts ",
     "clean": "rimraf lib",
     "start": "npm run build -- --watch"
   },
-  "gitHead": "95a512ae41870b700a155a14d6385b8b637b1d43",
+  "gitHead": "d02fb469720e4e207e0dca29d8d7fa650a1aa145",
   "devDependencies": {
-    "@em-cli/em-cli": "^1.4.10",
     "@types/gulp": "^4.0.9",
     "@types/gulp-autoprefixer": "^0.0.33",
     "@types/gulp-clean-css": "^4.3.0",
@@ -46,6 +40,7 @@
     "@babel/preset-env": "^7.14.8",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
+    "@em-cli/core": "^1.4.10",
     "@em-cli/shared": "^0.5.0",
     "@em-presets/babel": "^0.0.2",
     "@rollup/plugin-babel": "^5.3.0",
@@ -74,8 +69,5 @@
     "ts-node": "^10.1.0",
     "webpack": "^5.47.1",
     "webpack-merge": "^5.8.0"
-  },
-  "peerDependencies": {
-    "@em-cli/em-cli": "^1.4.6"
   }
 }

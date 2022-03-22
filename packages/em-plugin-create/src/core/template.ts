@@ -42,7 +42,7 @@ export function renderPkg(name: string) {
 }
 export function renderMain(name: string) {
   return `
-  import { defineCommand } from '@em-cli/em-cli';
+  import { defineCommand } from '@em-cli/core';
   export default defineCommand({
     id: '${name}',
     description: '${name}',

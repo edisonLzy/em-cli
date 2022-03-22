@@ -1,4 +1,4 @@
-import { defineCommand } from '@em-cli/em-cli';
+import { defineCommand } from '@em-cli/core';
 import { logger } from '@em-cli/shared';
 import { createLink } from './core/link';
 export default defineCommand({

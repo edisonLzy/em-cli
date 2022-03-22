@@ -4,11 +4,11 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
-    "prepublishOnly": "lerna run build",
-    "clean": "lerna clean && rimraf node_modules",
-    "build": "lerna run build",
-    "start": "lerna exec --scope @em-cli/em-cli -- yarn start",
-    "debug": "ee template create test"
+    "prepublishOnly": "pnpm build",
+    "clean": "pnpm clean && rimraf node_modules",
+    "build": "pnpm build -r",
+    "start": "pnpm run start --filter @em-cli/ee",
+    "release": "lerna publish"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^13.1.0",

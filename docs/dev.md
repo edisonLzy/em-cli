@@ -173,7 +173,7 @@ export * from './core/base';
 **导入文件**
 
 ```ts
-import { defineCommand } from '@em-cli/em-cli';
+import { defineCommand } from '@em-cli/core';
 // defineCommand is undefined
 export default defineCommand({
   id: 'init',

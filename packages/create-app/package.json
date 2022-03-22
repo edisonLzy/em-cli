@@ -16,15 +16,10 @@
     "start": "npm run clean && tsc --watch",
     "build": "npm run clean && tsc"
   },
-  "author": "evanzyli",
   "license": "ISC",
   "dependencies": {
     "commander": "^8.2.0",
     "read-pkg": "5.1.1"
   },
-  "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  }
+  "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7"
 }

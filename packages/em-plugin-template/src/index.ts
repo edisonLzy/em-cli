@@ -1,6 +1,6 @@
 import fg from 'fast-glob';
 import { logger } from '@em-cli/shared';
-import { defineCommand } from '@em-cli/em-cli';
+import { defineCommand } from '@em-cli/core';
 import { addTemplate } from './command/add';
 import { updateTemplate } from './command/update';
 import { createProjectByTemplate } from './command/create';
