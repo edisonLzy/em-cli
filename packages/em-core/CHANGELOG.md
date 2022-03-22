@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.4.11 (2022-03-22)
+
+**Note:** Version bump only for package @em-cli/core
+
 ## [1.4.10](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-cli@1.4.9...@em-cli/em-cli@1.4.10) (2022-03-21)
 
 **Note:** Version bump only for package @em-cli/em-cli
