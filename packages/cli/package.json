@@ -22,7 +22,7 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "@em-cli/core": "workspace:^1.4.11",
+    "@em-cli/core": "^1.4.11",
     "@em-cli/em-plugin-build": "^0.5.5",
     "@em-cli/em-plugin-create": "^0.4.0",
     "@em-cli/em-plugin-deploy": "^0.2.3",
