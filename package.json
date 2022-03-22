@@ -3,9 +3,10 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm build",
     "prepare": "husky install",
     "prepublishOnly": "pnpm build",
-    "clean": "pnpm clean && rimraf node_modules",
+    "clean": "pnpm clean -r && rimraf node_modules",
     "build": "pnpm build -r",
     "start": "pnpm run start --filter @em-cli/ee",
     "release": "lerna publish"

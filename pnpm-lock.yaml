@@ -42,11 +42,11 @@ importers:
 
   packages/cli:
     specifiers:
-      '@em-cli/core': workspace:^1.4.11
+      '@em-cli/core': ^1.4.11
       '@em-cli/em-plugin-build': ^0.5.5
       '@em-cli/em-plugin-create': ^0.4.0
       '@em-cli/em-plugin-deploy': ^0.2.3
-      '@em-cli/em-plugin-dev': ^0.3.3
+      '@em-cli/em-plugin-dev': ^0.4.0
       '@em-cli/em-plugin-init': ^0.6.0
       '@em-cli/em-plugin-template': ^0.5.1
       rimraf: ^3.0.2
@@ -71,7 +71,7 @@ importers:
 
   packages/em-core:
     specifiers:
-      '@em-cli/shared': ^0.5.0
+      '@em-cli/shared': ^0.5.1
       '@types/commander': ^2.12.2
       '@types/ejs': ^3.0.6
       '@types/inquirer': ^7.3.3
@@ -116,8 +116,8 @@ importers:
       '@babel/preset-env': ^7.14.8
       '@babel/preset-react': ^7.14.5
       '@babel/preset-typescript': ^7.14.5
-      '@em-cli/core': ^1.4.10
-      '@em-cli/shared': ^0.5.0
+      '@em-cli/core': ^1.4.11
+      '@em-cli/shared': ^0.5.1
       '@em-presets/babel': ^0.0.2
       '@rollup/plugin-babel': ^5.3.0
       '@rollup/plugin-commonjs': ^21.0.1
@@ -197,8 +197,8 @@ importers:
 
   packages/em-plugin-create:
     specifiers:
-      '@em-cli/core': ^1.4.10
-      '@em-cli/shared': ^0.5.0
+      '@em-cli/core': ^1.4.11
+      '@em-cli/shared': ^0.5.1
       '@types/fs-extra': ^9.0.12
       '@types/shelljs': ^0.8.9
       '@types/signale': ^1.4.2
@@ -224,8 +224,8 @@ importers:
 
   packages/em-plugin-deploy:
     specifiers:
-      '@em-cli/core': ^1.4.10
-      '@em-cli/shared': ^0.5.0
+      '@em-cli/core': ^1.4.11
+      '@em-cli/shared': ^0.5.1
       '@types/globby': ^9.1.0
       '@types/signale': ^1.4.2
       download-git-repo: ^3.0.2
@@ -253,8 +253,8 @@ importers:
 
   packages/em-plugin-dev:
     specifiers:
-      '@em-cli/core': ^1.4.10
-      '@em-cli/shared': ^0.5.0
+      '@em-cli/core': ^1.4.11
+      '@em-cli/shared': ^0.5.1
       em-pipeline: ^0.1.0
       fs-extra: ^10.0.0
       typescript: ^4.3.5
@@ -270,8 +270,8 @@ importers:
 
   packages/em-plugin-init:
     specifiers:
-      '@em-cli/core': ^1.4.10
-      '@em-cli/shared': ^0.5.0
+      '@em-cli/core': ^1.4.11
+      '@em-cli/shared': ^0.5.1
       '@etools/fm': ^0.0.7
       '@types/jsonfile': ^6.0.1
       '@types/shelljs': ^0.8.9
@@ -301,8 +301,8 @@ importers:
 
   packages/em-plugin-template:
     specifiers:
-      '@em-cli/core': ^1.4.10
-      '@em-cli/shared': ^0.5.0
+      '@em-cli/core': ^1.4.11
+      '@em-cli/shared': ^0.5.1
       '@etools/fm': ^0.0.7
       '@types/ejs': ^3.1.0
       '@types/fs-extra': ^9.0.12
