@@ -1,0 +1,37 @@
+{
+  "name": "@em-cli/em-plugin-renderer",
+  "version": "0.0.1",
+  "description": "渲染模版",
+  "keywords": [
+    ""
+  ],
+  "author": "lizhiyu <656603136@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "typings": "./lib/typings",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "start": "npm run clean && tsc --watch"
+  },
+  "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@em-cli/core": "^1.4.11",
+    "@em-cli/shared": "^0.2.1"
+  }
+}

@@ -28,6 +28,7 @@
     "@em-cli/em-plugin-deploy": "^0.2.3",
     "@em-cli/em-plugin-dev": "^0.4.0",
     "@em-cli/em-plugin-init": "^0.6.0",
+    "@em-cli/em-plugin-renderer": "^0.0.1",
     "@em-cli/em-plugin-template": "^0.5.1"
   }
 }

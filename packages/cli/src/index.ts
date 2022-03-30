@@ -5,6 +5,7 @@ import CommandBuild from '@em-cli/em-plugin-build';
 import CommandDeploy from '@em-cli/em-plugin-deploy';
 import CommandCreate from '@em-cli/em-plugin-create';
 import CommandTemplate from '@em-cli/em-plugin-template';
+import CommandRenderer from '@em-cli/em-plugin-renderer';
 
 export function run(isDev: boolean) {
   const eCli = new ECli();
@@ -15,7 +16,8 @@ export function run(isDev: boolean) {
     .addCommand(CommandDeploy)
     .addCommand(CommandCreate)
     .addCommand(CommandAdminConfig)
-    .addCommand(CommandTemplate);
+    .addCommand(CommandTemplate)
+    .addCommand(CommandRenderer);
   if (isDev) {
     eCli.addCommand(CommandAddCmd);
   }
