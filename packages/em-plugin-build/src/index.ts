@@ -1,4 +1,4 @@
-import { defineCommand } from '@em-cli/em-cli';
+import { defineCommand } from '@em-cli/core';
 import { buildWithRollup } from './buildLibWithRollup';
 import type { BuildExtension } from './buildLibWithRollup';
 import buildLib from './buildLib';

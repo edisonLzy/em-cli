@@ -1,4 +1,4 @@
-import { defineCommand } from '@em-cli/em-cli';
+import { defineCommand } from '@em-cli/core';
 import { deployStatic } from './static';
 
 interface DeployType {

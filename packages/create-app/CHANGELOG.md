@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/edisonLzy/em-cli/compare/@em-cli/create-app@0.2.0...@em-cli/create-app@0.2.1) (2022-03-22)
+
+**Note:** Version bump only for package @em-cli/create-app
+
 # [0.2.0](https://github.com/edisonLzy/mono-cli/compare/@em-cli/create-app@0.1.0...@em-cli/create-app@0.2.0) (2021-11-04)
 
 ### Features

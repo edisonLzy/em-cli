@@ -1,37 +1,21 @@
 {
-  "name": "@em-cli/em-cli",
-  "version": "1.4.5",
+  "name": "@em-cli/core",
+  "version": "1.4.11",
   "description": "make cli easier",
   "main": "lib/index.js",
-  "bin": {
-    "ee": "bin/em-cli"
-  },
   "typings": "lib/typings",
   "files": [
-    "lib",
-    "bin"
+    "lib"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
   "scripts": {
     "clean": "rimraf lib",
     "start": "npm run clean && tsc --watch",
     "build": "npm run clean && tsc",
     "dev": "ts-node src/index.ts"
   },
-  "author": "lizhiyu <656603136@qq.com>",
   "license": "ISC",
   "dependencies": {
-    "@em-cli/em-plugin-build": "^0.4.2",
-    "@em-cli/em-plugin-create": "^0.3.0",
-    "@em-cli/em-plugin-deploy": "^0.2.2",
-    "@em-cli/em-plugin-dev": "^0.3.2",
-    "@em-cli/em-plugin-init": "^0.5.0",
-    "@em-cli/em-plugin-link": "^0.0.2",
-    "@em-cli/em-plugin-template": "^0.5.0",
-    "@em-cli/shared": "^0.5.0",
+    "@em-cli/shared": "^0.5.1",
     "@types/module-alias": "^2.0.1",
     "commander": "^7.1.0",
     "ejs": "^3.1.6",
@@ -41,7 +25,7 @@
     "update-notifier": "^5.1.0",
     "userhome": "^1.0.0"
   },
-  "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
+  "gitHead": "d02fb469720e4e207e0dca29d8d7fa650a1aa145",
   "devDependencies": {
     "@types/commander": "^2.12.2",
     "@types/ejs": "^3.0.6",

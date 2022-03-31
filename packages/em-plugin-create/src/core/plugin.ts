@@ -1,4 +1,4 @@
-import { getConfigKey } from '@em-cli/em-cli';
+import { getConfigKey } from '@em-cli/core';
 import fs from 'fs-extra';
 import path from 'path';
 import { logger, formate } from '@em-cli/shared';

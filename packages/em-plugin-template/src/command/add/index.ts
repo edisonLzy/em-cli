@@ -1,4 +1,4 @@
-import { getConfigKey, setConfigKey } from '@em-cli/em-cli';
+import { getConfigKey, setConfigKey } from '@em-cli/core';
 import { logger } from '@em-cli/shared';
 import { download } from '@em-cli/shared';
 import path from 'path';

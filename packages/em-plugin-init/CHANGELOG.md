@@ -3,7 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.5.0](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-plugin-init@0.4.2...@em-cli/em-plugin-init@0.5.0) (2022-03-15)
+# [0.6.0](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-plugin-init@0.4.2...@em-cli/em-plugin-init@0.6.0) (2022-03-22)
+
+### Features
+
+- 修改 init dockerFile 脚本 ([d8f0aa4](https://github.com/edisonLzy/em-cli/commit/d8f0aa4424ba60252d2cd9c6d20d209183e2fc17))
+
+# [0.5.0](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-plugin-init@0.4.2...@em-cli/em-plugin-init@0.5.0) (2022-03-21)
 
 ### Features
 

@@ -1,0 +1,34 @@
+{
+  "name": "@em-cli/ee",
+  "version": "0.1.0",
+  "description": "make cli easier",
+  "main": "lib/index.js",
+  "bin": {
+    "ee": "bin/ee"
+  },
+  "typings": "lib/typings",
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "start": "npm run clean && tsc --watch",
+    "build": "npm run clean && tsc",
+    "dev": "ts-node src/index.ts"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "@em-cli/core": "^1.4.11",
+    "@em-cli/em-plugin-build": "^0.5.5",
+    "@em-cli/em-plugin-create": "^0.4.0",
+    "@em-cli/em-plugin-deploy": "^0.2.3",
+    "@em-cli/em-plugin-dev": "^0.4.0",
+    "@em-cli/em-plugin-init": "^0.6.0",
+    "@em-cli/em-plugin-renderer": "^0.0.1",
+    "@em-cli/em-plugin-template": "^0.5.1"
+  }
+}

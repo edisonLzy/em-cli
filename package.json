@@ -1,19 +1,14 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "preinstall": "npx only-allow yarn",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
-    "bootstrap": "yarn",
-    "prepublishOnly": "lerna run build",
-    "publish": "lerna publish",
-    "clean": "lerna clean && rimraf node_modules",
-    "build": "lerna run build",
-    "start": "lerna exec --scope @em-cli/em-cli -- yarn start",
-    "debug": "ee template create test"
+    "prepublishOnly": "pnpm build",
+    "clean": "pnpm clean -r && rimraf node_modules",
+    "build": "pnpm build -r",
+    "start": "pnpm run start --filter @em-cli/ee",
+    "release": "lerna publish"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^13.1.0",

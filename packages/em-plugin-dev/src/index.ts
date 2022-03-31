@@ -1,4 +1,4 @@
-import { defineCommand } from '@em-cli/em-cli';
+import { defineCommand } from '@em-cli/core';
 import { createServer } from 'vite';
 
 export default defineCommand({
@@ -9,7 +9,7 @@ export default defineCommand({
       // 任何合法的用户配置选项，加上 `mode` 和 `configFile`
       root: process.cwd(),
       server: {
-        port: 8080,
+        port: 2000,
       },
     });
     await server.listen();

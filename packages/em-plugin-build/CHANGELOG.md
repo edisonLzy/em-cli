@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-plugin-build@0.5.4...@em-cli/em-plugin-build@0.5.5) (2022-03-22)
+
+**Note:** Version bump only for package @em-cli/em-plugin-build
+
+## [0.5.4](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-plugin-build@0.5.3...@em-cli/em-plugin-build@0.5.4) (2022-03-21)
+
+**Note:** Version bump only for package @em-cli/em-plugin-build
+
+## [0.5.3](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-plugin-build@0.5.2...@em-cli/em-plugin-build@0.5.3) (2022-03-21)
+
+**Note:** Version bump only for package @em-cli/em-plugin-build
+
+## [0.5.2](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-plugin-build@0.5.1...@em-cli/em-plugin-build@0.5.2) (2022-03-21)
+
+**Note:** Version bump only for package @em-cli/em-plugin-build
+
+## [0.5.1](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-plugin-build@0.5.0...@em-cli/em-plugin-build@0.5.1) (2022-03-21)
+
+**Note:** Version bump only for package @em-cli/em-plugin-build
+
+# [0.5.0](https://github.com/edisonLzy/em-cli/compare/@em-cli/em-plugin-build@0.4.2...@em-cli/em-plugin-build@0.5.0) (2022-03-21)
+
+### Features
+
+- finish app ([8ea5f8d](https://github.com/edisonLzy/em-cli/commit/8ea5f8d4bb26a89a4b2e51a1f21088605e7e5f8e))
+
 ## [0.4.2](https://github.com/edisonLzy/mono-cli/compare/@em-cli/em-plugin-build@0.4.1...@em-cli/em-plugin-build@0.4.2) (2021-11-08)
 
 **Note:** Version bump only for package @em-cli/em-plugin-build
