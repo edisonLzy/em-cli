@@ -1,7 +1,5 @@
 # em-init
 
-- [] 拉取模版项目
-
 - [x] travis
 
 1. 输出 .travis.yml 配置文件
