@@ -12,5 +12,5 @@ function adaptorArgs(project: CreateOptions): Options {
 }
 export default function createApp(project: CreateOptions) {
   const { name } = adaptorArgs(project);
-  console.log(name);
+  console.log(name, '---');
 }
