@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.1.2
+
+### Patch Changes
+
+- test changesets
+- Updated dependencies
+  - @em-cli/core@1.4.13
+  - @em-cli/em-plugin-build@0.5.7
+  - @em-cli/em-plugin-create@0.4.2
+  - @em-cli/em-plugin-deploy@0.2.5
+  - @em-cli/em-plugin-dev@0.4.2
+  - @em-cli/em-plugin-init@0.6.2
+  - @em-cli/em-plugin-renderer@0.0.3
+  - @em-cli/em-plugin-template@0.5.3
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
