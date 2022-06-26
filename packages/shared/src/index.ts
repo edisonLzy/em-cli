@@ -1,5 +1,6 @@
 export * as spin from './spin';
 export * as pathHelper from './path';
+export * from './environment';
 export { formate } from './eslint';
 export { makeProgress } from './progress';
 export { install } from './installDeps';

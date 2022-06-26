@@ -1,13 +1,7 @@
-import commander, { createCommand } from 'commander';
+import commander from 'commander';
 import { logger } from '@em-cli/shared';
 import BaseClass from './base';
 import { CommandConfig, Options } from './command';
-import path from 'path';
-import readPkg from 'read-pkg';
-
-const pkg = readPkg.sync({
-  cwd: path.resolve(__dirname, '../../'),
-});
 
 class ECli extends BaseClass {
   private program: commander.Command;
@@ -18,11 +12,10 @@ class ECli extends BaseClass {
     this.program = this.createProgram(); // 创建program
   }
   private createProgram(): commander.Command {
-    const program = createCommand();
-    program.version(pkg.version);
-    program.usage('<command> [subCommand] [options]');
-    program.passThroughOptions();
-    program.allowExcessArguments(false);
+    const program = commander;
+    program
+      .version(`@em-cli/ee ${require('../../package').version}`)
+      .usage('<command> [subCommand] [options]');
     return program;
   }
   private registerCommand(command: CommandConfig, program: commander.Command) {
@@ -56,7 +49,7 @@ class ECli extends BaseClass {
     if (command.subCommands && command.subCommands.length !== 0) {
       this.registerCommands(command.subCommands, cmd);
     }
-    cmd.action(async (...args: any[]) => {
+    cmd.action((...args: any[]) => {
       // 弹出 command install
       args.pop();
       // 获取 options 参数

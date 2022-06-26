@@ -5,11 +5,11 @@ import fg from 'fast-glob';
  */
 type FileMapping = (Raw: { fullPath: string; file: string }) => void;
 export async function scanFiles(
-  workinDir: string,
+  workInDir: string,
   glob: string = '*',
   mapping: FileMapping = (val) => val
 ) {
-  const files = await fg(`${workinDir}/${glob}`, {
+  const files = await fg(`${workInDir}/${glob}`, {
     onlyFiles: true,
     ignore: ['node_modules/**/*'],
   });
@@ -24,10 +24,10 @@ export async function scanFiles(
 }
 type DirMapping = (Raw: { fullPath: string; dir: string }) => void;
 export async function scanDirs(
-  workinDir: string,
+  workInDir: string,
   mapping: DirMapping = (val) => val
 ) {
-  const dirs = await fg(`${workinDir}/*`, {
+  const dirs = await fg(`${workInDir}/*`, {
     onlyDirectories: true,
     ignore: ['node_modules/**/*'],
   });

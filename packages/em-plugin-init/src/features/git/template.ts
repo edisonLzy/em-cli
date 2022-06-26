@@ -1,14 +1,13 @@
 export const commitLint = `module.exports = {
     extends: ['@commitlint/config-conventional'],
 }
-  `;
+`;
 
-export const gitignore = `
-  .tmp
+export const gitignore = `.tmp
   .DS_Store
   node_modules
   build
-  
+  .history
   # Log files
   npm-debug.log*
   yarn-debug.log*

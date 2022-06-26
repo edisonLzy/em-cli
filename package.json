@@ -7,7 +7,7 @@
     "prepublishOnly": "pnpm build",
     "clean": "pnpm clean -r && rimraf node_modules",
     "build": "pnpm build -r",
-    "start": "pnpm run start --filter @em-cli/ee",
+    "start": "pnpm --parallel --filter em-plugin-init... --filter ee start",
     "release": "lerna publish"
   },
   "devDependencies": {
@@ -27,7 +27,7 @@
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "ts-node-dev": "^1.1.8",
-    "typescript": "^4.6.3"
+    "typescript": "^4.7.4"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

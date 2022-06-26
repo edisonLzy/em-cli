@@ -1,7 +1,3 @@
-import { Product } from './../../product';
-// shell.exec(`echo '${dockerFile}' > DockerFile`);
-// shell.exec(`echo '${jenkinsfile}' > Jenkinsfile`);
-
 import { defineFeature } from '../';
 import {
   dockerFile,
