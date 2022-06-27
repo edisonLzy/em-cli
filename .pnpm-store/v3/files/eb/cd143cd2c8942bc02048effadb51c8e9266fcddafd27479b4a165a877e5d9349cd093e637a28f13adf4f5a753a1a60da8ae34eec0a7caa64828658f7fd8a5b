@@ -1,0 +1,71 @@
+import { WriteFileModeEnum } from '../enum';
+export declare type WriteFileMode = keyof typeof WriteFileModeEnum;
+export declare type EnhanceFileOptions = Omit<VFileCoreOptions, 'value' | 'path'> & {
+    value?: Record<string, unknown> | VFileCoreOptions['value'];
+    path: string;
+    relativePath?: string;
+};
+export declare type FileOptions = EnhanceFileOptions | string;
+export declare type LogFn = (tips: string) => void;
+export interface Log {
+    /**
+     * 所有文件输出完成之后再打印日志
+     * @default true
+     */
+    batch?: boolean;
+    /**
+     * 输出错误打印函数
+     * @default sing
+     */
+    errorLog?: LogFn;
+    /**
+     * 开始输出打印函数
+     * @default sing
+     */
+    startLog?: LogFn;
+    /**
+     * 输出结束打印函数
+     * @default sing
+     */
+    endLog?: LogFn;
+}
+export interface FileManagerOptions {
+    /**
+     * 基础路径
+     * @description addFile的path都会基于这个路径
+     * @default process.cwd()
+     */
+    base?: string;
+    /**
+     * 文件的写入方式
+     * @description 当遇到文件已存在时,文件的写入方式
+     * @default overwrite
+     */
+    writeFileMode?: WriteFileMode;
+    /**
+     * 日志输入
+     * @description 当文件开始输出和输出完毕以及输出错误的打印方式
+     * @default console
+     */
+    log?: Log;
+}
+export declare type VFileCoreOptions = {
+    value?: string | Uint8Array | undefined;
+    cwd?: string | undefined;
+    history?: string[] | undefined;
+    path?: string | undefined;
+    basename?: string | undefined;
+    stem?: string | undefined;
+    extname?: string | undefined;
+    dirname?: string | undefined;
+    data?: {
+        [x: string]: unknown;
+    } | undefined;
+};
+/**
+ * Configuration: a bunch of keys that will be shallow copied over to the new
+ * file.
+ */
+export declare type VFileOptions = {
+    [key: string]: unknown;
+} & VFileCoreOptions;

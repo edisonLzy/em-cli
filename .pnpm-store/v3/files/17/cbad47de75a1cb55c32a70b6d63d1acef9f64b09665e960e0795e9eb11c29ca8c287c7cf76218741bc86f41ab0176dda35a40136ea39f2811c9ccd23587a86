@@ -1,0 +1,27 @@
+{
+    "name": "@types/gulp-clean-css",
+    "version": "4.3.0",
+    "description": "TypeScript definitions for gulp-clean-css",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "tqma",
+            "url": "https://github.com/tqma113",
+            "githubUsername": "tqma113"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/gulp-clean-css"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/clean-css": "*",
+        "@types/node": "*"
+    },
+    "typesPublisherContentHash": "5b3c44b746301649f492a9c1c7d9b0ad4b6ad6e0f0dde16ac7af73779d36204f",
+    "typeScriptVersion": "3.3"
+}

@@ -1,0 +1,15 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.resolvePwd = exports.resolveDirname = exports.resolvePath = void 0;
+const path_1 = __importDefault(require("path"));
+function resolvePath(base) {
+    return function (p) {
+        return path_1.default.resolve(base, p);
+    };
+}
+exports.resolvePath = resolvePath;
+exports.resolveDirname = resolvePath(__dirname);
+exports.resolvePwd = resolvePath(process.cwd());

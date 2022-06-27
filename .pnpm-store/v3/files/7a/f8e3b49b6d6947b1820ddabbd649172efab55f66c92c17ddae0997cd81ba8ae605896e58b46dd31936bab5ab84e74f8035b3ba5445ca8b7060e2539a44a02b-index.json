@@ -1,0 +1,24 @@
+{
+  "name": "@types/mini-css-extract-plugin",
+  "version": "2.5.1",
+  "files": {
+    "LICENSE": {
+      "checkedAt": 1656298289078,
+      "integrity": "sha512-HQaIQk9pwOcyKutyDk4o2a87WnotwYuLGYFW43emGm4FvIJFKPyg+OYaw5sTegKAKf+C5SKa1ACjzCLivbaHrQ==",
+      "mode": 511,
+      "size": 1141
+    },
+    "README.md": {
+      "checkedAt": 1656298296175,
+      "integrity": "sha512-J97Y7E8h5m7/ebsoqRhssP4aD+QWaNxcQ8Wti1GUj4LGqNt/6FajXquCPzIBtgLiOIc3h+wfPpIG6GqYiEU7uA==",
+      "mode": 511,
+      "size": 248
+    },
+    "package.json": {
+      "checkedAt": 1656298296175,
+      "integrity": "sha512-19gJn1p64MK+mTafttOmBX0pK051VqE1B/cqZZATeTC/hu9zaKLnGlqXXjvWG2VqH+weQ42mjnMjw3TLjKWXAg==",
+      "mode": 511,
+      "size": 362
+    }
+  }
+}

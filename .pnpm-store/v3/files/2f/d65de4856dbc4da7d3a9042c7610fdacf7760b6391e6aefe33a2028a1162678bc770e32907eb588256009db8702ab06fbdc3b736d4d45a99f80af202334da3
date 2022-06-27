@@ -1,0 +1,59 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.clearConsole = exports.error = exports.warn = exports.done = exports.info = exports.log = void 0;
+const chalk_1 = __importDefault(require("chalk"));
+const readline_1 = __importDefault(require("readline"));
+const spin_1 = require("./spin");
+const strip_ansi_1 = __importDefault(require("strip-ansi"));
+const format = (label, msg) => {
+    return msg.split('\n').map((line, i) => {
+        return i === 0
+            ? `${label} ${line}`
+            : line.padStart(strip_ansi_1.default(label).length + line.length + 1);
+    }).join('\n');
+};
+const chalkTag = (msg) => chalk_1.default.bgBlackBright.white.dim(` ${msg} `);
+const log = (msg = '', tag = '', output = true) => {
+    tag ? console.log(format(chalkTag(tag), msg)) : console.log(msg);
+};
+exports.log = log;
+const info = (msg = '', tag = '', output = true) => {
+    const _m = format(chalk_1.default.bgBlue.black(' INFO ') + (tag ? chalkTag(tag) : ''), msg);
+    output && console.error(_m);
+    return _m;
+};
+exports.info = info;
+const done = (msg = '', tag = '', output = true) => {
+    const _m = format(chalk_1.default.bgGreen.black(' DONE ') + (tag ? chalkTag(tag) : ''), msg);
+    output && console.error(_m);
+    return _m;
+};
+exports.done = done;
+const warn = (msg = '', tag = '', output = true) => {
+    const _m = format(chalk_1.default.bgYellow.black(' WARN ') + (tag ? chalkTag(tag) : ''), chalk_1.default.yellow(msg));
+    output && console.error(_m);
+    return _m;
+};
+exports.warn = warn;
+const error = (msg = '', tag = '', output = true) => {
+    spin_1.stopSpinner();
+    const _m = format(chalk_1.default.bgRed(' ERROR ') + (tag ? chalkTag(tag) : ''), chalk_1.default.red(msg));
+    output && console.error(_m);
+    return _m;
+};
+exports.error = error;
+const clearConsole = (title) => {
+    if (process.stdout.isTTY) {
+        const blank = '\n'.repeat(process.stdout.rows);
+        console.log(blank);
+        readline_1.default.cursorTo(process.stdout, 0, 0);
+        readline_1.default.clearScreenDown(process.stdout);
+        if (title) {
+            console.log(title);
+        }
+    }
+};
+exports.clearConsole = clearConsole;

@@ -1,0 +1,38 @@
+import { MergeType } from '@em-helper/type';
+declare type Obj<T = any> = Record<string, T>;
+export declare type Next<T> = (state?: Partial<T>) => void;
+export declare type Task<T extends Obj = Obj, O extends Obj = Obj> = (state: T, context: {
+    next: Next<MergeType<T, O>>;
+    skip: Next<MergeType<T, O>>;
+}) => void;
+export interface TaskItem<T extends Obj = Obj, O extends Obj = Obj> {
+    description: string;
+    fn: Task<T, O>;
+}
+export declare class PipeLine<T extends Obj> {
+    private headPoint;
+    private workinPoint;
+    private checkoutPoint;
+    private prevState;
+    constructor();
+    private enqueueTask;
+    tap<O extends Obj>(description: string, fn: TaskItem<T, O>['fn']): PipeLine<MergeType<T, O>>;
+    /**
+     * 跳过下一个任务
+     * @param state
+     */
+    skip: (state?: Obj) => void;
+    /**
+     * 执行下一个任务
+     * @param state
+     */
+    next: (state?: Obj) => void;
+    /**
+     * 开始执行任务
+     * @param context
+     * @returns
+     */
+    run(context: T): void;
+    processWork(state?: Obj): void;
+}
+export {};

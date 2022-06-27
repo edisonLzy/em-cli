@@ -1,0 +1,39 @@
+{
+    "name": "@types/undertaker",
+    "version": "1.2.7",
+    "description": "TypeScript definitions for undertaker",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/undertaker",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Qubo",
+            "url": "https://github.com/tkqubo",
+            "githubUsername": "tkqubo"
+        },
+        {
+            "name": "Giedrius Grabauskas",
+            "url": "https://github.com/GiedriusGrabauskas",
+            "githubUsername": "GiedriusGrabauskas"
+        },
+        {
+            "name": "Evan Yamanishi",
+            "url": "https://github.com/sh0ji",
+            "githubUsername": "sh0ji"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/undertaker"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/node": "*",
+        "@types/undertaker-registry": "*",
+        "async-done": "~1.3.2"
+    },
+    "typesPublisherContentHash": "48475b16307468d22b3198b14f37858d9be47fde0eaad4184c156c208ca863c0",
+    "typeScriptVersion": "3.6"
+}
