@@ -8,7 +8,8 @@
     "clean": "pnpm clean -r && rimraf node_modules",
     "build": "pnpm build -r",
     "start": "pnpm --parallel --filter em-plugin-init... --filter ee start",
-    "release": "lerna publish",
+    "ci:publish": "changeset publish",
+    "ci:version": "changeset version",
     "test": "jest"
   },
   "devDependencies": {
