@@ -1,0 +1,92 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PipeLine = void 0;
+const shared_1 = require("@em-cli/shared");
+const const_1 = require("./const");
+const task_node_1 = require("./task-node");
+class PipeLine {
+    headPoint = null; // 头指针
+    workinPoint = null; // 当前正在执行task的指针
+    checkoutPoint = null; // 切出子分支的指针
+    prevState;
+    constructor() {
+        this.headPoint = null;
+    }
+    enqueueTask(taskNode) {
+        if (this.headPoint) {
+            let current = this.headPoint;
+            while (current.next) {
+                current = current.next;
+            }
+            current.next = taskNode;
+        }
+        else {
+            this.headPoint = taskNode;
+        }
+    }
+    tap(description, fn) {
+        const task = new task_node_1.LinkNode(description, fn);
+        this.enqueueTask(task);
+        return this;
+    }
+    /**
+     * 跳过下一个任务
+     * @param state
+     */
+    skip = (state = {}) => {
+        if (this.workinPoint && this.workinPoint.next) {
+            this.workinPoint.next = this.workinPoint.next.next;
+            this.workinPoint = this.workinPoint.next;
+        }
+        this.processWork(state);
+    };
+    /**
+     * 执行下一个任务
+     * @param state
+     */
+    next = (state = {}) => {
+        if (this.workinPoint && this.workinPoint !== null) {
+            this.workinPoint = this.workinPoint.next;
+        }
+        this.processWork(state);
+    };
+    //   /**
+    //    * 开始执行分支上的任务
+    //    * @param pipeLine 
+    //    */
+    //   checkout = <P>(pipeLine: PipeLine<P>) => {
+    //       if(pipeLine.headPoint){
+    //           this.checkoutPoint = this.workinPoint;          
+    //           this.workinPoint  = pipeLine.headPoint as any;
+    //           this.processWork();
+    //       }
+    //   }
+    /**
+     * 开始执行任务
+     * @param context
+     * @returns
+     */
+    run(context) {
+        if (!this.headPoint)
+            return;
+        this.workinPoint = this.headPoint;
+        this.processWork(context);
+    }
+    processWork(state = {}) {
+        if (this.workinPoint) {
+            // 获取 current 需要执行的任务
+            const { fn, description } = this.workinPoint.data;
+            shared_1.logger.info(const_1.TIPS.start + description);
+            this.prevState = {
+                ...this.prevState,
+                ...state
+            };
+            fn(this.prevState, {
+                next: this.next,
+                skip: this.skip,
+                //   checkout: this.checkout
+            });
+        }
+    }
+}
+exports.PipeLine = PipeLine;

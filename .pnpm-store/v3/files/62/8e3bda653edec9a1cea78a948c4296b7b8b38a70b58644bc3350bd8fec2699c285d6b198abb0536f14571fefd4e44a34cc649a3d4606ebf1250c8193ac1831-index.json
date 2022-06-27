@@ -1,0 +1,36 @@
+{
+  "name": "strip-bom-stream",
+  "version": "5.0.0",
+  "files": {
+    "license": {
+      "checkedAt": 1656298289209,
+      "integrity": "sha512-0fM2/ycrxrltyaBKfQ748Ck23VlPUUBgNAR47ldf4B1V/HoXTfWBSk+vcshGKwEpmOynu4mOP5o+hyBfuRNa8g==",
+      "mode": 420,
+      "size": 1117
+    },
+    "index.js": {
+      "checkedAt": 1656298300307,
+      "integrity": "sha512-8V/8aWs49JxHKfLqPQ60H7FC+JLVhAjeDnJVXs68hRpd4AN2z9Jt0YEoKk4PGcVdTeHzPsJQ+o7Gc4jYc+SYgQ==",
+      "mode": 420,
+      "size": 232
+    },
+    "package.json": {
+      "checkedAt": 1656298300307,
+      "integrity": "sha512-FC+9oLvgv5wLuLF3x9bhg0goI6zyLaHSDydmsrGvdGELDO9fQ4TM935bNEyKOl8LfLH6a3p/Z5kEdyXNvU6t2g==",
+      "mode": 420,
+      "size": 944
+    },
+    "readme.md": {
+      "checkedAt": 1656298300307,
+      "integrity": "sha512-l2xAWWHwE9uyDRGT8rcWpdVI4z7pFjBbungr0OhnCBIDsYwN8y5WtGcNosUvc45HeDVwo7T5wJChGOZ/b7DjOA==",
+      "mode": 420,
+      "size": 819
+    },
+    "index.d.ts": {
+      "checkedAt": 1656298300307,
+      "integrity": "sha512-z4Ze3Ky4AO06NEDrjO74xuCNDAxo2pjlzXO4fCBOXOXShLg09Dtqkyrpr6Zgn+LJfQmzLz9dYIfqz6uk+9OPOQ==",
+      "mode": 420,
+      "size": 466
+    }
+  }
+}

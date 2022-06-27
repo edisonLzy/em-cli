@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.filterDir = void 0;
+const path_1 = __importDefault(require("path"));
+const fs_extra_1 = __importDefault(require("fs-extra"));
+function filterDir(dirs, base) {
+    // 过滤无效的目录，文件
+    const validateDir = dirs.reduce((acc, cur) => {
+        const fullPath = path_1.default.join(base, cur);
+        const stat = fs_extra_1.default.statSync(fullPath);
+        if (stat.isDirectory()) {
+            acc.push(fullPath);
+        }
+        return acc;
+    }, []);
+    return validateDir;
+}
+exports.filterDir = filterDir;

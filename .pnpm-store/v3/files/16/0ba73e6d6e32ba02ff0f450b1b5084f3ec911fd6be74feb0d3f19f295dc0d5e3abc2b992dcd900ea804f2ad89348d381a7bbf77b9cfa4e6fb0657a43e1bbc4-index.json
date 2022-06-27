@@ -1,0 +1,30 @@
+{
+  "name": "@types/gulp-autoprefixer",
+  "version": "0.0.33",
+  "files": {
+    "LICENSE": {
+      "checkedAt": 1656298289078,
+      "integrity": "sha512-HQaIQk9pwOcyKutyDk4o2a87WnotwYuLGYFW43emGm4FvIJFKPyg+OYaw5sTegKAKf+C5SKa1ACjzCLivbaHrQ==",
+      "mode": 511,
+      "size": 1141
+    },
+    "README.md": {
+      "checkedAt": 1656298299919,
+      "integrity": "sha512-tCdkwSjydJ1B4WpvdVw4Mftr7trHSiCRdS7KnUt506MS8AqqATts3kYxKcW0+Mecu+DfKwyE9YnURq+6ZOzXtQ==",
+      "mode": 511,
+      "size": 1694
+    },
+    "index.d.ts": {
+      "checkedAt": 1656298299919,
+      "integrity": "sha512-KGrKjCmrSMWZOpniUpQDc4EbZeNDsY4cY+KwDWKHzni+UjQ+v3h6fyjUQQXw2S6EYBDdK6ouU70rV9rIkyh7Mg==",
+      "mode": 511,
+      "size": 934
+    },
+    "package.json": {
+      "checkedAt": 1656298299919,
+      "integrity": "sha512-zwfnT8eMvAVc3HCiaqZ/VuUSCpogGcOLvbjqE2qBKDGw96602dPv5e22pIPaAZoid0VgYI/t+J5IRaRQirYBhQ==",
+      "mode": 511,
+      "size": 970
+    }
+  }
+}

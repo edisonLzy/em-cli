@@ -1,0 +1,30 @@
+{
+  "name": "gulp-clean-css",
+  "version": "4.3.0",
+  "files": {
+    "LICENSE": {
+      "checkedAt": 1656298304038,
+      "integrity": "sha512-aRVdWuM5txFiRKyUg4G2LLSfYDQ7RSUfS05pWpu+Y+LCCEPKbRgdbY9jhiaffvcIT58MsOmmObmlIvDoWFV4Xg==",
+      "mode": 420,
+      "size": 1071
+    },
+    "index.js": {
+      "checkedAt": 1656298304038,
+      "integrity": "sha512-4RrksuSO4OD+L9YiIXLdhiePFSh/uH3xyE7Cj72GQwPJo4KKgDsTn57LC9MjIq6XuIreQXrcLUzAG+vd/mdffA==",
+      "mode": 420,
+      "size": 1778
+    },
+    "package.json": {
+      "checkedAt": 1656298304038,
+      "integrity": "sha512-jQ3ErHzE/CujBWcig6Dc5MMKUxA+u7kNLHnnOqyJ/p3MbQEWXLlRZXWmEDUpKosJlHoiIDCeQJxLjLycE0ijBw==",
+      "mode": 420,
+      "size": 1472
+    },
+    "README.md": {
+      "checkedAt": 1656298304039,
+      "integrity": "sha512-or72xLRDDTnDM/DGM8iPcXNbB6baWmWWeNymbxyL0x+T4rUVY034c3uU9A5TG2szK22IpaJuHHlh2vY6ObZTOQ==",
+      "mode": 420,
+      "size": 3292
+    }
+  }
+}

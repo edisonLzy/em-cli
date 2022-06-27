@@ -1,0 +1,14 @@
+{
+    "name": "@types/p-map",
+    "version": "2.0.0",
+    "typings": null,
+    "description": "Stub TypeScript definitions entry for p-map, which provides its own types definitions",
+    "main": "",
+    "scripts": {},
+    "author": "",
+    "repository": "https://github.com/sindresorhus/p-map",
+    "license": "MIT",
+    "dependencies": {
+        "p-map": "*"
+    }
+}

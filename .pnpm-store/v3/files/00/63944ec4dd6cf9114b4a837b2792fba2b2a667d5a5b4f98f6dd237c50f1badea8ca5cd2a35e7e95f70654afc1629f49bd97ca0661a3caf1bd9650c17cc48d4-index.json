@@ -1,0 +1,30 @@
+{
+  "name": "@types/glob-stream",
+  "version": "6.1.1",
+  "files": {
+    "LICENSE": {
+      "checkedAt": 1656298289078,
+      "integrity": "sha512-HQaIQk9pwOcyKutyDk4o2a87WnotwYuLGYFW43emGm4FvIJFKPyg+OYaw5sTegKAKf+C5SKa1ACjzCLivbaHrQ==",
+      "mode": 511,
+      "size": 1141
+    },
+    "README.md": {
+      "checkedAt": 1656298304061,
+      "integrity": "sha512-kuHsh3Szrb3oz188cW4hSXsk0u8ht5/2uNeSpNl0Voi4FCccyGfpUSX2zqinoRORhocORBHUuvw9TuA5cUbDbg==",
+      "mode": 511,
+      "size": 2557
+    },
+    "index.d.ts": {
+      "checkedAt": 1656298304061,
+      "integrity": "sha512-v6WSldlo9IUrKRgS7Jqn6oC2nZn+CFi4W6SviUGVyoYarx7h+UbI/7/wteKUdXNxjs10YuemzrQGh7Hj/8hl4A==",
+      "mode": 511,
+      "size": 1772
+    },
+    "package.json": {
+      "checkedAt": 1656298304061,
+      "integrity": "sha512-3G/+A/2RgEbcQWpBh24KnbdH/N8KwVHDyeZMJ7HeAciWrkJdhYOJ+KuVz0R0u1NcP2Qj8croxY1MXRuUufRWwA==",
+      "mode": 511,
+      "size": 1005
+    }
+  }
+}

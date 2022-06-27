@@ -1,0 +1,30 @@
+{
+  "name": "@types/undertaker",
+  "version": "1.2.7",
+  "files": {
+    "LICENSE": {
+      "checkedAt": 1656298289078,
+      "integrity": "sha512-HQaIQk9pwOcyKutyDk4o2a87WnotwYuLGYFW43emGm4FvIJFKPyg+OYaw5sTegKAKf+C5SKa1ACjzCLivbaHrQ==",
+      "mode": 511,
+      "size": 1141
+    },
+    "README.md": {
+      "checkedAt": 1656298299851,
+      "integrity": "sha512-fbeN1+/08UWUCHVqljDwdRrEfEuDe8E4clOMEaEQ3Bpjq97f6QxsqY6y3m91YutdyjQe4DhmFyoWFGmJPLtqmQ==",
+      "mode": 511,
+      "size": 798
+    },
+    "index.d.ts": {
+      "checkedAt": 1656298299851,
+      "integrity": "sha512-OSAeg47bFqjTRvEBgcvkGpvLD1wDGmUKSXBSu/XTJTony/wSdU3dMr0RJONAe8LaMvbnGKZ82zA7i+U4O7zSIg==",
+      "mode": 511,
+      "size": 5321
+    },
+    "package.json": {
+      "checkedAt": 1656298299851,
+      "integrity": "sha512-FqQj68GDJv8heHg77/KneoesIvn0VaRtC6G+3wnJSX2gb732WNydTE21PNppvjfY8r6qJMlnjIF8EihsKHlzVw==",
+      "mode": 511,
+      "size": 1212
+    }
+  }
+}

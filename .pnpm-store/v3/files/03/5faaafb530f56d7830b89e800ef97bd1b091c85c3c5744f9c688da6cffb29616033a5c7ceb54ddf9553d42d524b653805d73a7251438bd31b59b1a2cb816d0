@@ -1,0 +1,2 @@
+export declare function checkIsisNakedFilePath(filePath: string): boolean;
+export declare function getRelativePath(filePath: string): string;

@@ -1,0 +1,24 @@
+{
+  "name": "@types/p-map",
+  "version": "2.0.0",
+  "files": {
+    "LICENSE": {
+      "checkedAt": 1656298290163,
+      "integrity": "sha512-OA1NKix/qrKxxfRisVCbGmX70dPqjsRn88PFfBoDRzStaYjo80MtZWn8vDOnalp8LU4MLPJBnqCFq/O/53Wd/w==",
+      "mode": 438,
+      "size": 1183
+    },
+    "README.md": {
+      "checkedAt": 1656298300574,
+      "integrity": "sha512-BIhtg1YEpHTuFZxJ81CqvOny/hckBUkOjFwGXJoHvSaxJN+k3dV50evZodFIJvrTzc3KMsMi44LMH2pVnepBrQ==",
+      "mode": 438,
+      "size": 166
+    },
+    "package.json": {
+      "checkedAt": 1656298300574,
+      "integrity": "sha512-3ush0q/AEt1L5sv/YE/xCz5lFpFBa+yx88nkv498nC/qI1g2qssNEbrS91kpB7Ms0jVlW0ObZ7lxYpJZ+Nxi9w==",
+      "mode": 438,
+      "size": 367
+    }
+  }
+}
