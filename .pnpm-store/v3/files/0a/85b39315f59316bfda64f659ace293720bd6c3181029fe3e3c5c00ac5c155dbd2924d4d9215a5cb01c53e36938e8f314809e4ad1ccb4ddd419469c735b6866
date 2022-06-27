@@ -1,0 +1,6 @@
+import type { Task, TaskItem } from './core';
+export declare class LinkNode<T> {
+    next: this | null;
+    data: TaskItem<T>;
+    constructor(description: string, fn: Task<T>);
+}

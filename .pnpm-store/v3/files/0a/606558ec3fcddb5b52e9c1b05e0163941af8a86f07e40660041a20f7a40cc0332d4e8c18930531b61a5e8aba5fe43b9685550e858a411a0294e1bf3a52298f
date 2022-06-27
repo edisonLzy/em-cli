@@ -1,0 +1,24 @@
+# @etools/fm
+
+## features
+
+- [x] ✈️ 统一批量输出文件
+- [x] 🚀 统一日志输出
+- [x] ✒️ 统一管理文件写入模式
+- [] 🚢 支持plugin对文件进行转换
+
+## usage
+
+```shell
+npm i @etools/fm
+```
+
+```ts
+import { FileManager } from '@etools/fm';
+const fm = new FileManager({
+  cwd: __dirname,
+});
+fm.addFile('./files/1.txt');
+fm.addFile('./files/2.txt');
+fm.outFile('./output');
+```

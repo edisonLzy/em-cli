@@ -1,0 +1,30 @@
+{
+  "name": "gulp-less",
+  "version": "5.0.0",
+  "files": {
+    "index.js": {
+      "checkedAt": 1656298298432,
+      "integrity": "sha512-+AphcOmh4iLxfscNjCkHWPD/oC7/rfwOZz4g7xYXtdPLROxep4XFi090zlvucfPN/gm1uieKyXk1gWAU4F/Y4g==",
+      "mode": 420,
+      "size": 2895
+    },
+    "package.json": {
+      "checkedAt": 1656298298433,
+      "integrity": "sha512-Y3+qKHdgvX2anDMqJr/zalIlHJEEhbRZkdyPUlDf1UfM/bjUBfeAwdrUt0GmTTymeaAJwmK1dODibLSXp+H99A==",
+      "mode": 420,
+      "size": 763
+    },
+    "Changelog.md": {
+      "checkedAt": 1656298298433,
+      "integrity": "sha512-MgPABn9a3ep8uht8gZXCtV4sIA81nXrQ/FUo097ZMtFmrA9W9s2E7epIgnhWrMpT7i0BjwUi2LfvB8W6My79oQ==",
+      "mode": 420,
+      "size": 929
+    },
+    "README.md": {
+      "checkedAt": 1656298298433,
+      "integrity": "sha512-rQPbCCx9RoXG8zQ6sSbsev1F0c4hoUe9wGLt2h7kRqNYEHsC7iiBT1hThTuiL7qW3iDtHirrjLlib0T6kWrqkQ==",
+      "mode": 420,
+      "size": 4417
+    }
+  }
+}
