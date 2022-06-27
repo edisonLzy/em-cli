@@ -1,9 +1,0 @@
-export declare type StatsType = keyof Omit<Stats, 'increase'>;
-export declare class Stats {
-    create: number;
-    overwrite: number;
-    skip: number;
-    error: number;
-    increase: (type: StatsType) => void;
-}
-export declare function logStats(stat: any): string;

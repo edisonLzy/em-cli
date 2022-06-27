@@ -1,6 +1,0 @@
-export declare const log: (msg?: string, tag?: string, output?: boolean) => void;
-export declare const info: (msg?: string, tag?: string, output?: boolean) => string;
-export declare const done: (msg?: string, tag?: string, output?: boolean) => string;
-export declare const warn: (msg?: string, tag?: string, output?: boolean) => string;
-export declare const error: (msg?: string, tag?: string, output?: boolean) => string;
-export declare const clearConsole: (title: string) => void;

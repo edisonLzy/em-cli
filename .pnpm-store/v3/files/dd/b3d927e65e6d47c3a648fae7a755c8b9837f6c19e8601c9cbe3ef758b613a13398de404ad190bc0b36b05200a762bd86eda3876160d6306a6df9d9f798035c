@@ -1,8 +1,0 @@
-import { VFile } from 'vfile';
-import { WriteFileMode } from '../types';
-import { StatsType } from './stats';
-export declare function transformValueByExtname(extname: VFile['extname'], value: VFile['value']): any;
-export declare function outputCheck(writeFileMode: WriteFileMode, file: VFile): Promise<{
-    type: StatsType;
-}>;
-export declare function output(file: VFile): Promise<void>;
