@@ -4,12 +4,12 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
-    "prepublishOnly": "pnpm build",
-    "clean": "pnpm clean -r && rimraf node_modules",
-    "build": "pnpm build -r",
+    "clean": "pnpm -r clean && rimraf node_modules",
     "start": "pnpm --parallel --filter em-plugin-init... --filter ee start",
     "ci:publish": "changeset publish",
     "ci:version": "changeset version",
+    "build": "pnpm -r build",
+    "lint": "eslint --fix && prettier --write",
     "test": "jest"
   },
   "devDependencies": {
