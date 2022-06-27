@@ -1,19 +1,13 @@
 import { FileManager, FileOptions } from '@etools/fm';
 import { ShellsManager } from '@em-cli/shared';
 
-type Deps =
-  | string[]
-  | Record<
-      string,
-      {
-        deps: string[];
-      }
-    >;
+type DepType = 'devDep' | 'dev';
+type Deps = string[];
 export class Product {
   // 产物名称
   name: string = '';
   // 需要安装的依赖
-  deps: ShellsManager;
+  deps: Map<DepType, Deps>;
   // 需要执行脚本
   shells: ShellsManager;
   // 需要输出的文件
@@ -23,22 +17,17 @@ export class Product {
       base: cwd,
       writeFileMode: 'skip',
     });
-    this.deps = new ShellsManager({
-      projectDir: cwd,
-    });
+    this.deps = new Map<DepType, Deps>([
+      ['dev', []],
+      ['devDep', []],
+    ]);
     this.shells = new ShellsManager({
       projectDir: cwd,
     });
   }
-  collectDeps(deps: Deps) {
-    if (Array.isArray(deps)) {
-      const depShells = ShellsManager.transformDepsToShells(deps);
-      this.deps.addShells([depShells]);
-    } else {
-      Object.values(deps).forEach(({ deps }) => {
-        this.collectDeps(deps);
-      });
-    }
+  collectDeps(type: DepType, deps: Deps) {
+    const rawDeps = this.deps.get(type)!;
+    this.deps.set(type, rawDeps.concat(deps));
     return this;
   }
   collectShells(shells: string[]) {

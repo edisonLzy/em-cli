@@ -60,6 +60,6 @@ class Logger extends Signale {
 }
 const logger = new Logger();
 logger.config({
-  displayTimestamp: true,
+  displayTimestamp: false,
 });
 export default logger;

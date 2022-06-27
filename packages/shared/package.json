@@ -38,6 +38,7 @@
     "ts-node": "^10.0.0"
   },
   "dependencies": {
+    "@antfu/install-pkg": "^0.1.0",
     "@types/jsonfile": "^6.0.1",
     "download-git-repo": "^3.0.2",
     "eslint": "^7.27.0",
