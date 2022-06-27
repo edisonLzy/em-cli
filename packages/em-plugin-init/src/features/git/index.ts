@@ -50,10 +50,9 @@ export default defineFeature({
         value: gitignore,
       },
     ]);
-    product.collectDeps(deps);
     if (gitTools.includes('husky')) {
       product
-        .collectDeps(deps['husky'].deps)
+        .collectDeps('devDep', deps['husky'].deps)
         .collectShells([
           'git init',
           'npx husky install',
@@ -76,7 +75,7 @@ export default defineFeature({
             value: commitLint,
           },
         ])
-        .collectDeps(deps['commitlint'].deps);
+        .collectDeps('devDep', deps['commitlint'].deps);
     }
   },
 });

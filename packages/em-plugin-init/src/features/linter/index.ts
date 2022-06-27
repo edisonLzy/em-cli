@@ -60,7 +60,7 @@ export default defineFeature({
           },
         ].filter(Boolean)
       )
-      .collectDeps(deps);
+      .collectDeps('devDep', deps);
 
     pkgEnhance(creator.projectDir, {
       create: {

@@ -1,20 +1,25 @@
+import { installPackage } from '@antfu/install-pkg';
+import { checkIsMonorepo } from './environment';
+import logger from './logger';
 /**
- * 安装依赖
- */
-
-import execa from 'execa';
-import { makeProgress } from './progress';
-const { start, end } = makeProgress();
-/**
- * 安装依赖
+ * base @antfu/install-pkg
+ * support monorepo project detect
  * @param opt
  */
-export async function install(...opt: string[]) {
-  start();
-  try {
-    await execa('npm', ['i', ...opt]);
-  } catch (e) {
-    console.log(e);
+
+export const installPkg: typeof installPackage = (name, options) => {
+  const isMonorepo = checkIsMonorepo();
+  let _options = options;
+  if (isMonorepo) {
+    // yarn workspace and pnpm workspace both use -w flag install pkg on root
+    logger.info('Detect is monorepo project');
+    _options = {
+      ..._options,
+      additionalArgs: (_options?.additionalArgs ?? []).concat('-w'),
+    };
   }
-  end();
-}
+  return installPackage(name, _options).then((v) => {
+    logger.success('Install Deps Success');
+    return v;
+  });
+};

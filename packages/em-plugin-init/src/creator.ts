@@ -1,5 +1,6 @@
 import { prompt } from 'inquirer';
 import type { CheckboxQuestionOptions, QuestionCollection } from 'inquirer';
+import { installPkg } from '@em-cli/shared';
 import { ApplyOptions } from './features/index';
 import { FeatureOptions } from './features';
 import loadApplies from './features/loadApply';
@@ -64,7 +65,7 @@ export class Creator {
     return projectOptions;
   }
   private async consumeProducts() {
-    const { fileManage, deps, name, shells } = this.product;
+    const { fileManage, deps, shells } = this.product;
     await this.processFiles(fileManage);
     await this.processDeps(deps);
     await this.processShells(shells);
@@ -73,7 +74,14 @@ export class Creator {
     await fileManage.outFile(this.projectDir);
   }
   private async processDeps(deps: Product['deps']) {
-    await deps.runShells();
+    for (const [type, dep] of deps.entries()) {
+      if (dep.length !== 0) {
+        await installPkg(dep, {
+          dev: type === 'devDep',
+          silent: true,
+        });
+      }
+    }
   }
   private async processShells(shells: Product['shells']) {
     await shells.runShells();

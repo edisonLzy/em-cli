@@ -1,10 +1,7 @@
 {
   "name": "@em-cli/em-plugin-renderer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "渲染模版",
-  "keywords": [
-    ""
-  ],
   "author": "lizhiyu <656603136@qq.com>",
   "homepage": "",
   "license": "ISC",
@@ -31,7 +28,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@em-cli/core": "^1.4.12",
-    "@em-cli/shared": "^0.2.1"
+    "@em-cli/core": "workspace:^1.4.13",
+    "@em-cli/shared": "workspace:^0.5.2"
   }
 }

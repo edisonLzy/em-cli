@@ -24,6 +24,8 @@ jobs:
           node-version: 14
       - name: install pnpm
         run: npm i pnpm@latest -g
+      - name: run test
+        run: pnpm t
       - name: Setup npmrc
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
       - name: setup pnpm config
@@ -31,7 +33,7 @@ jobs:
       - name: install dependencies
         run: pnpm install
       - name: create and publish versions
-        uses: changesets/action@master
+        uses: changesets/action@v1
         with:
           version: pnpm ci:version
           commit: "chore: update versions"
