@@ -1,5 +1,4 @@
 import { defineCommand } from '@em-cli/core';
-import { isMonorepo } from '@em-cli/shared';
 import { createServer } from 'vite';
 export default defineCommand({
   id: 'dev',

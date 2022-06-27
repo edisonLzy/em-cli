@@ -1,4 +1,4 @@
-import commander from 'commander';
+import commander, { createCommand } from 'commander';
 import { logger } from '@em-cli/shared';
 import BaseClass from './base';
 import { CommandConfig, Options } from './command';
@@ -12,7 +12,7 @@ class ECli extends BaseClass {
     this.program = this.createProgram(); // 创建program
   }
   private createProgram(): commander.Command {
-    const program = commander;
+    const program = createCommand();
     program
       .version(`@em-cli/ee ${require('../../package').version}`)
       .usage('<command> [subCommand] [options]');
