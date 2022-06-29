@@ -48,19 +48,22 @@ jobs:
 
       - name: debug
         run: |
-          ls -al
+          pnpm tsc --version
           pnpm ls inquirer --filter em-plugin-init
           pnpm ls @types/inquirer --filter em-plugin-init
           cat pnpm-lock.yaml | grep "inquirer" 
-      - name: prepare for publish
+      - name: build init only
         run: |
-          pnpm lint
-          pnpm build
-          pnpm t
-      - name: create and publish versions
-        uses: changesets/action@v1
-        with:
-          version: pnpm ci:version
-          publish: pnpm ci:publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pnpm run build --filter em-plugin-init... 
+      # - name: prepare for publish
+      #   run: |
+      #     pnpm lint
+      #     pnpm build
+      #     pnpm t
+      # - name: create and publish versions
+      #   uses: changesets/action@v1
+      #   with:
+      #     version: pnpm ci:version
+      #     publish: pnpm ci:publish
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
