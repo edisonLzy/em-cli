@@ -1,5 +1,14 @@
 # Change Log
 
+## 1.4.14
+
+### Patch Changes
+
+- cac4a03e: update
+- Updated dependencies [17783b0d]
+- Updated dependencies [cac4a03e]
+  - @em-cli/shared@1.0.0
+
 ## 1.4.13
 
 ### Patch Changes
