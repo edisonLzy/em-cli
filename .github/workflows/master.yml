@@ -7,7 +7,6 @@ env:
   CI: true
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 jobs:
   release:
     timeout-minutes: 15
@@ -43,16 +42,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Copy .npmrc to HOME directory
-        run: cp .npmrc $HOME
       - name: prepare for publish
         run: |
           pnpm lint
           pnpm t
       - name: create and publish versions
-        uses: changesets/action@v1
+        uses: changesets/action@master
         with:
           commit: "chore: update versions"
           publish: pnpm release
+          version: pnpm ci:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
