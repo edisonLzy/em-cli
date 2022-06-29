@@ -22,6 +22,8 @@
   },
   "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
   "devDependencies": {
+    "@types/inquirer": "^8.2.1",
+    "@types/node": "^18.0.0",
     "@types/signale": "^1.4.2",
     "typescript": "^4.3.5"
   },
@@ -33,6 +35,7 @@
     "@types/signale": "^1.4.2",
     "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
+    "inquirer": "^9.0.0",
     "read-pkg": "5",
     "shelljs": "^0.8.4",
     "signale": "^1.4.0"

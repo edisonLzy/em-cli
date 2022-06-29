@@ -64,6 +64,7 @@ importers:
       '@em-cli/em-plugin-init': workspace:^0.6.2
       '@em-cli/em-plugin-renderer': workspace:^0.0.3
       '@em-cli/em-plugin-template': workspace:^0.5.3
+      '@types/node': ^18.0.0
       rimraf: ^3.0.2
     dependencies:
       '@em-cli/core': link:../em-core
@@ -75,30 +76,38 @@ importers:
       '@em-cli/em-plugin-renderer': link:../em-plugin-renderer
       '@em-cli/em-plugin-template': link:../em-plugin-template
     devDependencies:
+      '@types/node': 18.0.0
       rimraf: 3.0.2
 
   packages/create-app:
     specifiers:
+      '@types/node': ^18.0.0
       commander: ^8.2.0
       read-pkg: 5.1.1
     dependencies:
       commander: 8.3.0
       read-pkg: 5.1.1
+    devDependencies:
+      '@types/node': 18.0.0
 
   packages/em-core:
     specifiers:
       '@em-cli/shared': workspace:^0.5.2
       '@types/commander': ^2.12.2
       '@types/ejs': ^3.0.6
+      '@types/fs-extra': ^9.0.13
       '@types/inquirer': ^8.2.1
       '@types/module-alias': ^2.0.1
+      '@types/node': ^18.0.0
       '@types/prettier': ^2.3.0
       '@types/read-pkg': ^5.1.0
       '@types/update-notifier': ^5.1.0
       commander: ^9.3.0
       cross-env: ^7.0.3
       ejs: ^3.1.6
+      fs-extra: ^10.0.0
       module-alias: ^2.2.2
+      p-map: ^5.5.0
       prettier: ^2.3.1
       read-pkg: ^5.1.1
       rimraf: ^3.0.2
@@ -109,7 +118,9 @@ importers:
       '@types/module-alias': 2.0.1
       commander: 9.3.0
       ejs: 3.1.8
+      fs-extra: 10.1.0
       module-alias: 2.2.2
+      p-map: 5.5.0
       prettier: 2.7.1
       read-pkg: 5.2.0
       update-notifier: 5.1.0
@@ -117,7 +128,9 @@ importers:
     devDependencies:
       '@types/commander': 2.12.2
       '@types/ejs': 3.1.1
+      '@types/fs-extra': 9.0.13
       '@types/inquirer': 8.2.1
+      '@types/node': 18.0.0
       '@types/prettier': 2.6.3
       '@types/read-pkg': 5.1.0
       '@types/update-notifier': 5.1.0
@@ -138,29 +151,39 @@ importers:
       '@rollup/plugin-babel': ^5.3.0
       '@rollup/plugin-commonjs': ^21.0.1
       '@rollup/plugin-node-resolve': ^13.0.5
+      '@types/fs-extra': ^9.0.13
+      '@types/glob': ^7.2.0
       '@types/gulp': ^4.0.9
       '@types/gulp-autoprefixer': ^0.0.33
       '@types/gulp-clean-css': ^4.3.0
       '@types/gulp-less': ^0.0.32
+      '@types/inquirer': ^8.2.1
       '@types/mini-css-extract-plugin': ^2.0.1
+      '@types/node': ^18.0.0
+      '@types/shelljs': ^0.8.11
       '@types/signale': ^1.4.2
+      '@types/undertaker': ^1.2.8
       '@types/webpack': ^5.28.0
       babel-loader: ^8.2.2
       core-js: '3'
       css-loader: ^6.2.0
       em-pipeline: ^0.1.2
       esbuild: ^0.12.16
-      fs-extra: ^10.0.0
+      execa: ^5.1.1
+      fs-extra: ^10.1.0
+      glob: ^8.0.3
       globby: ^12.0.0
       gulp: ^4.0.2
       gulp-autoprefixer: ^8.0.0
       gulp-clean-css: ^4.3.0
       gulp-less: ^5.0.0
+      inquirer: ^9.0.0
       less-loader: ^10.0.1
       mini-css-extract-plugin: ^2.1.0
       postcss-loader: ^6.1.1
       rollup: ^2.58.0
       rollup-plugin-typescript2: ^0.30.0
+      shelljs: ^0.8.4
       signale: ^1.4.0
       style-loader: ^3.2.1
       ts-node: ^10.1.0
@@ -187,27 +210,37 @@ importers:
       css-loader: 6.7.1_webpack@5.73.0
       em-pipeline: 0.1.2
       esbuild: 0.12.29
+      execa: 5.1.1
       fs-extra: 10.1.0
+      glob: 8.0.3
       globby: 12.2.0
       gulp: 4.0.2
       gulp-autoprefixer: 8.0.0_gulp@4.0.2
       gulp-clean-css: 4.3.0
       gulp-less: 5.0.0
+      inquirer: 9.0.0
       less-loader: 10.2.0_webpack@5.73.0
       mini-css-extract-plugin: 2.6.1_webpack@5.73.0
       postcss-loader: 6.2.1_webpack@5.73.0
       rollup: 2.75.7
       rollup-plugin-typescript2: 0.30.0_okefoyb4o5sittgqayreuhurei
+      shelljs: 0.8.5
       signale: 1.4.0
       style-loader: 3.3.1_webpack@5.73.0
-      ts-node: 10.8.1_typescript@4.7.4
+      ts-node: 10.8.1_qiyc72axg2v44xl4yovan2v55u
       webpack: 5.73.0_esbuild@0.12.29
       webpack-merge: 5.8.0
     devDependencies:
+      '@types/fs-extra': 9.0.13
+      '@types/glob': 7.2.0
       '@types/gulp': 4.0.9
       '@types/gulp-autoprefixer': 0.0.33
       '@types/gulp-clean-css': 4.3.0
       '@types/gulp-less': 0.0.32
+      '@types/inquirer': 8.2.1
+      '@types/node': 18.0.0
+      '@types/shelljs': 0.8.11
+      '@types/undertaker': 1.2.8
       '@types/webpack': 5.28.0_esbuild@0.12.29
       typescript: 4.7.4
 
@@ -216,10 +249,13 @@ importers:
       '@em-cli/core': workspace:^1.4.13
       '@em-cli/shared': workspace:^0.5.2
       '@types/fs-extra': ^9.0.12
+      '@types/inquirer': ^8.2.1
+      '@types/node': ^18.0.0
       '@types/shelljs': ^0.8.9
       '@types/signale': ^1.4.2
       fast-glob: ^3.2.7
       fs-extra: ^10.0.0
+      inquirer: ^9.0.0
       read-pkg: '5'
       shelljs: ^0.8.4
       signale: ^1.4.0
@@ -232,23 +268,28 @@ importers:
       '@types/signale': 1.4.4
       fast-glob: 3.2.11
       fs-extra: 10.1.0
+      inquirer: 9.0.0
       read-pkg: 5.2.0
       shelljs: 0.8.5
       signale: 1.4.0
     devDependencies:
+      '@types/inquirer': 8.2.1
+      '@types/node': 18.0.0
       typescript: 4.7.4
 
   packages/em-plugin-deploy:
     specifiers:
       '@em-cli/core': workspace:^1.4.13
       '@em-cli/shared': workspace:^0.5.2
+      '@types/fs-extra': ^9.0.13
       '@types/globby': ^9.1.0
       '@types/inquirer': ^8.2.1
+      '@types/node': ^18.0.0
       '@types/signale': ^1.4.2
       download-git-repo: ^3.0.2
       em-pipeline: ^0.1.0
       fast-glob: ^3.2.7
-      fs-extra: ^10.0.0
+      fs-extra: ^10.1.0
       globby: ^12.0.0
       inquirer: ^9.0.0
       signale: ^1.4.0
@@ -266,8 +307,10 @@ importers:
       signale: 1.4.0
       simple-git: 3.10.0
     devDependencies:
+      '@types/fs-extra': 9.0.13
       '@types/globby': 9.1.0
       '@types/inquirer': 8.2.1
+      '@types/node': 18.0.0
       '@types/signale': 1.4.4
       typescript: 4.7.4
 
@@ -275,6 +318,7 @@ importers:
     specifiers:
       '@em-cli/core': workspace:^1.4.13
       '@em-cli/shared': workspace:^0.5.2
+      '@types/node': ^18.0.0
       em-pipeline: ^0.1.0
       fs-extra: ^10.0.0
       typescript: ^4.3.5
@@ -286,6 +330,7 @@ importers:
       fs-extra: 10.1.0
       vite: 2.9.13
     devDependencies:
+      '@types/node': 18.0.0
       typescript: 4.7.4
 
   packages/em-plugin-init:
@@ -295,8 +340,10 @@ importers:
       '@etools/fm': ^0.0.7
       '@types/inquirer': ^8.2.1
       '@types/jsonfile': ^6.0.1
+      '@types/node': ^18.0.0
       '@types/shelljs': ^0.8.9
       em-pipeline: ^0.0.8
+      fast-glob: ^3.2.7
       fs-extra: ^10.0.0
       inquirer: ^9.0.0
       jsonfile: ^6.1.0
@@ -311,6 +358,7 @@ importers:
       '@etools/fm': 0.0.7
       '@types/jsonfile': 6.1.0
       em-pipeline: 0.0.8
+      fast-glob: 3.2.11
       fs-extra: 10.1.0
       inquirer: 9.0.0
       jsonfile: 6.1.0
@@ -320,6 +368,7 @@ importers:
       yaml: 1.10.2
     devDependencies:
       '@types/inquirer': 8.2.1
+      '@types/node': 18.0.0
       '@types/shelljs': 0.8.11
       typescript: 4.7.4
 
@@ -327,11 +376,13 @@ importers:
     specifiers:
       '@em-cli/core': workspace:^1.4.13
       '@em-cli/shared': workspace:^0.5.2
+      '@types/node': ^18.0.0
       typescript: ^4.3.5
     dependencies:
       '@em-cli/core': link:../em-core
       '@em-cli/shared': link:../shared
     devDependencies:
+      '@types/node': 18.0.0
       typescript: 4.7.4
 
   packages/em-plugin-template:
@@ -340,15 +391,20 @@ importers:
       '@em-cli/shared': workspace:^0.5.2
       '@etools/fm': ^0.0.7
       '@types/ejs': ^3.1.0
-      '@types/fs-extra': ^9.0.12
+      '@types/fs-extra': ^9.0.13
       '@types/inquirer': ^8.2.1
+      '@types/node': ^18.0.0
       '@types/p-map': ^2.0.0
+      chalk: ^5.0.1
       ejs: ^3.1.6
+      execa: ^5.1.1
       fast-glob: ^3.2.7
-      fs-extra: ^10.0.0
+      fs-extra: ^10.1.0
+      glob: ^8.0.3
       inquirer: ^9.0.0
       listr2: ^3.13.3
       p-map: ^5.1.0
+      shelljs: ^0.8.4
       simple-git: ^3.6.0
       typescript: ^4.3.5
       userhome: ^1.0.0
@@ -356,33 +412,44 @@ importers:
       '@em-cli/core': link:../em-core
       '@em-cli/shared': link:../shared
       '@etools/fm': 0.0.7
+      chalk: 5.0.1
       ejs: 3.1.8
+      execa: 5.1.1
       fast-glob: 3.2.11
       fs-extra: 10.1.0
+      glob: 8.0.3
       inquirer: 9.0.0
       listr2: 3.14.0
       p-map: 5.5.0
+      shelljs: 0.8.5
       simple-git: 3.10.0
       userhome: 1.0.0
     devDependencies:
       '@types/ejs': 3.1.1
       '@types/fs-extra': 9.0.13
       '@types/inquirer': 8.2.1
+      '@types/node': 18.0.0
       '@types/p-map': 2.0.0
       typescript: 4.7.4
 
   packages/shared:
     specifiers:
       '@antfu/install-pkg': ^0.1.0
+      '@types/chalk': ^2.2.0
       '@types/eslint': ^7.2.11
       '@types/fs-extra': ^9.0.11
       '@types/jsonfile': ^6.0.1
+      '@types/node': ^18.0.0
       '@types/npmlog': ^4.1.3
       '@types/progress': ^2.0.4
       '@types/read-pkg': ^5.1.0
+      '@types/shelljs': ^0.8.11
+      '@types/signale': ^1.4.4
+      chalk: ^5.0.1
       download-git-repo: ^3.0.2
       eslint: ^7.27.0
       execa: ^5.1.1
+      fast-glob: ^3.2.7
       fs-extra: ^10.0.0
       jsonfile: ^6.1.0
       log-symbols: ^4.1.0
@@ -400,9 +467,11 @@ importers:
     dependencies:
       '@antfu/install-pkg': 0.1.0
       '@types/jsonfile': 6.1.0
+      chalk: 5.0.1
       download-git-repo: 3.0.2
       eslint: 7.32.0
       execa: 5.1.1
+      fast-glob: 3.2.11
       fs-extra: 10.1.0
       jsonfile: 6.1.0
       log-symbols: 4.1.0
@@ -417,12 +486,16 @@ importers:
       strip-ansi: 6.0.1
       vinyl: 2.2.1
     devDependencies:
+      '@types/chalk': 2.2.0
       '@types/eslint': 7.29.0
       '@types/fs-extra': 9.0.13
+      '@types/node': 18.0.0
       '@types/npmlog': 4.1.4
       '@types/progress': 2.0.5
       '@types/read-pkg': 5.1.0
-      ts-node: 10.8.1
+      '@types/shelljs': 0.8.11
+      '@types/signale': 1.4.4
+      ts-node: 10.8.1_@types+node@18.0.0
 
 packages:
 
@@ -2530,6 +2603,13 @@ packages:
       '@babel/types': 7.18.4
     dev: true
 
+  /@types/chalk/2.2.0:
+    resolution: {integrity: sha512-1zzPV9FDe1I/WHhRkf9SNgqtRJWZqrBWgu7JGveuHmmyR9CnAPCie2N/x+iHrgnpYBIcCJWHBoMRv2TRWktsvw==}
+    deprecated: This is a stub types definition for chalk (https://github.com/chalk/chalk). chalk provides its own type definitions, so you don't need @types/chalk installed!
+    dependencies:
+      chalk: 5.0.1
+    dev: true
+
   /@types/clean-css/4.2.5:
     resolution: {integrity: sha512-NEzjkGGpbs9S9fgC4abuBvTpVwE3i+Acu9BBod3PUyjDVZcNsGx61b8r2PphR61QGPnn0JHVs5ey6/I4eTrkxw==}
     dependencies:
@@ -3916,7 +3996,6 @@ packages:
   /chalk/5.0.1:
     resolution: {integrity: sha512-Fo07WOYGqMfCWHOzSXOt2CxDbC6skS/jO9ynEcmpANMoPrD+W1r1K6Vx7iNm+AQmETU1Xr2t+n8nzkV9t6xh3w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
-    dev: false
 
   /char-regex/1.0.2:
     resolution: {integrity: sha512-kWWXztvZ5SBQV+eRgKFeh8q5sLuZY2+8WUIzlxWVTg+oGwY14qylx1KbKzHd8P6ZYkAg0xyIDU9JMHhyJMZ1jw==}
@@ -5946,6 +6025,17 @@ packages:
       minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
+
+  /glob/8.0.3:
+    resolution: {integrity: sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 5.1.0
+      once: 1.4.0
+    dev: false
 
   /global-dirs/0.1.1:
     resolution: {integrity: sha512-NknMLn7F2J7aflwFOlGdNIuCDpN3VGoSoB+aap3KABFWbHVn1TCgFC+np23J8W2BiZbjfEw3BFBycSMv1AFblg==}
@@ -10208,7 +10298,7 @@ packages:
       typescript: 4.7.4
     dev: true
 
-  /ts-node/10.8.1:
+  /ts-node/10.8.1_@types+node@18.0.0:
     resolution: {integrity: sha512-Wwsnao4DQoJsN034wePSg5nZiw4YKXf56mPIAeD6wVmiv+RytNSWqc2f3fKvcUoV+Yn2+yocD71VOfQHbmVX4g==}
     hasBin: true
     peerDependencies:
@@ -10227,6 +10317,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
+      '@types/node': 18.0.0
       acorn: 8.7.1
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -10237,7 +10328,7 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-node/10.8.1_typescript@4.7.4:
+  /ts-node/10.8.1_qiyc72axg2v44xl4yovan2v55u:
     resolution: {integrity: sha512-Wwsnao4DQoJsN034wePSg5nZiw4YKXf56mPIAeD6wVmiv+RytNSWqc2f3fKvcUoV+Yn2+yocD71VOfQHbmVX4g==}
     hasBin: true
     peerDependencies:
@@ -10256,6 +10347,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
+      '@types/node': 18.0.0
       acorn: 8.7.1
       acorn-walk: 8.2.0
       arg: 4.1.3

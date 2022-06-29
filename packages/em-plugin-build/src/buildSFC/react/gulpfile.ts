@@ -1,4 +1,4 @@
-import gulp from 'gulp';
+import { parallel } from 'gulp';
 import execa from 'execa';
 import { pkgEnhance } from '@em-cli/shared';
 import createBuildCompTask from './buildComp';
@@ -37,7 +37,7 @@ async function outputTypings() {
     cwd: process.cwd(),
   });
 }
-export default gulp.parallel(
+export default parallel(
   createBuildCompTask(),
   createBuildStyleTask(),
   enhancePkg,

@@ -21,5 +21,8 @@
     "commander": "^8.2.0",
     "read-pkg": "5.1.1"
   },
-  "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7"
+  "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
+  "devDependencies": {
+    "@types/node": "^18.0.0"
+  }
 }
