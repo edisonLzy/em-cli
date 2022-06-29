@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.4
+
+### Patch Changes
+
+- d4b3335b: aa
+
 ## 0.2.3
 
 ### Patch Changes
