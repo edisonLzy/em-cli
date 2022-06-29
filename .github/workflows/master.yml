@@ -21,6 +21,11 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
+      - name: setup npmrc
+        run: |
+          echo '//registry.npmjs.org/:_authToken=$NPM_TOKEN' >> .npmrc
+        env: 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: setup pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
@@ -54,4 +59,3 @@ jobs:
           version: pnpm ci:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
