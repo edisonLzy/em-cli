@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.5
+
+### Patch Changes
+
+- 93fe020d: sd
+
 ## 0.2.4
 
 ### Patch Changes
