@@ -51,7 +51,10 @@ jobs:
           pnpm tsc --version
           pnpm ls inquirer --filter em-plugin-init
           pnpm ls @types/inquirer --filter em-plugin-init
-          cat pnpm-lock.yaml | grep "inquirer" 
+          cd packages/em-plugin-init;
+          cat package.json
+          cd node_modules/@types
+          ls -al
       - name: build init only
         run: |
           pnpm run build --filter em-plugin-init... 
