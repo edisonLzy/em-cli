@@ -11,6 +11,10 @@
     "lib",
     "bin"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "clean": "rimraf lib",
     "start": "npm run clean && tsc --watch",

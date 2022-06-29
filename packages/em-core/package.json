@@ -39,5 +39,9 @@
     "@types/update-notifier": "^5.1.0",
     "cross-env": "^7.0.3",
     "rimraf": "^3.0.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
