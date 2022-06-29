@@ -11,7 +11,7 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "eslint --fix packages/*/src/**/* --ext .js,.ts,.tsx",
-    "release": "pnpm build && ci:publish"
+    "release": "pnpm build && pnpm ci:publish"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
