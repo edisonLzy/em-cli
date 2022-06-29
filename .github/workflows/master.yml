@@ -23,7 +23,7 @@ jobs:
       - name: setup pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
-            version: latest
+          version: latest
 
       - name: Get pnpm store directory
         id: pnpm-cache
@@ -40,33 +40,21 @@ jobs:
 
       - name: Setup npmrc
         run: |
-            echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' >> .npmrc
-            cat .npmrc
+          echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' >> .npmrc
+          cat .npmrc
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: debug
+      - name: prepare for publish
         run: |
-          pnpm tsc --version
-          pnpm ls inquirer --filter em-plugin-init
-          pnpm ls @types/inquirer --filter em-plugin-init
-          cd packages/em-plugin-init;
-          cat package.json
-          cd node_modules/@types
-          ls -al
-      - name: build init only
-        run: |
-          pnpm run build --filter em-plugin-init... 
-      # - name: prepare for publish
-      #   run: |
-      #     pnpm lint
-      #     pnpm build
-      #     pnpm t
-      # - name: create and publish versions
-      #   uses: changesets/action@v1
-      #   with:
-      #     version: pnpm ci:version
-      #     publish: pnpm ci:publish
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pnpm lint
+          pnpm build
+          pnpm t
+      - name: create and publish versions
+        uses: changesets/action@v1
+        with:
+          version: pnpm ci:version
+          publish: pnpm ci:publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
