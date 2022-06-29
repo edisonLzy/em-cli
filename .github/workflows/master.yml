@@ -8,7 +8,7 @@ env:
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 jobs:
-  version:
+  release:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
@@ -55,6 +55,7 @@ jobs:
         uses: changesets/action@v1
         with:
           version: pnpm ci:version
+          commit: "chore: update versions"
           publish: pnpm ci:publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
