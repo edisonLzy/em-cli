@@ -7,7 +7,6 @@
       "outputs": ["lib/**"]
     },
     "test": {
-      "dependsOn": ["^build"],
       "inputs": ["src/**/*.ts", "__tests__/**/*.ts"]
     }
   }
