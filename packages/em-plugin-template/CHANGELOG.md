@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.5
+
+### Patch Changes
+
+- bb583555: test
+
 ## 0.5.4
 
 ### Patch Changes

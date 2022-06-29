@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.4
+
+### Patch Changes
+
+- bb583555: test
+- Updated dependencies [bb583555]
+  - @em-cli/em-plugin-template@0.5.5
+
 ## 0.1.3
 
 ### Patch Changes
