@@ -2,13 +2,11 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "declarationDir": "./lib/typings",
     "outDir": "./lib",
-    "emitDeclarationOnly": true,
-    "jsx": "react-jsx",
-    "target": "ES2015",
-    "module": "ES2015"
+    "declarationDir": "./lib/typings",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*"],
-  "exclude": ["bin/*", "lib/**/*"]
+  "include": ["./src/**/*"]
 }

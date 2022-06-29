@@ -18,10 +18,10 @@
     "lib"
   ],
   "scripts": {
-    "prebuild": "npm run clean && tsc",
-    "build": "babel src --out-dir lib --extensions .ts ",
     "clean": "rimraf lib",
-    "start": "npm run build -- --watch"
+    "start": "npm run clean && tsc --watch",
+    "build": "npm run clean &&tsc",
+    "dev": "ts-node src/index.ts"
   },
   "gitHead": "d02fb469720e4e207e0dca29d8d7fa650a1aa145",
   "devDependencies": {
@@ -67,7 +67,7 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-less": "^5.0.0",
-    "inquirer": "^9.0.0",
+    "inquirer": "^8.0.0",
     "less-loader": "^10.0.1",
     "mini-css-extract-plugin": "^2.1.0",
     "postcss-loader": "^6.1.1",

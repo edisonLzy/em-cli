@@ -42,9 +42,9 @@
     "em-pipeline": "^0.0.8",
     "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
-    "inquirer": "^9.0.0",
+    "inquirer": "^8.0.0",
     "jsonfile": "^6.1.0",
-    "p-map": "4.0.0",
+    "p-map": "^4.0.0",
     "shelljs": "^0.8.4",
     "vinyl": "^2.2.1",
     "yaml": "^1.10.2"

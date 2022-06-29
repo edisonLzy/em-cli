@@ -39,10 +39,15 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Setup npmrc
-        run: echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' >> .npmrc
+        run: |
+            echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' >> .npmrc
+            cat .npmrc
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: debug
+        run: ls -al
 
       - name: prepare for publish
         run: |
