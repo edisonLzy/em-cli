@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [cac4a03e]
+  - @em-cli/core@1.4.14
+  - @em-cli/em-plugin-dev@0.4.3
+  - @em-cli/em-plugin-build@0.5.8
+  - @em-cli/em-plugin-create@0.4.3
+  - @em-cli/em-plugin-deploy@0.2.6
+  - @em-cli/em-plugin-init@0.6.3
+  - @em-cli/em-plugin-renderer@0.0.4
+  - @em-cli/em-plugin-template@0.5.4
+
 ## 0.1.2
 
 ### Patch Changes

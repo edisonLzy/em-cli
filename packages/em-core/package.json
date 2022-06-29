@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/core",
-  "version": "1.4.13",
+  "version": "1.4.14",
   "description": "make cli easier",
   "main": "lib/index.js",
   "typings": "lib/typings",
@@ -15,7 +15,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@em-cli/shared": "workspace:^0.5.2",
+    "@em-cli/shared": "workspace:^1.0.0",
     "@types/module-alias": "^2.0.1",
     "commander": "^9.3.0",
     "ejs": "^3.1.6",

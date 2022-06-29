@@ -1,5 +1,15 @@
 # Change Log
 
+## 1.0.0
+
+### Major Changes
+
+- 17783b0d: Modify Shell
+
+### Patch Changes
+
+- cac4a03e: update
+
 ## 0.5.4
 
 ### Patch Changes

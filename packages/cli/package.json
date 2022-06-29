@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/ee",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
@@ -23,13 +23,13 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "@em-cli/core": "workspace:^1.4.13",
-    "@em-cli/em-plugin-build": "workspace:^0.5.7",
-    "@em-cli/em-plugin-create": "workspace:^0.4.2",
-    "@em-cli/em-plugin-deploy": "workspace:^0.2.5",
-    "@em-cli/em-plugin-dev": "workspace:^0.4.2",
-    "@em-cli/em-plugin-init": "workspace:^0.6.2",
-    "@em-cli/em-plugin-renderer": "workspace:^0.0.3",
-    "@em-cli/em-plugin-template": "workspace:^0.5.3"
+    "@em-cli/core": "workspace:^1.4.14",
+    "@em-cli/em-plugin-build": "workspace:^0.5.8",
+    "@em-cli/em-plugin-create": "workspace:^0.4.3",
+    "@em-cli/em-plugin-deploy": "workspace:^0.2.6",
+    "@em-cli/em-plugin-dev": "workspace:^0.4.3",
+    "@em-cli/em-plugin-init": "workspace:^0.6.3",
+    "@em-cli/em-plugin-renderer": "workspace:^0.0.4",
+    "@em-cli/em-plugin-template": "workspace:^0.5.4"
   }
 }

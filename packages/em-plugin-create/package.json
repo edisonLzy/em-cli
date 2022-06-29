@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-create",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "创建插件包",
   "keywords": [
     "create"
@@ -28,8 +28,8 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@em-cli/core": "workspace:^1.4.13",
-    "@em-cli/shared": "workspace:^0.5.2",
+    "@em-cli/core": "workspace:^1.4.14",
+    "@em-cli/shared": "workspace:^1.0.0",
     "@types/fs-extra": "^9.0.12",
     "@types/shelljs": "^0.8.9",
     "@types/signale": "^1.4.2",
