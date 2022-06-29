@@ -47,8 +47,11 @@ jobs:
         run: pnpm install
 
       - name: debug
-        run: ls -al
-
+        run: |
+          ls -al
+          pnpm ls inquirer --filter em-plugin-init
+          pnpm ls @types/inquirer --filter em-plugin-init
+          cat pnpm-lock.yaml | grep "inquirer" 
       - name: prepare for publish
         run: |
           pnpm lint
