@@ -1,7 +1,6 @@
 export * as pathHelper from './path';
 export * from './environment';
 export { formate } from './eslint';
-export { makeProgress } from './progress';
 export { installPkg } from './installDeps';
 export { default as pkgEnhance, getPkgInfo } from './pkgEnhance';
 export { download } from './download';

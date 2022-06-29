@@ -5,6 +5,8 @@ on:
       - master
 env:
   CI: true
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 jobs:
   version:
     timeout-minutes: 15
@@ -18,17 +20,22 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
+      - name: setup pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+            version: latest
+            
       - name: Setup npmrc
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
-      - name: init project
-        run: |
-          npm i pnpm@latest -g
-          pnpm install
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: prepare for publish
         run: |
           pnpm lint
-          pnpm t
           pnpm build
+          pnpm t
       - name: create and publish versions
         uses: changesets/action@v1
         with:
