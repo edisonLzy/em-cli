@@ -1,5 +1,5 @@
 import { Creator } from './../creator';
-import { InjectPrompt } from '../promptModules';
+import type { InjectPrompt } from '../prompt';
 export type InjectPlugin = (options: ApplyOptions, creator: Creator) => void;
 
 export interface FeatureOptions {

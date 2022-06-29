@@ -4,8 +4,8 @@ import { installPkg } from '@em-cli/shared';
 import { ApplyOptions } from './features/index';
 import { FeatureOptions } from './features';
 import loadApplies from './features/loadApply';
-import type { OnPromptComplete } from './promptModules';
-import { PromptModuleAPI } from './promptModules';
+import type { OnPromptComplete } from './prompt';
+import { PromptModuleAPI } from './prompt';
 import { Product } from './product';
 const defaultFeaturePrompt = {
   name: 'features',
