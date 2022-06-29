@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rimraf lib",
     "start": "npm run clean && tsc --watch",
-    "build": "npm run clean && tsc",
+    "build": "tsc",
     "dev": "ts-node src/index.ts"
   },
   "license": "ISC",
