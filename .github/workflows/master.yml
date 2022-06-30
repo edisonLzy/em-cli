@@ -7,6 +7,8 @@ env:
   CI: true
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   release:
     timeout-minutes: 15
@@ -20,15 +22,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
-          registry-url: https://registry.npmjs.org/
       - name: setup npmrc
         run: |
           echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc
           cat .npmrc
-          echo ${NPM_TOKEN} >> 1.text
-          cat 1.text
-        env: 
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: setup pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
