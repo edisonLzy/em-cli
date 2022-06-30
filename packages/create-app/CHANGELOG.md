@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.7
+
+### Patch Changes
+
+- 38d7ba9b: test
+
 ## 0.2.6
 
 ### Patch Changes
