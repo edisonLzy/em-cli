@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.5.6
+
+### Patch Changes
+
+- e6cd75c2: asd
+- 584e79ac: rename tip
+- e6cd75c2: tipsre
+
 ## 0.5.5
 
 ### Patch Changes
