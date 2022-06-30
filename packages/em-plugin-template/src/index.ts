@@ -34,7 +34,7 @@ export default defineCommand({
     {
       id: 'create',
       args: '<project>',
-      option: [['-w,--workinDir <workinDir>', '工作目录', process.cwd()]],
+      option: [['-w,--workinDir <workinDir>', '工作路径', process.cwd()]],
       description: 'use selected template create project',
       async run({ args, optionsArgs }) {
         const { workinDir } = optionsArgs;
