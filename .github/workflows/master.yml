@@ -25,7 +25,6 @@ jobs:
       - name: setup npmrc
         run: |
           echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc
-          cat .npmrc
       - name: setup pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
@@ -49,6 +48,7 @@ jobs:
 
       - name: prepare for publish
         run: |
+          pnpm whoami
           pnpm lint
           pnpm t
       - name: create and publish versions
