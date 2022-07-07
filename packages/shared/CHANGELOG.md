@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.1
+
+### Patch Changes
+
+- 8dee8379: add support methods
+
 ## 1.0.0
 
 ### Major Changes

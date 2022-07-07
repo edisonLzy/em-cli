@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.5
+
+### Patch Changes
+
+- 8dee8379: add em-plugin-debug
+- Updated dependencies [8dee8379]
+  - @em-cli/em-plugin-debug@0.0.2
+
 ## 0.1.4
 
 ### Patch Changes
