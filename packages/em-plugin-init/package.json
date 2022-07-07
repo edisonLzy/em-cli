@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-init",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "项目初始化",
   "keywords": [
     "项目初始化"
