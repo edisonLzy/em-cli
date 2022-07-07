@@ -15,7 +15,8 @@ class ECli extends BaseClass {
     const program = createCommand();
     program
       .version(`@em-cli/ee ${require('../../package').version}`)
-      .usage('<command> [subCommand] [options]');
+      .usage('<command> [subCommand] [options]')
+      .passThroughOptions();
     return program;
   }
   private registerCommand(command: CommandConfig, program: commander.Command) {
