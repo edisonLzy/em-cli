@@ -24,12 +24,13 @@ export class Creator {
   // 注入的项目选项
   projectOptions: Record<string, unknown> = {};
   // 产物
-  product: Product = new Product(this.projectDir);
+  product: Product;
   constructor(
     public projectName: string,
     public projectDir: string,
     private features: FeatureOptions[]
   ) {
+    this.product = new Product(projectDir);
     const promptModuleAPI = PromptModuleAPI.getInstance(this);
     features.forEach((f) => f.injectPrompt(promptModuleAPI));
   }
