@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.4
+
+### Patch Changes
+
+- bc9b7e66: fix: fix debug
+
 ## 0.6.3
 
 ### Patch Changes
