@@ -37,12 +37,12 @@ async function addRepoInConfigFile(remoteUrl: string) {
 }
 export async function addTemplate(remoteUrl: string) {
   const dirname = getDirnameByRemoteUrl(remoteUrl);
+  // 下载模版到缓存中
+  await download(remoteUrl, dirname);
   // 添加模版到配置文件中
   await addRepoInConfigFile(remoteUrl);
   // 添加缓存目录
   await ensureRemoteRepoInLocal();
-  // 下载模版到缓存中
-  await download(remoteUrl, dirname);
   logger.success('success download %s in %s', remoteUrl, dirname);
   logger.info('your can get template list by ee template', '');
 }

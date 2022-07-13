@@ -59,10 +59,11 @@ importers:
       '@em-cli/core': workspace:^1.4.14
       '@em-cli/em-plugin-build': workspace:^0.5.8
       '@em-cli/em-plugin-create': workspace:^0.4.3
-      '@em-cli/em-plugin-debug': workspace:^0.0.1
+      '@em-cli/em-plugin-debug': workspace:^0.0.2
       '@em-cli/em-plugin-deploy': workspace:^0.2.6
       '@em-cli/em-plugin-dev': workspace:^0.4.3
       '@em-cli/em-plugin-init': workspace:^0.6.3
+      '@em-cli/em-plugin-open': workspace:^0.0.1
       '@em-cli/em-plugin-renderer': workspace:^0.0.4
       '@em-cli/em-plugin-template': workspace:^0.5.5
       '@types/node': ^18.0.0
@@ -75,6 +76,7 @@ importers:
       '@em-cli/em-plugin-deploy': link:../em-plugin-deploy
       '@em-cli/em-plugin-dev': link:../em-plugin-dev
       '@em-cli/em-plugin-init': link:../em-plugin-init
+      '@em-cli/em-plugin-open': link:../em-plugin-open
       '@em-cli/em-plugin-renderer': link:../em-plugin-renderer
       '@em-cli/em-plugin-template': link:../em-plugin-template
     devDependencies:
@@ -395,6 +397,17 @@ importers:
       '@types/inquirer': 8.2.1
       '@types/node': 18.0.0
       '@types/shelljs': 0.8.11
+      typescript: 4.7.4
+
+  packages/em-plugin-open:
+    specifiers:
+      '@em-cli/core': workspace:*
+      '@em-cli/shared': workspace:*
+      typescript: ^4.3.5
+    dependencies:
+      '@em-cli/core': link:../em-core
+      '@em-cli/shared': link:../shared
+    devDependencies:
       typescript: 4.7.4
 
   packages/em-plugin-renderer:
