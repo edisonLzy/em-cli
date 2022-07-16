@@ -1,6 +1,10 @@
 import { Signale } from 'signale';
+import ora from 'ora';
 import os from 'os';
 import chalk from 'chalk';
+import { downloadImg } from '../download';
+import { terminal } from 'terminal-kit';
+
 const tips = 'em-cli';
 class Logger extends Signale {
   constructor(scope = chalk.blueBright(tips)) {
@@ -56,6 +60,22 @@ class Logger extends Signale {
     this.note(`${tips}
     ${os.EOL}${content}
     `);
+  }
+  async img(url: string) {
+    // TODO
+    if (/^https?:\/\//.test(url)) {
+      const localFile = await downloadImg(url);
+      terminal.drawImage(localFile);
+      return;
+    }
+    terminal.drawImage(url);
+  }
+  spin(text: string) {
+    const spin = ora({
+      text: text,
+      color: 'gray',
+    }).start();
+    return spin;
   }
 }
 const logger = new Logger();
