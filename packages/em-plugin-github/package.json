@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-github",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "fetch specify github user repo",
   "keywords": [
     "github repo"

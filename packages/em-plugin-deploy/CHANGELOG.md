@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.7
+
+### Patch Changes
+
+- 8f51b8c7: add github command and enhance logger in shard
+- Updated dependencies [8f51b8c7]
+  - @em-cli/shared@1.0.2
+
 ## 0.2.6
 
 ### Patch Changes
