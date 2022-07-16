@@ -30,7 +30,9 @@ export async function getRepo(dir: string) {
   let spin = logger.spin('init github');
   const octokit = await getOctokit();
   spin.text = 'fetch github repos list';
-  const { data } = await octokit.request('GET /user/repos');
+  const { data } = await octokit.request('GET /user/repos', {
+    per_page: 100,
+  });
   spin.stop();
   const choices: Array<{
     name: string;
