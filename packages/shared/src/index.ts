@@ -6,4 +6,6 @@ export { default as pkgEnhance, getPkgInfo } from './pkgEnhance';
 export { download } from './download';
 export { default as ShellsManager } from './Shells';
 export { default as logger } from './logger';
+export { default as inquirer } from './inquirer';
+export { default as git } from './git';
 export * from './scan';

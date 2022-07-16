@@ -1,4 +1,4 @@
-import simpleGit, { SimpleGit } from 'simple-git';
+import simpleGit from 'simple-git';
 import inquirer from 'inquirer';
 import fg from 'fast-glob';
 import fs from 'fs-extra';
@@ -7,7 +7,7 @@ import signale from 'signale';
 import globalConfig from './config';
 import { formateContent } from './formate';
 
-const git: SimpleGit = simpleGit();
+const git = simpleGit();
 
 /**
  * 目前只匹配 md 文件
