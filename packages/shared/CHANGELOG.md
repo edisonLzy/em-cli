@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.2
+
+### Patch Changes
+
+- 8f51b8c7: add github command and enhance logger in shard
+
 ## 1.0.1
 
 ### Patch Changes

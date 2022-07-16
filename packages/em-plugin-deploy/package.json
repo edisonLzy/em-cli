@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-deploy",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "部署项目",
   "keywords": [
     "docker",
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@em-cli/core": "workspace:^1.4.14",
-    "@em-cli/shared": "workspace:^1.0.0",
+    "@em-cli/shared": "workspace:^1.0.2",
     "download-git-repo": "^3.0.2",
     "em-pipeline": "^0.1.0",
     "fast-glob": "^3.2.7",

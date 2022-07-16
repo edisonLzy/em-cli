@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.6
+
+### Patch Changes
+
+- 8f51b8c7: add github command and enhance logger in shard
+- Updated dependencies [f7a13dab]
+- Updated dependencies [8f51b8c7]
+  - @em-cli/em-plugin-github@0.0.2
+  - @em-cli/em-plugin-deploy@0.2.7
+  - @em-cli/em-plugin-debug@0.0.3
+
 ## 0.1.5
 
 ### Patch Changes
