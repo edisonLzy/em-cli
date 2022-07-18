@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
+    "@types/configstore": "^6.0.0",
     "@types/eslint": "^7.2.11",
     "@types/fs-extra": "^9.0.11",
     "@types/inquirer": "^8.2.1",
@@ -48,6 +49,7 @@
     "@antfu/install-pkg": "^0.1.0",
     "@types/jsonfile": "^6.0.1",
     "chalk": "^4.0.0",
+    "configstore": "^5.0.0",
     "download-git-repo": "^3.0.2",
     "eslint": "^7.27.0",
     "execa": "^5.1.1",

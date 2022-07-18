@@ -11,6 +11,7 @@
     "pretty": true,
     "target": "ESNext",
     "noImplicitThis": false,
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
   }
 }
