@@ -20,3 +20,6 @@ export async function getUserInfo() {
     // }
   }
 }
+export async function whoami() {
+  const { name } = await getUserInfo();
+}

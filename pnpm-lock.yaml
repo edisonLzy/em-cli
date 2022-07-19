@@ -80,7 +80,7 @@ importers:
       '@em-cli/em-plugin-init': link:../em-plugin-init
       '@em-cli/em-plugin-renderer': link:../em-plugin-renderer
       '@em-cli/em-plugin-template': link:../em-plugin-template
-      '@em-cli/em-plugin-yuque': link:../em-plugin-yuque/lib
+      '@em-cli/em-plugin-yuque': link:../em-plugin-yuque
     devDependencies:
       '@types/node': 18.0.6
       rimraf: 3.0.2
@@ -492,28 +492,19 @@ importers:
       '@em-cli/shared': workspace:*
       '@types/uuid': ^8.3.4
       '@yuque/sdk': ^1.1.1
+      fast-glob: ^3.2.7
+      fuzzy: ^0.1.3
       typescript: ^4.3.5
       uuid: ^8.3.2
     dependencies:
       '@em-cli/core': link:../em-core
       '@em-cli/shared': link:../shared
       '@yuque/sdk': 1.1.1
+      fast-glob: 3.2.11
+      fuzzy: 0.1.3
       uuid: 8.3.2
     devDependencies:
       '@types/uuid': 8.3.4
-      typescript: 4.7.4
-
-  packages/em-plugin-yuque/lib:
-    specifiers:
-      '@em-cli/core': workspace:*
-      '@em-cli/shared': workspace:*
-      '@yuque/sdk': ^1.1.1
-      typescript: ^4.3.5
-    dependencies:
-      '@em-cli/core': link:../../em-core
-      '@em-cli/shared': link:../../shared
-      '@yuque/sdk': 1.1.1
-    devDependencies:
       typescript: 4.7.4
 
   packages/shared:

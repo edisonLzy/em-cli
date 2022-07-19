@@ -3,9 +3,8 @@
  */
 import { defineCommand } from '@em-cli/core';
 import { logger } from '@em-cli/shared';
-import { getUserInfo } from './core';
-import { createRepo } from './core/repos';
-
+import { whoami } from './core';
+import { batchDeleteRepos, syncToRepos } from './core/repos';
 export default defineCommand({
   id: 'yuque',
   description: 'base yuque sdk',
@@ -14,14 +13,20 @@ export default defineCommand({
       id: 'whoami',
       description: 'get current user information',
       async run() {
-        getUserInfo().catch(logger.error);
+        whoami().catch(logger.error);
+      },
+    },
+    {
+      id: 'sync',
+      description: 'sync local dir to yuque repos',
+      option: [['-d,--dir [dirname]', '工作目录', process.cwd()]],
+      async run({ args, optionsArgs }) {
+        const { dirname } = optionsArgs;
+        syncToRepos(dirname).catch(logger.error);
       },
     },
   ],
   async run({ args, optionsArgs }) {
-    createRepo({
-      name: 'asd11',
-      description: 'ass',
-    });
+    batchDeleteRepos().catch(logger.error);
   },
 });

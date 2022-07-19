@@ -1,5 +1,4 @@
-import { createStore, inquirer } from '@em-cli/shared';
-import type { Store } from '@em-cli/shared';
+import { inquirer } from '@em-cli/shared';
 import { AUTH_TOKEN_KEY } from '../constant';
 import { store } from './getStore';
 

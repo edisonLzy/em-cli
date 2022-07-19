@@ -1,6 +1,6 @@
 # `@em-cli/em-plugin-yuque`
 
-- https://github.com/yuque/sdk
+- https://www.yuque.com/yuque/developer/ag3xgd
 
 ## Usage
 
