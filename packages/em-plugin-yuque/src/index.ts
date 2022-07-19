@@ -4,6 +4,7 @@
 import { defineCommand } from '@em-cli/core';
 import { logger } from '@em-cli/shared';
 import { whoami } from './core';
+import { batchDeleteDocs } from './core/docs';
 import { batchDeleteRepos, syncToRepos } from './core/repos';
 export default defineCommand({
   id: 'yuque',
@@ -19,7 +20,7 @@ export default defineCommand({
     {
       id: 'sync',
       description: 'sync local dir to yuque repos',
-      option: [['-d,--dir [dirname]', '工作目录', process.cwd()]],
+      option: [['-d,--dirname [dirname]', '工作目录', process.cwd()]],
       async run({ args, optionsArgs }) {
         const { dirname } = optionsArgs;
         syncToRepos(dirname).catch(logger.error);
@@ -27,6 +28,6 @@ export default defineCommand({
     },
   ],
   async run({ args, optionsArgs }) {
-    batchDeleteRepos().catch(logger.error);
+    batchDeleteDocs().catch(logger.error);
   },
 });

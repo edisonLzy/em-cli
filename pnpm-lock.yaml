@@ -490,10 +490,14 @@ importers:
     specifiers:
       '@em-cli/core': workspace:*
       '@em-cli/shared': workspace:*
+      '@types/fs-extra': ^9.0.13
       '@types/uuid': ^8.3.4
       '@yuque/sdk': ^1.1.1
       fast-glob: ^3.2.7
+      fs-extra: ^10.1.0
       fuzzy: ^0.1.3
+      p-map: ^4.0.0
+      p-reduce: ^2.0.0
       typescript: ^4.3.5
       uuid: ^8.3.2
     dependencies:
@@ -501,9 +505,13 @@ importers:
       '@em-cli/shared': link:../shared
       '@yuque/sdk': 1.1.1
       fast-glob: 3.2.11
+      fs-extra: 10.1.0
       fuzzy: 0.1.3
+      p-map: 4.0.0
+      p-reduce: 2.1.0
       uuid: 8.3.2
     devDependencies:
+      '@types/fs-extra': 9.0.13
       '@types/uuid': 8.3.4
       typescript: 4.7.4
 
@@ -520,6 +528,7 @@ importers:
       '@types/node': ^18.0.0
       '@types/npmlog': ^4.1.3
       '@types/progress': ^2.0.4
+      '@types/randomstring': ^1.1.8
       '@types/read-pkg': ^5.1.0
       '@types/shelljs': ^0.8.11
       '@types/signale': ^1.4.4
@@ -541,6 +550,7 @@ importers:
       npmlog: ^5.0.1
       ora: ^5.0.0
       progress: ^2.0.3
+      randomstring: ^1.2.2
       read-pkg: ^5.1.1
       readline: ^1.3.0
       resolve-cwd: ^3.0.0
@@ -569,6 +579,7 @@ importers:
       npmlog: 5.0.1
       ora: 5.4.1
       progress: 2.0.3
+      randomstring: 1.2.2
       read-pkg: 5.2.0
       readline: 1.3.0
       resolve-cwd: 3.0.0
@@ -588,6 +599,7 @@ importers:
       '@types/node': 18.0.6
       '@types/npmlog': 4.1.4
       '@types/progress': 2.0.5
+      '@types/randomstring': 1.1.8
       '@types/read-pkg': 5.1.0
       '@types/shelljs': 0.8.11
       '@types/signale': 1.4.4
@@ -3263,6 +3275,10 @@ packages:
     resolution: {integrity: sha512-ZREFYlpUmPQJ0esjxoG1fMvB2HNaD3z+mjqdSosZvd3RalncI9NEur73P8ZJz4YQdL64CmV1w0RuqoRUlhQRBw==}
     dev: false
 
+  /@types/randomstring/1.1.8:
+    resolution: {integrity: sha512-NPOJcW+TTjT9Qiog0UjSoG3Sj24c7EfzZO39BU9E61D7fQtwNmBNblyQhSsK9+5s9Fm0o31rvX+ZyZkpE/c7jA==}
+    dev: true
+
   /@types/read-pkg/5.1.0:
     resolution: {integrity: sha512-YOrcNByG1rPqIMhEMC1xU4SeFHcvQmHkl8yT6M4qPr+8eM1OBxRFJWog2uO+kx5Ept48Wdv+DuriUAVMC+LbQA==}
     deprecated: This is a stub types definition. read-pkg provides its own type definitions, so you do not need this installed.
@@ -3924,6 +3940,11 @@ packages:
   /array-union/3.0.1:
     resolution: {integrity: sha512-1OvF9IbWwaeiM9VhzYXVQacMibxpXOMYVNIvMtKRyX9SImBXpKcFr8XvFDeEslCyuH/t6KRt7HEO94AlP8Iatw==}
     engines: {node: '>=12'}
+
+  /array-uniq/1.0.2:
+    resolution: {integrity: sha512-GVYjmpL05al4dNlKJm53mKE4w9OOLiuVHWorsIA3YVz+Hu0hcn6PtE3Ydl0EqU7v+7ABC4mjjWsnLUxbpno+CA==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /array-unique/0.3.2:
     resolution: {integrity: sha512-SleRWjh9JUud2wH1hPs9rZBZ33H6T9HOiL0uwGnGx9FpE6wKGyfWugmbkEOIs6qWrZhg0LWeLziLrEwQJhs5mQ==}
@@ -9564,6 +9585,11 @@ packages:
     dependencies:
       aggregate-error: 3.1.0
 
+  /p-reduce/2.1.0:
+    resolution: {integrity: sha512-2USApvnsutq8uoxZBGbbWM0JIYLiEMJ9RlaN7fAzVNb9OZN0SHjjTTfIcb667XynS5Y1VhwDJVDa72TnPzAYWw==}
+    engines: {node: '>=8'}
+    dev: false
+
   /p-timeout/2.0.1:
     resolution: {integrity: sha512-88em58dDVB/KzPEx1X0N3LwFfYZPyDc4B6eF38M1rk9VTZMbxXXgjugz8mmwpS9Ox4BDZ+t6t3QP5+/gazweIA==}
     engines: {node: '>=4'}
@@ -10093,10 +10119,22 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /randombytes/2.0.3:
+    resolution: {integrity: sha512-lDVjxQQFoCG1jcrP06LNo2lbWp4QTShEXnhActFBwYuHprllQV6VUpwreApsYqCgD+N1mHoqJ/BI/4eV4R2GYg==}
+    dev: false
+
   /randombytes/2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
     dependencies:
       safe-buffer: 5.2.1
+
+  /randomstring/1.2.2:
+    resolution: {integrity: sha512-9FByiB8guWZLbE+akdQiWE3I1I6w7Vn5El4o4y7o5bWQ6DWPcEOp+aLG7Jezc8BVRKKpgJd2ppRX0jnKu1YCfg==}
+    hasBin: true
+    dependencies:
+      array-uniq: 1.0.2
+      randombytes: 2.0.3
+    dev: false
 
   /raw-body/2.5.1:
     resolution: {integrity: sha512-qqJBtEyVgS0ZmPGdCFPWJ3FreoqvG4MVQln/kCgF7Olq95IbOp0/BWyMwbdtn4VTvkM8Y7khCQ2Xgk/tcrCXig==}

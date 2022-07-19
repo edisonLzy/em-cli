@@ -1,7 +1,7 @@
-import SDK from '@yuque/sdk';
+import { SDK } from '../sdk';
 import { getToken } from './getToken';
 
-let instance: any;
+let instance: SDK;
 export async function getSDK() {
   if (instance) {
     return instance;

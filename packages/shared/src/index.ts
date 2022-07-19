@@ -1,5 +1,6 @@
 export * as pathHelper from './path';
 export * from './environment';
+export * as random from './random';
 export { formate } from './eslint';
 export { installPkg } from './installDeps';
 export { default as pkgEnhance, getPkgInfo } from './pkgEnhance';

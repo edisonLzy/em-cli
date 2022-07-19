@@ -1,10 +1,13 @@
-import { logger, inquirer } from '@em-cli/shared';
+import { logger, inquirer, pathHelper } from '@em-cli/shared';
+import pMap from 'p-map';
+import path from 'path';
 import fg from 'fast-glob';
 import { v4 as uuidv4 } from 'uuid';
 import fuzzy from 'fuzzy';
+import { store } from './../utils/getStore';
 import { getSDK } from '../utils/setupSdk';
 import { getUserInfo } from './users';
-import { createDoc } from './docs';
+import { createDoc, createNestDoc } from './docs';
 export async function createRepo(params: {
   name: string;
   description?: string;
@@ -71,22 +74,41 @@ export async function batchDeleteRepos() {
   await Promise.all(namespaces.map(deleteRepo));
 }
 
-export async function syncToRepo(name: string) {
-  const { id } = await createRepo({
+export async function getMayRepoExist(name: string) {
+  if (store.has(name)) {
+    return store.get(name);
+  }
+  const repo = await createRepo({
     name,
-    description: 'this is description',
+    description: `this docs for ${name}`,
   });
-  // TODO
-  await createDoc({
-    id: id,
-    title: 'test/asd',
-    body: 'asdasd',
+  store.set(name, repo);
+  return repo;
+}
+
+export async function syncToRepo(filePath: string, fullPath: string) {
+  const accessPath = pathHelper.separatePath(filePath);
+  const [repoName, ...docs] = accessPath;
+  // 创建一个知识库
+  const { id } = await getMayRepoExist(repoName);
+  await createNestDoc(docs, {
+    namespace: id,
+    fullPath: fullPath,
   });
 }
 export async function syncToRepos(workInDir: string) {
-  const dirs = await fg('*', {
-    onlyDirectories: true,
+  const mds = await fg('**/*.md', {
+    cwd: workInDir,
+    onlyFiles: true,
   });
-  const testDir = dirs.filter((el) => el === '训练营');
-  return testDir.map(syncToRepo);
+  return pMap(
+    mds,
+    async (md) => {
+      const full = path.join(workInDir, md);
+      return await syncToRepo(md, full);
+    },
+    {
+      concurrency: 1,
+    }
+  );
 }
