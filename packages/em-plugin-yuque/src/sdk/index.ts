@@ -22,7 +22,7 @@ class TOC {
     return this.client.request(`repos/${namespace}/toc`, {
       method: 'PUT',
       data: {
-        action: 'appendByDocs',
+        action: 'prependByDocs',
         ...data,
       },
     });

@@ -38,7 +38,7 @@ export async function getRepos() {
   return res;
 }
 
-export async function deleteRepo(namespace: string | number) {
+export async function deleteRepo(namespace: string) {
   const spin = logger.spin(`deleting ${namespace}`);
   const sdk = await getSDK();
   await sdk.repos.delete({

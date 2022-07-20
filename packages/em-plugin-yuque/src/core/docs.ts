@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs-extra';
 import fuzzy from 'fuzzy';
 import { inquirer, logger, random } from '@em-cli/shared';
-import { getSpecTocUUID, setDocToSpecToc } from './toc';
+import { setDocToSpecToc } from './toc';
 import { getRepos } from './repos';
 import { getSlug } from '../utils/getSlug';
 import { getSDK } from '../utils/setupSdk';
@@ -63,28 +63,17 @@ export async function deleteDoc({
 }
 export async function batchDeleteDocs() {
   const { docs, namespace } = await getDocs();
-  const choices = docs.map(({ id: value, title: label }) => {
+  const choices = docs.map(({ id: value, title: name }) => {
     return {
       value,
-      label,
+      name,
     };
   });
-  const { docs: deleteDocIds } = await inquirer.prompt([
-    {
-      type: 'checkbox-plus',
-      name: 'docs',
-      message: 'select docs your want delete',
-      source: async (answersSoFar: any, input: string) => {
-        if (!input) return choices;
-        const results = fuzzy
-          .filter(input, choices, {
-            extract: (el) => el.value,
-          })
-          .map((el) => el.original);
-        return results;
-      },
-    },
-  ]);
+  const { deleteDocIds } = await inquirer.singleInquire.checkboxPlus({
+    choices,
+    name: 'deleteDocIds',
+    message: 'select docs you want to delete',
+  });
   await Promise.all(
     deleteDocIds.map((id: string) => {
       return deleteDoc({
@@ -133,11 +122,19 @@ export async function createNestDoc(
   await pReduce(
     accessPath,
     async (acc, cur, idx) => {
+      let content = '';
+      let title = cur;
+      if (idx === accessPath.length - 1) {
+        // 说明是md文件了
+        content = (await fs.readFile(fullPath)).toString();
+        title = path.basename(fullPath);
+      }
       if (!acc) {
         // 创建doc
         const doc = await createDoc({
           namespace,
           title: cur,
+          body: content,
         });
         // 创建目录
         return await setDocToSpecToc({
@@ -149,13 +146,6 @@ export async function createNestDoc(
         });
       } else {
         const { uuid: parentUUid } = acc;
-        let content = '';
-        let title = cur;
-        if (idx === accessPath.length - 1) {
-          // 说明是md文件了
-          content = (await fs.readFile(fullPath)).toString();
-          title = path.basename(fullPath);
-        }
         const doc = await createDoc({
           namespace,
           body: content,
