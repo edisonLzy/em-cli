@@ -26,8 +26,13 @@ export default defineCommand({
         syncToRepos(dirname).catch(logger.error);
       },
     },
+    {
+      id: 'delete',
+      description: 'delete repos',
+      async run({ args, optionsArgs }) {
+        batchDeleteRepos().catch(logger.error);
+      },
+    },
   ],
-  async run({ args, optionsArgs }) {
-    batchDeleteRepos().catch(logger.error);
-  },
+  async run({ args, optionsArgs }) {},
 });

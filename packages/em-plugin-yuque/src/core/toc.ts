@@ -3,14 +3,19 @@ import type { AppendOptions } from '../sdk';
 
 interface TOC {
   namespace: string;
+  title: string;
 }
-function findLatestDir(dirs: any[]) {
+function findLatestDir(
+  title: TOC['title'],
+  dirs: (Pick<TOC, 'title'> & Record<string, any>)[]
+) {
   const dir = dirs.filter((it) => {
-    return it.level === 0;
+    return it.title === title;
   });
   return dir.shift();
 }
 export async function setDocToSpecToc({
+  title,
   namespace,
   data,
 }: TOC & {
@@ -21,7 +26,7 @@ export async function setDocToSpecToc({
     namespace,
     data,
   });
-  const latestDir = findLatestDir(res);
+  const latestDir = findLatestDir(title, res);
   return latestDir;
 }
 

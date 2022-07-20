@@ -81,7 +81,9 @@ export async function syncToRepo(filePath: string, fullPath: string) {
   const accessPath = pathHelper.separatePath(filePath);
   const [repoName, ...docs] = accessPath;
   // 创建一个知识库
+  const spin = logger.spin(`creating ${repoName}...`);
   const { id } = await getMayRepoExist(repoName);
+  spin.succeed(`created ${repoName} done`);
   await createNestDoc(docs, {
     namespace: id,
     fullPath: fullPath,
