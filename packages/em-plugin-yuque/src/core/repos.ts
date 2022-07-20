@@ -2,12 +2,13 @@ import { logger, inquirer, pathHelper } from '@em-cli/shared';
 import pMap from 'p-map';
 import path from 'path';
 import fg from 'fast-glob';
-import fuzzy from 'fuzzy';
 import { store } from './../utils/getStore';
 import { getSlug } from '../utils/getSlug';
 import { getSDK } from '../utils/setupSdk';
+import { getStoreKey } from '../utils/getStoreKey';
 import { getUserInfo } from './users';
 import { createDoc, createNestDoc } from './docs';
+import { STORE_KEY } from '../constant';
 
 export async function createRepo(params: {
   name: string;
@@ -64,14 +65,15 @@ export async function batchDeleteRepos() {
 }
 
 export async function getMayRepoExist(name: string) {
-  if (store.has(name)) {
-    return store.get(name);
+  const storeKey = getStoreKey([STORE_KEY.REPO, name]);
+  if (store.has(storeKey)) {
+    return store.get(storeKey);
   }
   const repo = await createRepo({
     name,
     description: `this docs for ${name}`,
   });
-  store.set(name, repo);
+  store.set(storeKey, repo);
   return repo;
 }
 
@@ -83,6 +85,7 @@ export async function syncToRepo(filePath: string, fullPath: string) {
   await createNestDoc(docs, {
     namespace: id,
     fullPath: fullPath,
+    repoName,
   });
 }
 export async function syncToRepos(workInDir: string) {

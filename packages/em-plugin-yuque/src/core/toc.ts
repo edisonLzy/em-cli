@@ -4,6 +4,12 @@ import type { AppendOptions } from '../sdk';
 interface TOC {
   namespace: string;
 }
+function findLatestDir(dirs: any[]) {
+  const dir = dirs.filter((it) => {
+    return it.level === 0;
+  });
+  return dir.shift();
+}
 export async function setDocToSpecToc({
   namespace,
   data,
@@ -11,11 +17,12 @@ export async function setDocToSpecToc({
   data: AppendOptions;
 }) {
   const sdk = await getSDK();
-  const [toc] = await sdk.toc.setDocToSpecToc({
+  const res = await sdk.toc.setDocToSpecToc({
     namespace,
     data,
   });
-  return toc;
+  const latestDir = findLatestDir(res);
+  return latestDir;
 }
 
 export async function getSpecTocUUID({

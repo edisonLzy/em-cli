@@ -7,6 +7,9 @@ import { setDocToSpecToc } from './toc';
 import { getRepos } from './repos';
 import { getSlug } from '../utils/getSlug';
 import { getSDK } from '../utils/setupSdk';
+import { getStoreKey } from '../utils/getStoreKey';
+import { store } from '../utils/getStore';
+import { STORE_KEY } from '../constant';
 
 export async function getDocs() {
   const sdk = await getSDK();
@@ -89,11 +92,18 @@ export async function createDoc({
   namespace,
   title,
   body = '',
+  storePath,
 }: {
   namespace: string;
   title: string;
+  storePath: string[];
   body?: string;
 }) {
+  const storeKey = getStoreKey([STORE_KEY.DOC, ...storePath]);
+  //避免重复创建同名的文档
+  if (store.has(storeKey)) {
+    return store.get(storeKey);
+  }
   const sdk = await getSDK();
   const slug = getSlug();
   const doc = await sdk.docs.create({
@@ -105,6 +115,7 @@ export async function createDoc({
       format: 'markdown',
     },
   });
+  store.set(storeKey, doc);
   return doc;
 }
 
@@ -114,14 +125,15 @@ export async function createDoc({
 interface CreateNestDocOptions {
   namespace: string;
   fullPath: string;
+  repoName: string;
 }
 export async function createNestDoc(
   accessPath: string[],
-  { namespace, fullPath }: CreateNestDocOptions
+  { namespace, fullPath, repoName }: CreateNestDocOptions
 ) {
-  await pReduce(
+  await pReduce<string, [any, string[]]>(
     accessPath,
-    async (acc, cur, idx) => {
+    async ([acc, curPath], cur, idx) => {
       let content = '';
       let title = cur;
       if (idx === accessPath.length - 1) {
@@ -130,36 +142,42 @@ export async function createNestDoc(
         title = path.basename(fullPath);
       }
       if (!acc) {
+        const nextPath = [...curPath, cur];
         // 创建doc
         const doc = await createDoc({
           namespace,
           title: cur,
           body: content,
+          storePath: nextPath,
         });
         // 创建目录
-        return await setDocToSpecToc({
+        const pre = await setDocToSpecToc({
           namespace,
           data: {
             target_uuid: null,
             doc_ids: [doc.id],
           },
         });
+        return [pre, nextPath];
       } else {
         const { uuid: parentUUid } = acc;
+        const nextPath = [...curPath, cur];
         const doc = await createDoc({
           namespace,
           body: content,
           title,
+          storePath: nextPath,
         });
-        return await setDocToSpecToc({
+        const pre = await setDocToSpecToc({
           namespace,
           data: {
             doc_ids: [doc.id],
             target_uuid: parentUUid,
           },
         });
+        return [pre, nextPath];
       }
     },
-    null
+    [null, [repoName]]
   );
 }
