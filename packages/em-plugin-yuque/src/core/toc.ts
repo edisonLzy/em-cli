@@ -11,11 +11,13 @@ export async function setDocToSpecToc({
   data: AppendOptions;
 }) {
   const sdk = await getSDK();
-  await sdk.toc.setDocToSpecToc({
+  const [toc] = await sdk.toc.setDocToSpecToc({
     namespace,
     data,
   });
+  return toc;
 }
+
 export async function getSpecTocUUID({
   namespace,
   title,

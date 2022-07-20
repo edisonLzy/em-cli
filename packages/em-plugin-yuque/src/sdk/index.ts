@@ -1,7 +1,7 @@
 import RawSDK from '@yuque/sdk';
 
 export interface AppendOptions {
-  target_uuid: string;
+  target_uuid: string | null;
   doc_ids: string[];
 }
 class TOC {

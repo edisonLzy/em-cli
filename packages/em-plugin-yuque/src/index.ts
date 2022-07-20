@@ -28,6 +28,6 @@ export default defineCommand({
     },
   ],
   async run({ args, optionsArgs }) {
-    batchDeleteDocs().catch(logger.error);
+    batchDeleteRepos().catch(logger.error);
   },
 });

@@ -2,12 +2,13 @@ import { logger, inquirer, pathHelper } from '@em-cli/shared';
 import pMap from 'p-map';
 import path from 'path';
 import fg from 'fast-glob';
-import { v4 as uuidv4 } from 'uuid';
 import fuzzy from 'fuzzy';
 import { store } from './../utils/getStore';
+import { getSlug } from '../utils/getSlug';
 import { getSDK } from '../utils/setupSdk';
 import { getUserInfo } from './users';
 import { createDoc, createNestDoc } from './docs';
+
 export async function createRepo(params: {
   name: string;
   description?: string;
@@ -19,7 +20,7 @@ export async function createRepo(params: {
     user: id,
     data: {
       ...params,
-      slug: uuidv4(),
+      slug: getSlug(),
       public: 1,
       type: 'Book',
     },
@@ -48,29 +49,17 @@ export async function deleteRepo(namespace: string | number) {
 
 export async function batchDeleteRepos() {
   const repos: Array<{ namespace: string; name: string }> = await getRepos();
-  const choices = repos.map(({ namespace: value, name: label }) => {
+  const choices = repos.map(({ namespace: value, name }) => {
     return {
       value,
-      label,
+      name,
     };
   });
-  const { namespaces } = await inquirer.prompt([
-    {
-      type: 'checkbox-plus',
-      name: 'namespaces',
-      message: 'select repo your want delete',
-      source: async (answersSoFar: any, input: string) => {
-        if (!input) return choices.map((el) => el.value);
-        const results = fuzzy
-          .filter(input, choices, {
-            extract: (el) => el.value,
-          })
-          .map((el) => el.original);
-
-        return results;
-      },
-    },
-  ]);
+  const { namespaces } = await inquirer.singleInquire.checkboxPlus({
+    choices,
+    name: 'namespaces',
+    message: 'select repo you want to delete',
+  });
   await Promise.all(namespaces.map(deleteRepo));
 }
 

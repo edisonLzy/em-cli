@@ -3,9 +3,10 @@ import path from 'path';
 import fs from 'fs-extra';
 import fuzzy from 'fuzzy';
 import { inquirer, logger, random } from '@em-cli/shared';
-import { getSDK } from '../utils/setupSdk';
 import { getSpecTocUUID, setDocToSpecToc } from './toc';
 import { getRepos } from './repos';
+import { getSlug } from '../utils/getSlug';
+import { getSDK } from '../utils/setupSdk';
 
 export async function getDocs() {
   const sdk = await getSDK();
@@ -105,7 +106,7 @@ export async function createDoc({
   body?: string;
 }) {
   const sdk = await getSDK();
-  const slug = random.string(8);
+  const slug = getSlug();
   const doc = await sdk.docs.create({
     namespace: namespace,
     data: {
@@ -133,12 +134,21 @@ export async function createNestDoc(
     accessPath,
     async (acc, cur, idx) => {
       if (!acc) {
-        return await createDoc({
+        // 创建doc
+        const doc = await createDoc({
           namespace,
           title: cur,
         });
+        // 创建目录
+        return await setDocToSpecToc({
+          namespace,
+          data: {
+            target_uuid: null,
+            doc_ids: [doc.id],
+          },
+        });
       } else {
-        const { title: preTitle } = acc;
+        const { uuid: parentUUid } = acc;
         let content = '';
         let title = cur;
         if (idx === accessPath.length - 1) {
@@ -151,20 +161,13 @@ export async function createNestDoc(
           body: content,
           title,
         });
-        const uuid = await getSpecTocUUID({
+        return await setDocToSpecToc({
           namespace,
-          title: preTitle,
+          data: {
+            doc_ids: [doc.id],
+            target_uuid: parentUUid,
+          },
         });
-        console.log(doc, namespace);
-        if (uuid) {
-          // await setDocToSpecToc({
-          //   namespace,
-          //   data: {
-          //     target_uuid: uuid,
-          //     doc_ids: [doc.id],
-          //   },
-          // });
-        }
       }
     },
     null
