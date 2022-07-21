@@ -36,6 +36,7 @@
     "@em-cli/em-plugin-github": "workspace:^0.0.2",
     "@em-cli/em-plugin-init": "workspace:^0.6.3",
     "@em-cli/em-plugin-renderer": "workspace:^0.0.4",
-    "@em-cli/em-plugin-template": "workspace:^0.5.5"
+    "@em-cli/em-plugin-template": "workspace:^0.5.5",
+    "@em-cli/em-plugin-yuque": "workspace:^0.0.1"
   }
 }

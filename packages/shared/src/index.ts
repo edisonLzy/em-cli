@@ -1,5 +1,6 @@
 export * as pathHelper from './path';
 export * from './environment';
+export * as random from './random';
 export { formate } from './eslint';
 export { installPkg } from './installDeps';
 export { default as pkgEnhance, getPkgInfo } from './pkgEnhance';
@@ -8,4 +9,5 @@ export { default as ShellsManager } from './Shells';
 export { default as logger } from './logger';
 export { default as inquirer } from './inquirer';
 export { default as git } from './git';
+export * from './store';
 export * from './scan';

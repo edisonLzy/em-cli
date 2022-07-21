@@ -1,0 +1,47 @@
+{
+  "name": "@em-cli/em-plugin-yuque",
+  "version": "0.0.1",
+  "description": "yuque",
+  "keywords": [
+    "sync docs "
+  ],
+  "author": "lizhiyu <656603136@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "typings": "./lib/typings",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "start": "npm run clean && tsc --watch"
+  },
+  "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/uuid": "^8.3.4",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@em-cli/core": "workspace:*",
+    "@em-cli/shared": "workspace:*",
+    "@yuque/sdk": "^1.1.1",
+    "fast-glob": "^3.2.7",
+    "fs-extra": "^10.1.0",
+    "fuzzy": "^0.1.3",
+    "indent-string": "^4",
+    "p-map": "^4.0.0",
+    "p-reduce": "^2.0.0",
+    "uuid": "^8.3.2"
+  }
+}
