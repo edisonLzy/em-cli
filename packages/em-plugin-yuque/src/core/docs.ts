@@ -2,7 +2,6 @@ import pReduce from 'p-reduce';
 import path from 'path';
 import fs from 'fs-extra';
 import fuzzy from 'fuzzy';
-import indentString from 'indent-string';
 import { inquirer, logger, random } from '@em-cli/shared';
 import { setDocToSpecToc } from './toc';
 import { getRepos } from './repos';
@@ -10,6 +9,7 @@ import { getSlug } from '../utils/getSlug';
 import { getSDK } from '../utils/setupSdk';
 import { getStoreKey } from '../utils/getStoreKey';
 import { store } from '../utils/getStore';
+import { getIndent } from '../utils/getIndent';
 import { STORE_KEY } from '../constant';
 
 export async function getDocs() {
@@ -136,7 +136,7 @@ export async function createNestDoc(
     async ([acc, curPath], cur, idx) => {
       let content = '';
       let title = cur;
-      const spin = logger.spin(indentString(`creating ${title}...`, idx));
+      const spin = logger.spin(getIndent(`creating ${title}...`, idx));
       if (idx === accessPath.length - 1) {
         // 说明是md文件了
         content = (await fs.readFile(fullPath)).toString();
@@ -160,7 +160,7 @@ export async function createNestDoc(
             doc_ids: [doc.id],
           },
         });
-        spin.succeed(indentString(`created ${title}`, idx));
+        spin.succeed(getIndent(`created ${title}`, idx));
         return [pre, nextPath];
       } else {
         const { uuid: parentUUid } = acc;
@@ -179,7 +179,7 @@ export async function createNestDoc(
             target_uuid: parentUUid,
           },
         });
-        spin.succeed(indentString(`created ${title}`, idx));
+        spin.succeed(getIndent(`created ${title}`, idx));
         return [pre, nextPath];
       }
     },
