@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.7
+
+### Patch Changes
+
+- Updated dependencies [90bc6caf]
+  - @em-cli/em-plugin-yuque@0.0.2
+
 ## 0.1.6
 
 ### Patch Changes
