@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/ee",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "make cli easier",
   "main": "lib/index.js",
   "bin": {
@@ -37,6 +37,6 @@
     "@em-cli/em-plugin-init": "workspace:^0.6.3",
     "@em-cli/em-plugin-renderer": "workspace:^0.0.4",
     "@em-cli/em-plugin-template": "workspace:^0.5.5",
-    "@em-cli/em-plugin-yuque": "workspace:^0.0.1"
+    "@em-cli/em-plugin-yuque": "workspace:^0.0.2"
   }
 }
