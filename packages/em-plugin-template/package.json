@@ -5,23 +5,28 @@
   "author": "lizhiyu <656603136@qq.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/index.js",
-  "typings": "./lib/typings",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "typings": "dist",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "start": "npm run clean && tsc --watch"
+    "start": "pnpm build --watch",
+    "build": "tsup-node"
   },
   "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
   "devDependencies": {

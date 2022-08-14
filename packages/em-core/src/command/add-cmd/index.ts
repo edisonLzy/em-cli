@@ -1,9 +1,10 @@
 import { render } from 'ejs';
 import fs from 'fs-extra';
 import path from 'path';
-import { logger } from '@em-cli/shared';
-import { defineCommand } from '@/core/command';
+import { pathHelper, logger } from '@em-cli/shared';
+import { defineCommand } from '../../core/command';
 
+const { __dirname } = pathHelper.getDirnameAndFilename();
 const context = path.resolve(__dirname, '../../../');
 
 function renderTemplate(commandName: string) {

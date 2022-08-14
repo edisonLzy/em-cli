@@ -1,4 +1,6 @@
-module.exports = {
+const { defineConfig } = require('eslint-define-config');
+
+module.exports = defineConfig({
   root: true,
   env: {
     browser: true,
@@ -6,8 +8,8 @@ module.exports = {
     node: true,
   },
   parserOptions: {
-    ecmaVersion: '2020',
     sourceType: 'module',
+    ecmaVersion: 2021,
   },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
@@ -38,5 +40,16 @@ module.exports = {
         'no-unused-vars': 'off',
       },
     },
+    {
+      files: ['packages/**/src/**/*'],
+      rules: {
+        'no-restricted-globals': [
+          'error',
+          'require',
+          '__dirname',
+          '__filename',
+        ],
+      },
+    },
   ],
-};
+});

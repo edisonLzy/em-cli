@@ -16,9 +16,8 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "rimraf lib",
-    "start": "npm run clean && tsc --watch",
-    "build": "npm run clean && tsc"
+    "build": "tsup-node",
+    "start": "pnpm build --watch"
   },
   "license": "ISC",
   "dependencies": {

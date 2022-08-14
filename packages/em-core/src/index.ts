@@ -6,8 +6,8 @@ import {
   CONFIG_PATH,
   getConfigKey,
   setConfigKey,
-} from '@/command';
-import ECli from '@/core';
+} from './command';
+import ECli from './core';
 
 export {
   defineCommand,

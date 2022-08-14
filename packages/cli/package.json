@@ -2,11 +2,17 @@
   "name": "@em-cli/ee",
   "version": "0.1.7",
   "description": "make cli easier",
-  "main": "lib/index.js",
-  "bin": {
-    "ee": "bin/ee"
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js"
+    }
   },
-  "typings": "lib/typings",
+  "typings": "dist",
+  "bin": {
+    "ee": "bin/ee.js"
+  },
   "files": [
     "lib",
     "bin"
@@ -16,10 +22,8 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "rimraf lib",
-    "start": "npm run clean && tsc --watch",
-    "build": "npm run clean && tsc",
-    "dev": "ts-node src/index.ts"
+    "build": "tsup-node",
+    "start": "pnpm build --watch"
   },
   "license": "ISC",
   "devDependencies": {

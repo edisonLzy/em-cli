@@ -1,6 +1,6 @@
 import path from 'path';
-import readPkg from 'read-pkg';
-import { writeFile } from 'jsonfile';
+import { readPackageSync } from 'read-pkg';
+import jsonfile from 'jsonfile';
 /**
  * 方便修改 pkg.json 文件
  * @param originFile  原始文件路径
@@ -40,17 +40,21 @@ function processCreate(create: Enhance['create'] = {}, origin: any) {
   }, origin);
 }
 export default async function pkgEnhance(workDir: string, enhanceObj: Enhance) {
-  const origin = require(path.join(workDir, 'package.json'));
+  const origin = await import(path.join(workDir, 'package.json'));
   const { add, create } = enhanceObj;
   const withAdd = processAdd(add, origin);
   const withCreate = processCreate(create, withAdd);
-  return await writeFile(path.join(workDir, 'package.json'), withCreate, {
-    spaces: 2,
-  });
+  return await jsonfile.writeFile(
+    path.join(workDir, 'package.json'),
+    withCreate,
+    {
+      spaces: 2,
+    }
+  );
 }
 
 export function getPkgInfo(workinDir = process.cwd()) {
-  const pkg = readPkg.sync({
+  const pkg = readPackageSync({
     cwd: workinDir,
   });
   return pkg;

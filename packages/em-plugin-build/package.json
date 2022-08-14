@@ -8,20 +8,24 @@
     "gulp"
   ],
   "license": "ISC",
-  "main": "lib/index.js",
-  "typings": "./lib/typings",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "typings": "dist",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "clean": "rimraf lib",
-    "start": "npm run clean && tsc --watch",
-    "build": "npm run clean &&tsc",
-    "dev": "ts-node src/index.ts"
+    "start": "pnpm build --watch",
+    "build": "tsup-node"
   },
   "gitHead": "d02fb469720e4e207e0dca29d8d7fa650a1aa145",
   "devDependencies": {

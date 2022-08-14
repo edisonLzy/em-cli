@@ -2,16 +2,20 @@
   "name": "@em-cli/core",
   "version": "1.4.14",
   "description": "make cli easier",
-  "main": "lib/index.js",
-  "typings": "lib/typings",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "typings": "dist",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "clean": "rimraf lib",
-    "start": "npm run clean && tsc --watch",
-    "build": "npm run clean &&tsc",
-    "dev": "ts-node src/index.ts"
+    "start": "pnpm build --watch",
+    "build": "tsup-node"
   },
   "license": "ISC",
   "dependencies": {
