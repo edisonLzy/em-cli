@@ -28,18 +28,17 @@
   },
   "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
   "devDependencies": {
-    "@types/axios": "^0.14.0",
     "@types/configstore": "^6.0.0",
-    "@types/inquirer": "^8.2.1",
-    "typescript": "^4.3.5"
+    "@types/inquirer": "^9.0.0",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
     "@em-cli/core": "workspace:*",
     "@em-cli/shared": "workspace:*",
     "axios": "^0.27.2",
-    "configstore": "^5.0.0",
+    "configstore": "^6.0.0",
     "fuzzy": "^0.1.3",
-    "inquirer": "^8.0.0",
-    "octokit": "^2.0.3"
+    "inquirer": "^9.1.0",
+    "octokit": "^2.0.5"
   }
 }

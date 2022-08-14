@@ -31,22 +31,21 @@
   "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
-    "@types/globby": "^9.1.0",
-    "@types/inquirer": "^8.2.1",
-    "@types/node": "^18.0.0",
-    "@types/signale": "^1.4.2",
-    "typescript": "^4.3.5"
+    "@types/inquirer": "^9.0.0",
+    "@types/node": "^18.7.3",
+    "@types/signale": "^1.4.4",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
     "@em-cli/core": "workspace:^1.4.14",
     "@em-cli/shared": "workspace:^1.0.2",
     "download-git-repo": "^3.0.2",
-    "em-pipeline": "^0.1.0",
-    "fast-glob": "^3.2.7",
+    "em-pipeline": "^0.1.2",
+    "fast-glob": "^3.2.11",
     "fs-extra": "^10.1.0",
-    "globby": "^12.0.0",
-    "inquirer": "^8.0.0",
+    "globby": "^13.1.2",
+    "inquirer": "^9.1.0",
     "signale": "^1.4.0",
-    "simple-git": "^3.6.0"
+    "simple-git": "^3.12.0"
   }
 }

@@ -6,7 +6,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
-    "module": "CommonJS",
+    "module": "ESNext",
     "strict": true,
     "pretty": true,
     "target": "ESNext",
