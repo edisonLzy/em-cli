@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-dev",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "本地开发服务器",
   "keywords": [
     "vite",

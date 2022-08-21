@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.1
+
+### Patch Changes
+
+- b6f8a733:
+
 ## 1.0.0
 
 ### Major Changes
