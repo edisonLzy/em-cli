@@ -2,7 +2,7 @@ import { build } from 'esbuild';
 import path from 'path';
 import type { BuildOptions } from 'esbuild';
 import shell from 'shelljs';
-import { PipeLine } from 'em-pipeline';
+import { PipeLine } from '@etools/pipeline';
 import glob from 'glob';
 export default async function (workDir: string, options?: BuildOptions) {
   const task = new PipeLine<{

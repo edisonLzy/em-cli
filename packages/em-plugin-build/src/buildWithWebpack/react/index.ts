@@ -1,4 +1,4 @@
-import { PipeLine } from 'em-pipeline';
+import { PipeLine } from '@etools/pipeline';
 import webpack, { Configuration } from 'webpack';
 import signale from 'signale';
 import { merge } from 'webpack-merge';

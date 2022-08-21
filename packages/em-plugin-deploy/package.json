@@ -45,7 +45,6 @@
     "@em-cli/core": "workspace:^2.0.0",
     "@em-cli/shared": "workspace:^2.0.0",
     "download-git-repo": "^3.0.2",
-    "em-pipeline": "^0.1.2",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.1.0",
     "globby": "^13.1.2",
