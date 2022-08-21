@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-build",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "构建",
   "keywords": [
     "webpack",
