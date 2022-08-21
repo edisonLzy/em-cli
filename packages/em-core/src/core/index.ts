@@ -57,6 +57,7 @@ class ECli extends BaseClass {
       const optionsArgs: Record<string, any> = args.pop();
       // command 命令参数
       const commandArg: string[] = args;
+      // TODO run 中抛出的错误没有被捕获
       command.run({
         args: commandArg || [],
         optionsArgs,
@@ -72,7 +73,11 @@ class ECli extends BaseClass {
     }
   }
   private parseArgs() {
-    this.program.parse(process.argv);
+    try {
+      this.program.parse(process.argv);
+    } catch (e) {
+      console.log(e);
+    }
   }
   addCommand(command: CommandConfig) {
     const id = command.id;

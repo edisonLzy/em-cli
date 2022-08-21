@@ -1,10 +1,10 @@
-import { defineCommand } from '@/core/command';
+import { logger } from '@em-cli/shared';
 import fs from 'fs-extra';
 import userhome from 'userhome';
-import { logger } from '@em-cli/shared';
-import { getConfigKey, setConfigKey, deleteConfigKey } from './utils';
 import pMap from 'p-map';
-import { CONFIG_FILENAME } from '../../const';
+import { CONFIG_FILENAME } from '@/const';
+import { defineCommand } from '@/core/command';
+import { getConfigKey, setConfigKey, deleteConfigKey } from './utils';
 
 export { getConfigKey, setConfigKey };
 /**

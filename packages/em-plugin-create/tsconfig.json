@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "declarationDir": "./lib/typings",
+    "declarationDir": "./typings",
     "outDir": "./lib"
   },
   "include": ["src/**/*"]

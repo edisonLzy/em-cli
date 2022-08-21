@@ -9,8 +9,10 @@ import CommandRenderer from '@em-cli/em-plugin-renderer';
 import CommandDebug from '@em-cli/em-plugin-debug';
 import CommandGithub from '@em-cli/em-plugin-github';
 import CommandYuque from '@em-cli/em-plugin-yuque';
+
 export function run(isDev: boolean) {
   const eCli = new ECli();
+
   eCli
     .addCommand(CommandInit)
     .addCommand(CommandDev)

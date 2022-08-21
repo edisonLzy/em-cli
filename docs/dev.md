@@ -65,8 +65,8 @@ ee build --env [环境标识]
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "declarationDir": "./lib/typings",
-    "outDir": "./lib",
+    "declarationDir": "./typings",
+
     "sourceMap": true
   },
   "include": ["src/**/*"],

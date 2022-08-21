@@ -6,8 +6,14 @@
     "create"
   ],
   "license": "ISC",
-  "main": "lib/index.js",
-  "typings": "./lib/typings",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "typings": "dist",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -17,31 +23,30 @@
     "access": "public"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "start": "npm run clean && tsc --watch"
+    "build": "tsup-node",
+    "start": "pnpm build --watch --sourcemap"
   },
   "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
   "devDependencies": {
-    "@types/inquirer": "^8.2.1",
-    "@types/node": "^18.0.0",
+    "@types/inquirer": "^9.0.0",
+    "@types/node": "^18.7.3",
     "@types/signale": "^1.4.2",
-    "typescript": "^4.3.5"
+    "typescript": "^4.7.4"
   },
   "dependencies": {
     "@em-cli/core": "workspace:^1.4.14",
     "@em-cli/shared": "workspace:^1.0.0",
-    "@types/fs-extra": "^9.0.12",
-    "@types/shelljs": "^0.8.9",
-    "@types/signale": "^1.4.2",
-    "fast-glob": "^3.2.7",
-    "fs-extra": "^10.0.0",
-    "inquirer": "^8.0.0",
-    "read-pkg": "5",
-    "shelljs": "^0.8.4",
+    "@types/fs-extra": "^9.0.13",
+    "@types/shelljs": "^0.8.11",
+    "@types/signale": "^1.4.4",
+    "fast-glob": "^3.2.11",
+    "fs-extra": "^10.1.0",
+    "inquirer": "^9.1.0",
+    "read-pkg": "^7.1.0",
+    "shelljs": "^0.8.5",
     "signale": "^1.4.0"
   }
 }

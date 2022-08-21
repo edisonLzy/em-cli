@@ -8,7 +8,7 @@
   },
   "typings": "lib/typings",
   "files": [
-    "lib",
+    "dist",
     "bin"
   ],
   "publishConfig": {
@@ -16,17 +16,16 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "rimraf lib",
-    "start": "npm run clean && tsc --watch",
-    "build": "npm run clean && tsc"
+    "build": "tsup-node",
+    "start": "pnpm build --watch --sourcemap"
   },
   "license": "ISC",
   "dependencies": {
-    "commander": "^8.2.0",
-    "read-pkg": "5.1.1"
+    "commander": "^9.4.0",
+    "read-pkg": "7.1.0"
   },
   "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
   "devDependencies": {
-    "@types/node": "^18.0.0"
+    "@types/node": "^18.7.3"
   }
 }

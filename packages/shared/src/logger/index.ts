@@ -1,12 +1,12 @@
-import { Signale } from 'signale';
+import signale from 'signale';
 import ora from 'ora';
 import os from 'os';
 import chalk from 'chalk';
+import terminal from 'terminal-kit';
 import { downloadImg } from '../download';
-import { terminal } from 'terminal-kit';
 
 const tips = 'em-cli';
-class Logger extends Signale {
+class Logger extends signale.Signale {
   constructor(scope = chalk.blueBright(tips)) {
     super({
       scope,
@@ -65,10 +65,10 @@ class Logger extends Signale {
     // TODO
     if (/^https?:\/\//.test(url)) {
       const localFile = await downloadImg(url);
-      terminal.drawImage(localFile);
+      terminal.terminal.drawImage(localFile);
       return;
     }
-    terminal.drawImage(url);
+    terminal.terminal.drawImage(url);
   }
   spin(text: string) {
     const spin = ora({

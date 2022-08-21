@@ -2,7 +2,7 @@
  * 单文件打包
  * react / vue
  */
-import execa from 'execa';
+import { execa } from 'execa';
 import buildVue from './vue';
 type SFCTarget = 'react' | 'vue';
 export interface SFCOptions {

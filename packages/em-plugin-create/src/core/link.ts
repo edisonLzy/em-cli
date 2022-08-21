@@ -1,5 +1,5 @@
 import signale from 'signale';
-import readPkg from 'read-pkg';
+import { readPackage } from 'read-pkg';
 import shelljs from 'shelljs';
 import path from 'path';
 import fg from 'fast-glob';
@@ -14,7 +14,7 @@ function getChoices(dirs: string[]) {
   });
 }
 async function getPkgName(dir: string) {
-  const { name } = await readPkg({
+  const { name } = await readPackage({
     cwd: dir,
   });
   return name;

@@ -1,5 +1,5 @@
 import resolveCwd from 'resolve-cwd';
-import execa from 'execa';
+import { execa } from 'execa';
 import logger from './logger';
 /**
  * 判断当前项目是不是一个 monorepo项目

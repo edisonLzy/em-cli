@@ -7,3 +7,5 @@ local
 .history
 coverage
 .turbo
+dist
+typings

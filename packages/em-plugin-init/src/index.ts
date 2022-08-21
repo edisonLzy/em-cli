@@ -1,6 +1,7 @@
 import { defineCommand } from '@em-cli/core';
 import loadFeature from './features/loadFeature';
 import { Creator } from './creator';
+
 export default defineCommand({
   id: 'init',
   option: [

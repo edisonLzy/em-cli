@@ -1,8 +1,6 @@
 import { PipeLine } from 'em-pipeline';
 import webpack, { Configuration } from 'webpack';
 import signale from 'signale';
-import fs from 'fs-extra';
-import path from 'path';
 import { merge } from 'webpack-merge';
 import baseConfig from '../config/base';
 import { loadConfig } from './loadConfig';
@@ -14,7 +12,7 @@ export function buildReact(workDir: string) {
     .tap<{
       inputConfig: Configuration;
     }>('读取用户的配置文件', async ({ workDir }, { next }) => {
-      const config = loadConfig(workDir);
+      const config = await loadConfig(workDir);
       next({
         inputConfig: config,
       });

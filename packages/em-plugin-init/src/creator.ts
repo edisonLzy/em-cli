@@ -1,4 +1,4 @@
-import { prompt } from 'inquirer';
+import inquirer from 'inquirer';
 import type { CheckboxQuestionOptions, QuestionCollection } from 'inquirer';
 import { installPkg } from '@em-cli/shared';
 import { ApplyOptions } from './features/index';
@@ -60,7 +60,7 @@ export class Creator {
   }
   private async promptAndResolve() {
     const prompts = [this.featurePrompt, ...this.injectedPrompts];
-    const answers = await prompt(prompts);
+    const answers = await inquirer.prompt(prompts);
     const projectOptions = { workinDir: this.projectDir, plugins: {} };
     this.promptCompleteCbs.forEach((cb) => cb(answers, projectOptions));
     return projectOptions;

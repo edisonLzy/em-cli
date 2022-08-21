@@ -22,7 +22,7 @@ export function renderPkg(name: string) {
         },
         "scripts": {
           "build": "tsc",
-          "clean": "rimraf dist",
+          
           "start": "npm run clean && tsc --watch"
         },
         "gitHead": "65fc0d6f668fa0776a56ec6fcf105d222b487fd8",
@@ -61,8 +61,8 @@ export function renderTsConfig() {
         "extends": "../../tsconfig.base.json",
         "compilerOptions": {
           "baseUrl": "./",
-          "declarationDir": "./lib/typings",
-          "outDir": "./lib",
+          "declarationDir": "./typings",
+          
         },
         "include": ["src/**/*"],
         "exclude": ["bin/*","lib/**/*"]

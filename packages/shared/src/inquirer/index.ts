@@ -1,13 +1,12 @@
-import inquirer from 'inquirer';
-import type { Inquirer } from 'inquirer';
+import Inquirer from 'inquirer';
 
 import { setupPlugin } from './setupPlugin';
 import { SingleInquire } from './single';
 
-type EnhanceInquirer = Inquirer & {
+type EnhanceInquirer = typeof Inquirer & {
   singleInquire: SingleInquire;
 };
-const enhanceInquirer = setupPlugin(inquirer) as unknown as EnhanceInquirer;
+const enhanceInquirer = setupPlugin(Inquirer) as unknown as EnhanceInquirer;
 
 enhanceInquirer.singleInquire = new SingleInquire();
 

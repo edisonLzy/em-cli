@@ -1,11 +1,9 @@
-import path from 'path';
 import fg from 'fast-glob';
-import { support } from '@em-cli/shared';
-import execa from 'execa';
+import { support, inquirer } from '@em-cli/shared';
+import { execa } from 'execa';
 import { createStore } from './createStore';
 import { TestFileGlob } from '../constant';
 const store = createStore();
-const { prompt } = require('enquirer');
 
 export default async function runTest() {
   const isSupported = await support(['jest', 'pnpm']);
@@ -28,14 +26,17 @@ export default async function runTest() {
     return it.value === store.get('testFile');
   });
 
-  const { testFile, extraArgs } = await prompt([
-    {
-      type: 'autocomplete',
-      name: 'testFile',
-      message: 'Pick a test',
-      initial: idx,
-      choices: choices,
-    },
+  const { testFile, extraArgs } = await inquirer.prompt<{
+    testFile: string;
+    extraArgs: string;
+  }>([
+    // {
+    //   type: 'autocomplete',
+    //   name: 'testFile',
+    //   message: 'Pick a test',
+    //   initial: idx,
+    //   choices: choices,
+    // },
     {
       type: 'input',
       name: 'extraArgs',
