@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-init",
-  "version": "0.6.4",
+  "version": "1.0.0",
   "description": "项目初始化",
   "keywords": [
     "项目初始化"
@@ -40,8 +40,8 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@em-cli/core": "workspace:^1.4.14",
-    "@em-cli/shared": "workspace:^1.0.0",
+    "@em-cli/core": "workspace:^2.0.0",
+    "@em-cli/shared": "workspace:^2.0.0",
     "@etools/fm": "^0.0.7",
     "@types/jsonfile": "^6.1.0",
     "em-pipeline": "^0.1.2",

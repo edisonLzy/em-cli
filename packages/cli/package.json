@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/ee",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "make cli easier",
   "type": "module",
   "exports": {
@@ -31,16 +31,16 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "@em-cli/core": "workspace:^1.4.14",
-    "@em-cli/em-plugin-build": "workspace:^0.5.8",
-    "@em-cli/em-plugin-create": "workspace:^0.4.3",
-    "@em-cli/em-plugin-debug": "workspace:^0.0.3",
-    "@em-cli/em-plugin-deploy": "workspace:^0.2.7",
-    "@em-cli/em-plugin-dev": "workspace:^0.4.3",
-    "@em-cli/em-plugin-github": "workspace:^0.0.2",
-    "@em-cli/em-plugin-init": "workspace:^0.6.3",
-    "@em-cli/em-plugin-renderer": "workspace:^0.0.4",
-    "@em-cli/em-plugin-template": "workspace:^0.5.5",
-    "@em-cli/em-plugin-yuque": "workspace:^0.0.2"
+    "@em-cli/core": "workspace:^2.0.0",
+    "@em-cli/em-plugin-build": "workspace:^1.0.0",
+    "@em-cli/em-plugin-create": "workspace:^1.0.0",
+    "@em-cli/em-plugin-debug": "workspace:^1.0.0",
+    "@em-cli/em-plugin-deploy": "workspace:^1.0.0",
+    "@em-cli/em-plugin-dev": "workspace:^1.0.0",
+    "@em-cli/em-plugin-github": "workspace:^1.0.0",
+    "@em-cli/em-plugin-init": "workspace:^1.0.0",
+    "@em-cli/em-plugin-renderer": "workspace:^1.0.0",
+    "@em-cli/em-plugin-template": "workspace:^1.0.0",
+    "@em-cli/em-plugin-yuque": "workspace:^1.0.0"
   }
 }

@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.0
+
+### Major Changes
+
+- 08e4713b: migrate to esm
+
 ## 0.2.7
 
 ### Patch Changes
