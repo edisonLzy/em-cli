@@ -11,7 +11,7 @@
     "ci:version": "changeset version",
     "build": "turbo run build",
     "test": "turbo run test",
-    "lint": "eslint --fix packages/*/src/**/* --ext .js,.ts,.tsx",
+    "lint": "eslint --fix --ext .js,.ts,.tsx packages/*/src/**/*",
     "release": "pnpm build && pnpm ci:publish",
     "codemod": "jscodeshift -t codemod/transform-entry-file.js packages/**/package.json"
   },
