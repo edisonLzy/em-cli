@@ -61,8 +61,8 @@ export function renderTsConfig() {
         "extends": "../../tsconfig.base.json",
         "compilerOptions": {
           "baseUrl": "./",
-          "declarationDir": "./lib/typings",
-          "outDir": "./lib",
+          "declarationDir": "./typings",
+          
         },
         "include": ["src/**/*"],
         "exclude": ["bin/*","lib/**/*"]

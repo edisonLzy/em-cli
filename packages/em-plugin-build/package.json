@@ -24,8 +24,8 @@
     "dist"
   ],
   "scripts": {
-    "start": "pnpm build --watch",
-    "build": "tsup-node"
+    "build": "tsup-node",
+    "start": "pnpm build --watch --sourcemap"
   },
   "gitHead": "d02fb469720e4e207e0dca29d8d7fa650a1aa145",
   "devDependencies": {

@@ -14,8 +14,8 @@
     "dist"
   ],
   "scripts": {
-    "start": "pnpm build --watch",
-    "build": "tsup-node"
+    "build": "tsup-node",
+    "start": "pnpm build --watch --sourcemap"
   },
   "license": "ISC",
   "dependencies": {

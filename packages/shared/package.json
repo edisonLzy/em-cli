@@ -29,9 +29,7 @@
   },
   "scripts": {
     "build": "tsup-node",
-    "start": "pnpm build --watch",
-    "dev": "ts-node-dev  --respawn ./examples/logger.ts",
-    "test": "jest"
+    "start": "pnpm build --watch --sourcemap"
   },
   "devDependencies": {
     "@types/configstore": "^6.0.0",

@@ -8,7 +8,7 @@
   },
   "typings": "lib/typings",
   "files": [
-    "lib",
+    "dist",
     "bin"
   ],
   "publishConfig": {
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "tsup-node",
-    "start": "pnpm build --watch"
+    "start": "pnpm build --watch --sourcemap"
   },
   "license": "ISC",
   "dependencies": {

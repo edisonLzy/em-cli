@@ -1,7 +1,5 @@
 import Configstore from 'configstore';
-import fs from 'fs';
-
-const packageJson = require('../../package.json');
+import packageJson from '../../package.json';
 
 export function createStore() {
   // Create a Configstore instance.

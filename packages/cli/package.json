@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "tsup-node",
-    "start": "pnpm build --watch"
+    "start": "pnpm build --watch --sourcemap"
   },
   "license": "ISC",
   "devDependencies": {

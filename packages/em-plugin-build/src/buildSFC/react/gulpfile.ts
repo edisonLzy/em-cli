@@ -1,5 +1,5 @@
 import { parallel } from 'gulp';
-import execa from 'execa';
+import { execa } from 'execa';
 import { pkgEnhance } from '@em-cli/shared';
 import createBuildCompTask from './buildComp';
 import createBuildStyleTask from './buildStyle';

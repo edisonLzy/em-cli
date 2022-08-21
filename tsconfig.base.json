@@ -10,8 +10,8 @@
     "strict": true,
     "pretty": true,
     "target": "ESNext",
+    "emitDeclarationOnly": true,
     "noImplicitThis": false,
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "resolveJsonModule": true
   }
 }

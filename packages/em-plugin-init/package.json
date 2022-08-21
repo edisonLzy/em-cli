@@ -28,8 +28,8 @@
     "access": "public"
   },
   "scripts": {
-    "start": "pnpm build --watch",
-    "build": "tsup-node"
+    "build": "tsup-node",
+    "start": "pnpm build --watch --sourcemap"
   },
   "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
   "devDependencies": {
