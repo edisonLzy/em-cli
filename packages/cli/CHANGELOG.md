@@ -1,5 +1,26 @@
 # Change Log
 
+## 1.0.0
+
+### Major Changes
+
+- 08e4713b: migrate to esm
+
+### Patch Changes
+
+- Updated dependencies [08e4713b]
+  - @em-cli/core@2.0.0
+  - @em-cli/em-plugin-build@1.0.0
+  - @em-cli/em-plugin-create@1.0.0
+  - @em-cli/em-plugin-debug@1.0.0
+  - @em-cli/em-plugin-deploy@1.0.0
+  - @em-cli/em-plugin-dev@1.0.0
+  - @em-cli/em-plugin-github@1.0.0
+  - @em-cli/em-plugin-init@1.0.0
+  - @em-cli/em-plugin-renderer@1.0.0
+  - @em-cli/em-plugin-template@1.0.0
+  - @em-cli/em-plugin-yuque@1.0.0
+
 ## 0.1.7
 
 ### Patch Changes

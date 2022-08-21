@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.0.0
+
+### Major Changes
+
+- 08e4713b: migrate to esm
+
+### Patch Changes
+
+- Updated dependencies [08e4713b]
+  - @em-cli/shared@2.0.0
+
 ## 1.4.14
 
 ### Patch Changes

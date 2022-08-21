@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-debug",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "debug source code",
   "keywords": [
     "debug test"

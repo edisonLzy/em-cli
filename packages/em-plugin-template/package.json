@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/em-plugin-template",
-  "version": "0.5.6",
+  "version": "1.0.0",
   "description": "本地开发服务器",
   "author": "lizhiyu <656603136@qq.com>",
   "homepage": "",
@@ -37,8 +37,8 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@em-cli/core": "workspace:^1.4.14",
-    "@em-cli/shared": "workspace:^1.0.0",
+    "@em-cli/core": "workspace:^2.0.0",
+    "@em-cli/shared": "workspace:^2.0.0",
     "@etools/fm": "^0.0.7",
     "chalk": "^5.0.1",
     "ejs": "^3.1.8",
