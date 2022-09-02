@@ -31,6 +31,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-define-config": "^1.6.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "father": "^4.0.2",
     "find-up": "^6.3.0",
     "husky": "^8.0.1",
     "jest": "^28.1.3",

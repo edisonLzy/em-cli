@@ -1,5 +1,6 @@
 import commander, { createCommand } from 'commander';
-import { logger } from '@em-cli/shared';
+import { logger, getPkgInfo } from '@em-cli/shared';
+
 import BaseClass from './base';
 import { CommandConfig, Options } from './command';
 
@@ -13,8 +14,9 @@ class ECli extends BaseClass {
   }
   private createProgram(): commander.Command {
     const program = createCommand();
+    const { version } = getPkgInfo();
     program
-      .version(`@em-cli/ee ${require('../../package').version}`)
+      .version(`@em-cli/ee`)
       .usage('<command> [subCommand] [options]')
       .passThroughOptions();
     return program;
