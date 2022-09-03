@@ -21,6 +21,7 @@ importers:
       eslint-config-prettier: ^8.5.0
       eslint-define-config: ^1.6.0
       eslint-plugin-prettier: ^4.2.1
+      fast-glob: ^3.2.11
       father: ^4.0.2
       find-up: ^6.3.0
       husky: ^8.0.1
@@ -53,6 +54,7 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.23.0
       eslint-define-config: 1.7.0
       eslint-plugin-prettier: 4.2.1_tgumt6uwl2md3n6uqnggd6wvce
+      fast-glob: 3.2.11
       father: 4.0.2_webpack@5.74.0
       find-up: 6.3.0
       husky: 8.0.1
@@ -3595,7 +3597,7 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.4.6
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
 
   /@types/eslint/8.4.6:
     resolution: {integrity: sha512-/fqTbjxyFUaYNO7VcW5g+4npmqVACz1bB7RTHYuLj+PRjw9hrCwrUXVQFpChUS0JsyEFvMZ7U/PfmvWgxJhI9g==}

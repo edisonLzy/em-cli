@@ -6,6 +6,7 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
+    "start": {},
     "test": {
       "inputs": ["src/**/*.ts", "__tests__/**/*.ts"]
     }
