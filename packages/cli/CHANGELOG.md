@@ -1,5 +1,26 @@
 # Change Log
 
+## 1.1.0
+
+### Minor Changes
+
+- 1cb0fa4f: use father
+
+### Patch Changes
+
+- Updated dependencies [1cb0fa4f]
+  - @em-cli/core@2.1.0
+  - @em-cli/em-plugin-build@1.1.0
+  - @em-cli/em-plugin-create@1.1.0
+  - @em-cli/em-plugin-debug@1.1.0
+  - @em-cli/em-plugin-deploy@1.1.0
+  - @em-cli/em-plugin-dev@1.1.0
+  - @em-cli/em-plugin-github@1.1.0
+  - @em-cli/em-plugin-init@1.1.0
+  - @em-cli/em-plugin-renderer@1.1.0
+  - @em-cli/em-plugin-template@1.1.0
+  - @em-cli/em-plugin-yuque@1.1.0
+
 ## 1.0.0
 
 ### Major Changes
