@@ -2,11 +2,11 @@ import MiniCSSExtractPlugin from 'mini-css-extract-plugin';
 
 export function getCssLoader(lang: 'scss' | 'less' | 'css') {
   const styleLoader = {
-    loader: require.resolve(MiniCSSExtractPlugin.loader),
+    loader: MiniCSSExtractPlugin.loader,
   };
 
   const cssLoader = {
-    loader: require.resolve('css-loader'),
+    loader: 'css-loader',
     options: {
       // 处理css文件只需要处理 postcss-loader处理
       importLoaders: lang === 'css' ? 1 : 2,
@@ -19,7 +19,7 @@ export function getCssLoader(lang: 'scss' | 'less' | 'css') {
     },
   };
   const postcssLoader = {
-    loader: require.resolve('postcss-loader'),
+    loader: 'postcss-loader',
     options: {
       sourceMap: true,
       postcssOptions: {
@@ -28,7 +28,7 @@ export function getCssLoader(lang: 'scss' | 'less' | 'css') {
     },
   };
   const lessLoader = {
-    loader: require.resolve('less-loader'),
+    loader: 'less-loader',
     options: {
       sourceMap: true,
       lessOptions: {

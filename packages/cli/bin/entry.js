@@ -6,9 +6,12 @@ const cliPath = resolve(dirname(fileURLToPath(import.meta.url)));
 
 spawn(
   'node',
-  ['--no-warnings', '--experimental-specifier-resolution=node', 'ee.js'].concat(
-    process.argv.slice(2)
-  ),
+  [
+    '--no-warnings',
+    '--experimental-specifier-resolution=node',
+    '--experimental-import-meta-resolve',
+    'ee.js',
+  ].concat(process.argv.slice(2)),
   {
     env: process.env,
     cwd: cliPath,

@@ -15,6 +15,7 @@ export default function (
 ) {
   return async function buildComponent() {
     const src = path.join(workinDir, inputFiles);
+    const presets = await import.meta.resolve?.('@em-presets/babel');
     const bundle = await rollup({
       input: src,
       external: [/react/, 'classnames'],
@@ -26,7 +27,7 @@ export default function (
         babel({
           babelHelpers: 'runtime',
           extensions: ['.tsx', '.ts', '.jsx', '.js'],
-          presets: [require.resolve('@em-presets/babel')],
+          presets: [presets as string],
         }),
       ],
     });
