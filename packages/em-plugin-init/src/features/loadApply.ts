@@ -1,6 +1,6 @@
 import path from 'path';
 import pMap from 'p-map';
-import { pathHelper } from '@em-cli/shared';
+import { fileURLToPath } from 'url';
 /**
  * 加载feature的apply方法
  * @param features
@@ -11,7 +11,7 @@ export default async function loadApplies(
   applyFeatures: Record<string, any>
 ) {
   const applies = await pMap(features, async (featureName: string) => {
-    const { __dirname } = pathHelper.getDirnameAndFilename();
+    const __dirname = path.dirname(fileURLToPath(import.meta.url));
     const feature = await import(
       path.join(__dirname, `${featureName}/index.js`)
     );

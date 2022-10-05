@@ -1,5 +1,11 @@
 import { defineFeature } from '../';
-import { prettier, prettierignore, eslint, eslintIgnore } from './template';
+import {
+  prettier,
+  prettierignore,
+  eslint,
+  eslintIgnore,
+  stylelint,
+} from './template';
 import { pkgEnhance } from '@em-cli/shared';
 import { deps } from './deps';
 export default defineFeature({
@@ -25,8 +31,12 @@ export default defineFeature({
             name: 'prettier',
             value: 'prettier',
           },
+          {
+            name: 'stylelint',
+            value: 'stylelint',
+          },
         ],
-        default: ['eslint', 'prettier'],
+        default: ['eslint', 'prettier', 'stylelint'],
       },
     ]);
     cli.onPromptComplete((answers, projectOptions) => {
@@ -43,7 +53,7 @@ export default defineFeature({
       .collectFiles(
         [
           options.linterTools.includes('eslint') && {
-            path: './.eslintrc.js',
+            path: './.eslintrc.cjs',
             value: eslint,
           },
           options.linterTools.includes('eslint') && {
@@ -58,6 +68,10 @@ export default defineFeature({
             path: './.prettierrc',
             value: prettier,
           },
+          options.linterTools.includes('stylelint') && {
+            path: './.stylelintrc.cjs',
+            value: stylelint,
+          },
         ].filter(Boolean)
       )
       .collectDeps('devDep', deps);
@@ -67,6 +81,12 @@ export default defineFeature({
         'lint-staged': {
           '*.{js,jsx,ts,tsx}': ['eslint --fix'],
           '*.{d.ts,json,md}': ['prettier --write'],
+          '**/*.{scss,css,less}': ['stylelint --fix'],
+        },
+      },
+      add: {
+        scripts: {
+          'lint:style': 'stylelint --fix "src/**/*.{css,scss}"',
         },
       },
     });

@@ -56,8 +56,8 @@ export default defineFeature({
         .collectShells([
           'git init',
           'npx husky install',
-          'npx husky add .husky/pre-commit "npx lint-staged"',
-          'npx husky add .husky/commit-msg "npx commitlint --edit $1"',
+          'npx husky add .husky/pre-commit "npx --no-install lint-staged"',
+          'npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"',
         ]);
       pkgEnhance(creator.projectDir, {
         add: {

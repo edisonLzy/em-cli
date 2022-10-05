@@ -1,6 +1,6 @@
 import path from 'path';
 import jsonfile from 'jsonfile';
-import { readPackageUpSync } from 'read-pkg-up';
+import { NormalizedPackageJson, readPackageUpSync } from 'read-pkg-up';
 /**
  * 方便修改 pkg.json 文件
  * @param originFile  原始文件路径
@@ -40,7 +40,9 @@ function processCreate(create: Enhance['create'] = {}, origin: any) {
   }, origin);
 }
 export default async function pkgEnhance(workDir: string, enhanceObj: Enhance) {
-  const origin = await import(path.join(workDir, 'package.json'));
+  const pkgInfo = getPkgInfo();
+  const { _id, readme, ...origin } =
+    pkgInfo?.packageJson as unknown as NormalizedPackageJson;
   const { add, create } = enhanceObj;
   const withAdd = processAdd(add, origin);
   const withCreate = processCreate(create, withAdd);

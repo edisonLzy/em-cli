@@ -6,7 +6,7 @@ export default defineConfig({
       input: 'src', // 默认编译目录
       transformer: 'babel', // 默认使用 babel 以提供更好的兼容性
       platform: 'node',
-      output:'dist'
+      output:'dist',
     },
     extraBabelPlugins: [
       '@babel/plugin-syntax-import-assertions'
