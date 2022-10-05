@@ -5,8 +5,7 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js"
     }
   },
   "typings": "dist",
@@ -14,8 +13,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup-node",
-    "start": "pnpm build --watch --sourcemap"
+    "build": "father build",
+    "start": "father dev"
   },
   "license": "ISC",
   "dependencies": {

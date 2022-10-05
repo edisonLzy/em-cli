@@ -7,9 +7,15 @@ export interface LibOptions {
   workinDir: string;
   inputFile: string;
 }
+function loadPresets() {
+  return ['@babel/preset-env', '@babel/preset-typescript'].map((preset) => {
+    return import.meta.resolve?.(preset);
+  }) as unknown as string[];
+}
 export default async function buildLib({ workinDir, inputFile }: LibOptions) {
   const src = path.join(inputFile);
-  console.log(src);
+
+  const presets = await loadPresets();
 
   const bundle = await rollup({
     input: src,
@@ -21,10 +27,7 @@ export default async function buildLib({ workinDir, inputFile }: LibOptions) {
       babel({
         babelHelpers: 'bundled',
         extensions: ['.tsx', '.ts', '.jsx', '.js'],
-        presets: [
-          require.resolve('@babel/preset-env'),
-          require.resolve('@babel/preset-typescript'),
-        ],
+        presets: presets,
       }),
     ],
   });

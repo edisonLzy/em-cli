@@ -1,6 +1,6 @@
 import path from 'path';
-import { readPackageSync } from 'read-pkg';
 import jsonfile from 'jsonfile';
+import { readPackageUpSync } from 'read-pkg-up';
 /**
  * 方便修改 pkg.json 文件
  * @param originFile  原始文件路径
@@ -53,9 +53,7 @@ export default async function pkgEnhance(workDir: string, enhanceObj: Enhance) {
   );
 }
 
-export function getPkgInfo(workinDir = process.cwd()) {
-  const pkg = readPackageSync({
-    cwd: workinDir,
-  });
+export function getPkgInfo() {
+  const pkg = readPackageUpSync();
   return pkg;
 }

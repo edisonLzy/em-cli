@@ -1,12 +1,15 @@
 import { logger } from '@em-cli/shared';
 import fs from 'fs-extra';
-import userhome from 'userhome';
 import pMap from 'p-map';
-import { CONFIG_FILENAME } from '@/const';
 import { defineCommand } from '@/core/command';
-import { getConfigKey, setConfigKey, deleteConfigKey } from './utils';
+import {
+  getConfigKey,
+  setConfigKey,
+  deleteConfigKey,
+  CONFIG_PATH,
+} from './utils';
 
-export { getConfigKey, setConfigKey };
+export { getConfigKey, setConfigKey, CONFIG_PATH };
 /**
  * 该命令用来管理全局的配置文件
  * .eeconf.json
@@ -14,7 +17,7 @@ export { getConfigKey, setConfigKey };
  *  ee config get key: 获取指定key的值
  *  ee config set key value: 添加配置
  */
-export const CONFIG_PATH = userhome(CONFIG_FILENAME);
+
 async function initConfigFile() {
   const isExist = await fs.pathExists(CONFIG_PATH);
   if (isExist) {

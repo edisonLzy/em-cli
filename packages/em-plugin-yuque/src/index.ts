@@ -34,5 +34,7 @@ export default defineCommand({
       },
     },
   ],
-  async run({ args, optionsArgs }) {},
+  async run({ args, optionsArgs }) {
+    console.log('yuque command');
+  },
 });

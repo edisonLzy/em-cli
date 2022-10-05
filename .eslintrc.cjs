@@ -40,16 +40,16 @@ module.exports = defineConfig({
         'no-unused-vars': 'off',
       },
     },
-    // {
-    //   files: ['packages/**/src/**/*'],
-    //   rules: {
-    //     'no-restricted-globals': [
-    //       'error',
-    //       'require',
-    //       '__dirname',
-    //       '__filename',
-    //     ],
-    //   },
-    // },
+    {
+      files: ['packages/**/src/**/*'],
+      rules: {
+        'no-restricted-globals': [
+          'error',
+          'require',
+          '__dirname',
+          '__filename',
+        ],
+      },
+    },
   ],
 });

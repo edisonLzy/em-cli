@@ -9,8 +9,7 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js"
     }
   },
   "typings": "dist",
@@ -26,8 +25,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup-node",
-    "start": "pnpm build --watch --sourcemap"
+    "build": "father build",
+    "start": "father dev"
   },
   "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
   "devDependencies": {

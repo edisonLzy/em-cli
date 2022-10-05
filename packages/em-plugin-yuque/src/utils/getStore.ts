@@ -1,4 +1,4 @@
-import { createStore } from '@em-cli/shared';
+import { createStore, getPkgInfo } from '@em-cli/shared';
 import type { Store } from '@em-cli/shared';
-
-export const store: Store = createStore(require('../../package.json').name);
+const pkg = getPkgInfo();
+export const store: Store = createStore(pkg?.packageJson.name as string);

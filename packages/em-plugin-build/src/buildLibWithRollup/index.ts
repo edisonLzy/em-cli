@@ -2,10 +2,12 @@ import { RollupOptions, OutputOptions, rollup } from 'rollup';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import ts from 'rollup-plugin-typescript2';
-import { scanFiles } from '@em-cli/shared';
+import { scanFiles, pathHelper } from '@em-cli/shared';
 import inquirer from 'inquirer';
 import path from 'path';
 export type BuildExtension = '.tsx' | '.ts' | '.vue';
+
+const { __dirname } = pathHelper.getDirnameAndFilename();
 interface Options {
   extension: BuildExtension;
   workinDir: string;

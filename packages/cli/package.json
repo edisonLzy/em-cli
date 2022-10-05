@@ -5,16 +5,15 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js"
     }
   },
   "typings": "dist",
   "bin": {
-    "ee": "bin/ee.js"
+    "ee": "bin/entry.js"
   },
   "files": [
-    "lib",
+    "dist",
     "bin"
   ],
   "publishConfig": {
@@ -22,8 +21,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup-node",
-    "start": "pnpm build --watch --sourcemap"
+    "build": "father build",
+    "start": "father dev"
   },
   "license": "ISC",
   "devDependencies": {

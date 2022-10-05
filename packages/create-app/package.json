@@ -16,8 +16,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup-node",
-    "start": "pnpm build --watch --sourcemap"
+    "build": "father build",
+    "start": "father dev"
   },
   "license": "ISC",
   "dependencies": {

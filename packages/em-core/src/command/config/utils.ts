@@ -1,5 +1,7 @@
-import { CONFIG_PATH } from './index';
 import fs from 'fs-extra';
+import userhome from 'userhome';
+import { CONFIG_FILENAME } from '@/const';
+export const CONFIG_PATH = userhome(CONFIG_FILENAME);
 
 const presets = {
   CONFIG_PATH,
@@ -10,6 +12,7 @@ async function getConfigFileContent() {
   const obj = JSON.parse(content.toString());
   return obj;
 }
+
 export async function getConfigKey(key: string) {
   const isExist = await fs.pathExists(CONFIG_PATH);
   if (isExist) {
