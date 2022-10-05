@@ -1,5 +1,12 @@
 # @em-cli/em-plugin-github
 
+## 1.1.1
+
+### Patch Changes
+
+- Updated dependencies [6fa25a08]
+  - @em-cli/shared@2.1.1
+
 ## 1.1.0
 
 ### Minor Changes

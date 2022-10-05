@@ -1,5 +1,16 @@
 # Change Log
 
+## 1.1.1
+
+### Patch Changes
+
+- 6fa25a08: init command add stylelint
+- Updated dependencies [6fa25a08]
+  - @em-cli/em-plugin-init@1.1.1
+  - @em-cli/em-plugin-debug@1.1.1
+  - @em-cli/em-plugin-github@1.1.1
+  - @em-cli/em-plugin-yuque@1.1.1
+
 ## 1.1.0
 
 ### Minor Changes
