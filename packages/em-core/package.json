@@ -1,6 +1,6 @@
 {
   "name": "@em-cli/core",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "make cli easier",
   "type": "module",
   "exports": {
@@ -18,7 +18,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@em-cli/shared": "workspace:^2.0.0",
+    "@em-cli/shared": "workspace:^2.1.0",
     "@types/module-alias": "^2.0.1",
     "commander": "^9.4.0",
     "ejs": "^3.1.8",

@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.1.0
+
+### Minor Changes
+
+- 1cb0fa4f: use father
+
+### Patch Changes
+
+- Updated dependencies [1cb0fa4f]
+  - @em-cli/shared@2.1.0
+
 ## 2.0.0
 
 ### Major Changes
