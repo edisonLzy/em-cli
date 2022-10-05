@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.1
+
+### Patch Changes
+
+- 6fa25a08: init command add stylelint
+
 ## 2.1.0
 
 ### Minor Changes

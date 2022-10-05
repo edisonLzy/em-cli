@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.1.1
+
+### Patch Changes
+
+- 6fa25a08: init command add stylelint
+- Updated dependencies [6fa25a08]
+  - @em-cli/shared@2.1.1
+
 ## 1.1.0
 
 ### Minor Changes
