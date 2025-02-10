@@ -1,5 +1,6 @@
-import commander from 'commander';
+import type commander from 'commander';
 import type { QuestionCollection } from 'inquirer';
+
 export type Options = [
   directive:
     | `-${string},--${string} [${string}]`
@@ -7,6 +8,7 @@ export type Options = [
   description?: string,
   defaultValue?: string | boolean | undefined
 ];
+
 export type Command = commander.Command;
 
 export type UnionToMapping<S, T = string> = [S] extends [infer P]
@@ -20,10 +22,13 @@ export type UnwrapBracket<T> = T extends `[${infer P1}]`
   : T extends `<${infer P2}>`
   ? P2
   : never;
+
 export type ExtractArgsName<T> = T extends `-${infer S},--${infer F} ${infer P}`
   ? UnwrapBracket<P>
   : never;
+
 export type GetOptionsDirective<T extends Options> = T[0];
+
 export type GetOptionsArgs<T> = [T] extends [Options]
   ? UnionToMapping<ExtractArgsName<GetOptionsDirective<T>>>
   : never;
@@ -31,6 +36,7 @@ export type GetOptionsArgs<T> = [T] extends [Options]
 export type GetArgs<T> = {
   [P in UnwrapBracket<T>]: string;
 };
+
 export interface CommandConfig<T extends Options = any> {
   /**
    * 命令的标示 比如: init
@@ -63,6 +69,7 @@ export interface CommandConfig<T extends Options = any> {
   subCommands?: this[];
   run: (args: { args: string[]; optionsArgs: GetOptionsArgs<T> }) => void;
 }
+
 export function defineCommand<T extends Options = any>(
   config: CommandConfig<T>
 ) {

@@ -16,6 +16,7 @@ async function getTemplatesChoices() {
   const arr: string[] = JSON.parse(templates ?? '[]');
   return arr;
 }
+
 export async function updateTemplate(op: UpdateTemplateOptions) {
   const tasks = new Listr<UpdateContext>([
     {

@@ -1,7 +1,8 @@
 import { pkgEnhance } from '@em-cli/shared';
+import { defineFeature } from '../';
 import { deps } from './deps';
 import { commitLint, gitignore } from './template';
-import { defineFeature } from '../';
+
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({

@@ -1,27 +1,33 @@
-import commander, { createCommand } from 'commander';
+import { createCommand } from 'commander/esm.mjs';
 import { logger, getPkgInfo } from '@em-cli/shared';
 
 import BaseClass from './base';
-import { CommandConfig, Options } from './command';
+import type { Command } from 'commander/esm.mjs';
+import type { CommandConfig, Options } from './command';
 
 class ECli extends BaseClass {
-  private program: commander.Command;
+  private program: Command;
+
   private CommandCtors: CommandConfig[] = [];
+
   private CommandIds = new Set<string>();
+
   constructor() {
     super();
     this.program = this.createProgram(); // 创建program
   }
-  private createProgram(): commander.Command {
+
+  private createProgram(): Command {
     const program = createCommand();
-    const { version } = getPkgInfo();
+    const version = getPkgInfo()?.packageJson.version ?? '0.0.0';
     program
-      .version(`@em-cli/ee`)
+      .version(version)
       .usage('<command> [subCommand] [options]')
       .passThroughOptions();
     return program;
   }
-  private registerCommand(command: CommandConfig, program: commander.Command) {
+
+  private registerCommand(command: CommandConfig, program: Command) {
     const cmd = program.command(command.id);
     if (command.args) {
       cmd.arguments(command.args);
@@ -66,14 +72,13 @@ class ECli extends BaseClass {
       });
     });
   }
-  private registerCommands(
-    commands: CommandConfig[],
-    program: commander.Command
-  ) {
+
+  private registerCommands(commands: CommandConfig[], program: Command) {
     for (const command of commands) {
       this.registerCommand(command, program);
     }
   }
+
   private parseArgs() {
     try {
       this.program.parse(process.argv);
@@ -81,6 +86,7 @@ class ECli extends BaseClass {
       console.log(e);
     }
   }
+
   addCommand(command: CommandConfig) {
     const id = command.id;
     if (this.CommandIds.has(id)) {
@@ -90,10 +96,12 @@ class ECli extends BaseClass {
     this.CommandCtors.push(command);
     return this;
   }
+
   async run() {
     this.registerCommands(this.CommandCtors, this.program);
     //! 必须在parse之前完成命令的注册,且只能注册 parse一次,parse多次 可能会导致 action执行多次
     this.parseArgs();
   }
 }
+
 export default ECli;

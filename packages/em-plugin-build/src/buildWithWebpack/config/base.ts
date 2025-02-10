@@ -1,7 +1,8 @@
-import { Configuration } from 'webpack';
 import { resolveCwdPath } from '../../utils';
 import { getCssLoader } from './cssLoader';
 import { getBabelLoader } from './babelLoader';
+import type { Configuration } from 'webpack';
+
 export default function createBaseConfig(cwd: string): Configuration {
   return {
     resolve: {

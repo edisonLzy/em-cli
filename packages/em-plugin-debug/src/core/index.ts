@@ -1,8 +1,8 @@
 import fg from 'fast-glob';
 import { support, inquirer } from '@em-cli/shared';
 import { execa } from 'execa';
-import { createStore } from './createStore';
 import { TestFileGlob } from '../constant';
+import { createStore } from './createStore';
 const store = createStore();
 
 export default async function runTest() {

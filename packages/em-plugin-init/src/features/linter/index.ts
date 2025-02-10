@@ -1,3 +1,4 @@
+import { pkgEnhance } from '@em-cli/shared';
 import { defineFeature } from '../';
 import {
   prettier,
@@ -6,8 +7,8 @@ import {
   eslintIgnore,
   stylelint,
 } from './template';
-import { pkgEnhance } from '@em-cli/shared';
 import { deps } from './deps';
+
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({

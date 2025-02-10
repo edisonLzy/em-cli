@@ -1,15 +1,27 @@
 #!/usr/bin/env node
+
 import { spawn } from 'child_process';
-import { resolve, dirname } from 'node:path';
+import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const execFilePath = resolve(dirname(fileURLToPath(import.meta.url)), 'ee.js');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+//
+const execFilePath = resolve(__dirname, 'ee.js');
+// 
+const loadersDir = resolve(__dirname, '../loaders');
+const loaders = ['specifier-resolution-loader.js']
+                .map(l=>join(loadersDir, l))
+                .join(',');
+//
 spawn(
   'node',
   [
     '--no-warnings',
-    '--experimental-specifier-resolution=node',
+    // 使用 import.meta.resolve API: 
+    // https://nodejs.org/api/esm.html#importmetaresolvespecifier-parent
     '--experimental-import-meta-resolve',
+    '--loader',
+    loaders,
     execFilePath,
   ].concat(process.argv.slice(2)),
   {
@@ -20,3 +32,4 @@ spawn(
 ).on('exit', (code) => {
   process.exit(code);
 });
+

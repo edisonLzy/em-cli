@@ -1,16 +1,16 @@
-import pReduce from 'p-reduce';
 import path from 'path';
+import pReduce from 'p-reduce';
 import fs from 'fs-extra';
 import fuzzy from 'fuzzy';
-import { inquirer, logger, random } from '@em-cli/shared';
-import { setDocToSpecToc } from './toc';
-import { getRepos } from './repos';
+import { inquirer, logger } from '@em-cli/shared';
 import { getSlug } from '../utils/getSlug';
 import { getSDK } from '../utils/setupSdk';
 import { getStoreKey } from '../utils/getStoreKey';
 import { store } from '../utils/getStore';
 import { getIndent } from '../utils/getIndent';
 import { STORE_KEY } from '../constant';
+import { getRepos } from './repos';
+import { setDocToSpecToc } from './toc';
 
 export async function getDocs() {
   const sdk = await getSDK();
@@ -50,6 +50,7 @@ export async function getDocs() {
     namespace,
   };
 }
+
 export async function deleteDoc({
   namespace,
   id,
@@ -65,6 +66,7 @@ export async function deleteDoc({
   });
   spin.succeed(`deleted ${namespace}`);
 }
+
 export async function batchDeleteDocs() {
   const { docs, namespace } = await getDocs();
   const choices = docs.map(({ id: value, title: name }) => {
@@ -127,6 +129,7 @@ interface CreateNestDocOptions {
   fullPath: string;
   repoName: string;
 }
+
 export async function createNestDoc(
   accessPath: string[],
   { namespace, fullPath, repoName }: CreateNestDocOptions

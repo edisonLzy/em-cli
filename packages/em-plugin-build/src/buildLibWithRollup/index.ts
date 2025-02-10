@@ -1,10 +1,12 @@
-import { RollupOptions, OutputOptions, rollup } from 'rollup';
+import path from 'path';
+import { rollup } from 'rollup';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import ts from 'rollup-plugin-typescript2';
 import { scanFiles, pathHelper } from '@em-cli/shared';
 import inquirer from 'inquirer';
-import path from 'path';
+import type { RollupOptions, OutputOptions } from 'rollup';
+
 export type BuildExtension = '.tsx' | '.ts' | '.vue';
 
 const { __dirname } = pathHelper.getDirnameAndFilename();
@@ -12,6 +14,7 @@ interface Options {
   extension: BuildExtension;
   workinDir: string;
 }
+
 function getBuildConfig(extension: BuildExtension): RollupOptions {
   if (extension === '.vue') {
     // TODO
@@ -31,6 +34,7 @@ function getBuildConfig(extension: BuildExtension): RollupOptions {
     return baseConfig;
   }
 }
+
 async function getEntries(
   workinDir: string,
   extension: BuildExtension
@@ -53,6 +57,7 @@ async function getEntries(
   ]);
   return files;
 }
+
 async function build(entry: string, config: RollupOptions) {
   const bundle = await rollup({
     input: entry,
@@ -70,6 +75,7 @@ async function build(entry: string, config: RollupOptions) {
   ];
   await Promise.all(defaultOutput.map(bundle.write));
 }
+
 export async function buildWithRollup({ extension, workinDir }: Options) {
   const entries = await getEntries(workinDir, extension);
   const baseConfig = getBuildConfig(extension);

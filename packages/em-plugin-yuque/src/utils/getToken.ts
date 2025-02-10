@@ -20,6 +20,7 @@ export async function refreshToken() {
   store.set(AUTH_TOKEN_KEY, token);
   return token;
 }
+
 export async function getToken() {
   if (store.has(AUTH_TOKEN_KEY)) {
     return store.get(AUTH_TOKEN_KEY);

@@ -1,9 +1,11 @@
 import { PipeLine } from '@etools/pipeline';
-import webpack, { Configuration } from 'webpack';
+import webpack from 'webpack';
 import signale from 'signale';
 import { merge } from 'webpack-merge';
 import baseConfig from '../config/base';
 import { loadConfig } from './loadConfig';
+import type { Configuration } from 'webpack';
+
 export function buildReact(workDir: string) {
   const task = new PipeLine<{
     workDir: string;

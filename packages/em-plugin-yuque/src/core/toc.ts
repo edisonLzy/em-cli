@@ -5,6 +5,7 @@ interface TOC {
   namespace: string;
   title: string;
 }
+
 function findLatestDir(
   title: TOC['title'],
   dirs: (Pick<TOC, 'title'> & Record<string, any>)[]
@@ -14,6 +15,7 @@ function findLatestDir(
   });
   return dir.shift();
 }
+
 export async function setDocToSpecToc({
   title,
   namespace,

@@ -1,7 +1,8 @@
+import { pkgEnhance } from '@em-cli/shared';
 import { defineFeature } from '..';
 import { babelConfig, test } from './template';
 import { deps } from './deps';
-import { pkgEnhance } from '@em-cli/shared';
+
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({

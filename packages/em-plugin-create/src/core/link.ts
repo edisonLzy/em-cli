@@ -1,7 +1,7 @@
+import path from 'path';
 import signale from 'signale';
 import { readPackage } from 'read-pkg';
 import shelljs from 'shelljs';
-import path from 'path';
 import fg from 'fast-glob';
 import inquirer from 'inquirer';
 
@@ -13,12 +13,14 @@ function getChoices(dirs: string[]) {
     };
   });
 }
+
 async function getPkgName(dir: string) {
   const { name } = await readPackage({
     cwd: dir,
   });
   return name;
 }
+
 function getPkgNames(dirs: string[]) {
   return Promise.all(dirs.map(getPkgName));
 }

@@ -37,6 +37,7 @@ async function outputTypings() {
     cwd: process.cwd(),
   });
 }
+
 export default parallel(
   createBuildCompTask(),
   createBuildStyleTask(),

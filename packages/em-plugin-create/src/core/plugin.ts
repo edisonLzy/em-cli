@@ -1,12 +1,13 @@
+import path from 'path';
 import { getConfigKey } from '@em-cli/core';
 import fs from 'fs-extra';
-import path from 'path';
 import { logger, formate } from '@em-cli/shared';
 import { renderMain, renderPkg, renderRm, renderTsConfig } from './template';
 interface Opt {
   name: string;
   workinDir: string;
 }
+
 async function outputFile(p: string, content: string) {
   await fs.outputFile(p, content);
   if (!(path.extname(p) === '.json')) {
@@ -14,6 +15,7 @@ async function outputFile(p: string, content: string) {
   }
   logger.info('success create %s', p);
 }
+
 export async function createPlugin({ name }: Opt) {
   // 获取cli地址
   const pluginUrl = await getConfigKey('CLI_PLUGIN_DIR');

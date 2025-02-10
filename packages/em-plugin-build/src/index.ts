@@ -1,15 +1,15 @@
 import { defineCommand } from '@em-cli/core';
-import { buildWithRollup } from './buildLibWithRollup';
-import type { BuildExtension } from './buildLibWithRollup';
 import buildLib from './buildLib';
 import buildWithWebpack from './buildWithWebpack';
 import './utils/enhanceRequire';
-import buildSFC, { SFCOptions } from './buildSFC';
+import buildSFC from './buildSFC';
+import type { SFCOptions } from './buildSFC';
 const choices = ['webpack', 'rollup', 'gulp', 'esbuild', 'vite'];
 
 const buildMapping = {
   webpack: buildWithWebpack,
 };
+
 export default defineCommand({
   id: 'build',
   description: 'build',

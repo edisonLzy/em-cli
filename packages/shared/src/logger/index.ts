@@ -1,6 +1,6 @@
+import os from 'os';
 import signale from 'signale';
 import ora from 'ora';
-import os from 'os';
 import chalk from 'chalk';
 import terminal from 'terminal-kit';
 import { downloadImg } from '../download';
@@ -47,7 +47,7 @@ class Logger extends signale.Signale {
     ${os.EOL}${content}
     `);
   }
-  array(arr: any[], tips: string = '', log = true) {
+  array(arr: any[], tips = '', log = true) {
     let content = '';
     if (arr.length === 0) {
       content = 'empty';
@@ -82,4 +82,5 @@ const logger = new Logger();
 logger.config({
   displayTimestamp: false,
 });
+
 export default logger;

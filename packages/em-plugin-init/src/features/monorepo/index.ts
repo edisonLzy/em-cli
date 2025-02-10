@@ -1,6 +1,7 @@
 import { pkgEnhance, scanDirs } from '@em-cli/shared';
 import { defineFeature } from '../';
 import { lernaConfig, npmrc, pnpmWorkspace } from './template';
+
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({

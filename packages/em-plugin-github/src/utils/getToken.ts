@@ -1,6 +1,6 @@
-import { createStore } from './createStore';
-import { AUTH_TOKEN_KEY } from '../constant';
 import inquirer from 'inquirer';
+import { AUTH_TOKEN_KEY } from '../constant';
+import { createStore } from './createStore';
 
 const store = createStore();
 
@@ -22,6 +22,7 @@ export async function refreshToken() {
   store.set(AUTH_TOKEN_KEY, token);
   return token;
 }
+
 export async function getToken() {
   if (store.has(AUTH_TOKEN_KEY)) {
     return store.get(AUTH_TOKEN_KEY);

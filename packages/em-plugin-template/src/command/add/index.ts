@@ -1,6 +1,5 @@
 import { getConfigKey, setConfigKey } from '@em-cli/core';
-import { logger } from '@em-cli/shared';
-import { download } from '@em-cli/shared';
+import { logger, download } from '@em-cli/shared';
 import fs from 'fs-extra';
 import { REPO_CACHE_KEY, TEMPLATE_CACHE_KEY } from '../../constant';
 import { repoCacheDir, getDirnameByRemoteUrl } from '../../utils';
@@ -34,6 +33,7 @@ async function addRepoInConfigFile(remoteUrl: string) {
     logger.success('success set repo %s in configFile ', remoteUrl);
   }
 }
+
 export async function addTemplate(remoteUrl: string) {
   const dirname = getDirnameByRemoteUrl(remoteUrl);
   // 添加模版到配置文件中

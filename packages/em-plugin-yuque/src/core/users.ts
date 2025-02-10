@@ -2,6 +2,7 @@ import { logger } from '@em-cli/shared';
 import { USER_INFO_KEY } from '../constant';
 import { store } from '../utils/getStore';
 import { getSDK } from '../utils/setupSdk';
+
 export async function getUserInfo() {
   try {
     if (store.has(USER_INFO_KEY)) {
@@ -21,6 +22,7 @@ export async function getUserInfo() {
     // }
   }
 }
+
 export async function whoami() {
   const { name } = await getUserInfo();
   logger.success(name);

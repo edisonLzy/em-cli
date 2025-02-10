@@ -1,6 +1,6 @@
 import path from 'path';
-import pMap from 'p-map';
 import { fileURLToPath } from 'url';
+import pMap from 'p-map';
 /**
  * 加载feature的apply方法
  * @param features

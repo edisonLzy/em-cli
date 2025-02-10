@@ -3,6 +3,7 @@ import { logger, inquirer, git } from '@em-cli/shared';
 import { STATUS } from '../constant';
 import { getOctokit } from '../utils/setupOctokit';
 import { refreshToken } from '../utils/getToken';
+
 /**
  * 获取 用户信息
  */
@@ -23,6 +24,7 @@ export async function getInfo() {
     }
   }
 }
+
 /**
  * 获取 所有的仓库
  */

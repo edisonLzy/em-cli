@@ -3,15 +3,17 @@
  * react / vue
  */
 import { execa } from 'execa';
-import buildVue from './vue';
 import { pathHelper } from '@em-cli/shared';
+import buildVue from './vue';
 type SFCTarget = 'react' | 'vue';
 
 const { __dirname } = pathHelper.getDirnameAndFilename();
+
 export interface SFCOptions {
   target: SFCTarget;
   workinDir: string;
 }
+
 export default async function buildSFC({
   target,
   workinDir = process.cwd(),

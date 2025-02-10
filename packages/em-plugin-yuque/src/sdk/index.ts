@@ -37,6 +37,7 @@ class TOC {
     });
   }
 }
+
 export class SDK extends RawSDK {
   toc: TOC;
   constructor(options: any) {
