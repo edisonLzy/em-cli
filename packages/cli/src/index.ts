@@ -1,6 +1,6 @@
 import ECli, { CommandAddCmd, CommandAdminConfig } from '@em-cli/core';
 import CommandInit from '@em-cli/em-plugin-init';
-import CommandAI from '@em-cli/em-plugin-ai'
+import CommandAI from '@em-cli/em-plugin-ai';
 
 export function run(isDev: boolean) {
   const eCli = new ECli();
@@ -8,7 +8,7 @@ export function run(isDev: boolean) {
   eCli
     .addCommand(CommandInit)
     .addCommand(CommandAdminConfig)
-    .addCommand(CommandAI)
+    .addCommand(CommandAI);
   if (isDev) {
     eCli.addCommand(CommandAddCmd);
   }
