@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import { resolveConfigFile } from '../utils/configFile';
+
 export async function loadConfig(workDir: string) {
   let webpackPath = '';
   const webpackConfigPaths = resolveConfigFile(workDir);

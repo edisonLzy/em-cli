@@ -1,12 +1,13 @@
+import path from 'path';
 import { rollup } from 'rollup';
 import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import path from 'path';
 interface Options {
   workinDir: string;
   inputFiles: string;
 }
+
 export default function (
   { workinDir, inputFiles }: Options = {
     workinDir: process.cwd(),

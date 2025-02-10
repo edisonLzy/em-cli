@@ -1,17 +1,20 @@
+import path from 'path';
 import { rollup } from 'rollup';
 import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import path from 'path';
+
 export interface LibOptions {
   workinDir: string;
   inputFile: string;
 }
+
 function loadPresets() {
   return ['@babel/preset-env', '@babel/preset-typescript'].map((preset) => {
     return import.meta.resolve?.(preset);
   }) as unknown as string[];
 }
+
 export default async function buildLib({ workinDir, inputFile }: LibOptions) {
   const src = path.join(inputFile);
 

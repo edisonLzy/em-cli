@@ -1,5 +1,6 @@
 import { defineCommand } from '@em-cli/core';
 import { createServer } from 'vite';
+
 export default defineCommand({
   id: 'dev',
   description: '本地开发服务器',

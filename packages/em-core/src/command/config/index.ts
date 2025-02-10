@@ -1,13 +1,13 @@
 import { logger } from '@em-cli/shared';
 import fs from 'fs-extra';
 import pMap from 'p-map';
-import { defineCommand } from '@/core/command';
 import {
   getConfigKey,
   setConfigKey,
   deleteConfigKey,
   CONFIG_PATH,
 } from './utils';
+import { defineCommand } from '@/core/command';
 
 export { getConfigKey, setConfigKey, CONFIG_PATH };
 /**
@@ -31,6 +31,7 @@ async function initConfigFile() {
     return presets;
   }
 }
+
 export default defineCommand({
   id: 'config',
   description: 'maintains ee cli config file',

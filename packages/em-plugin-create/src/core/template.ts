@@ -40,6 +40,7 @@ export function renderPkg(name: string) {
       
     `;
 }
+
 export function renderMain(name: string) {
   return `
   import { defineCommand } from '@em-cli/core';
@@ -50,11 +51,13 @@ export function renderMain(name: string) {
     });
     `;
 }
+
 export function renderRm(name: string) {
   return `
     # @em-cli/em-plugin-${name}
     `;
 }
+
 export function renderTsConfig() {
   return `
     {

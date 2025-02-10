@@ -1,6 +1,7 @@
 import prettier from 'prettier';
 
 const removeMarkdownh1 = /# (.+?)\n/s;
+
 function getNow() {
   return new Date().toISOString();
 }

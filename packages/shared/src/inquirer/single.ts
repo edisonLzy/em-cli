@@ -1,7 +1,7 @@
 import fuzzy from 'fuzzy';
+import inquirer from './';
 import type { Question } from 'inquirer';
 
-import inquirer from './';
 export class SingleInquire {
   async checkboxPlus({
     choices,

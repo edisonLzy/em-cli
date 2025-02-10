@@ -1,14 +1,14 @@
+import path from 'path';
 import { logger, inquirer, pathHelper } from '@em-cli/shared';
 import pMap from 'p-map';
-import path from 'path';
 import fg from 'fast-glob';
-import { store } from './../utils/getStore';
 import { getSlug } from '../utils/getSlug';
 import { getSDK } from '../utils/setupSdk';
 import { getStoreKey } from '../utils/getStoreKey';
-import { getUserInfo } from './users';
-import { createDoc, createNestDoc } from './docs';
 import { STORE_KEY } from '../constant';
+import { store } from './../utils/getStore';
+import { getUserInfo } from './users';
+import { createNestDoc } from './docs';
 
 export async function createRepo(params: {
   name: string;
@@ -88,6 +88,7 @@ export async function syncToRepo(filePath: string, fullPath: string) {
     repoName,
   });
 }
+
 export async function syncToRepos(workInDir: string) {
   const mds = await fg('**/*.md', {
     cwd: workInDir,

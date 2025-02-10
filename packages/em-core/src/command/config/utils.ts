@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import userhome from 'userhome';
 import { CONFIG_FILENAME } from '@/const';
+
 export const CONFIG_PATH = userhome(CONFIG_FILENAME);
 
 const presets = {
@@ -22,6 +23,7 @@ export async function getConfigKey(key: string) {
     throw new Error('please init first');
   }
 }
+
 export async function setConfigKey(key: string, value: string) {
   const isExist = await fs.pathExists(CONFIG_PATH);
   if (isExist) {

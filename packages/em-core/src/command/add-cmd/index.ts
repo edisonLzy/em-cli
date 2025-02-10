@@ -1,6 +1,6 @@
+import path from 'path';
 import { render } from 'ejs';
 import fs from 'fs-extra';
-import path from 'path';
 import { pathHelper, logger } from '@em-cli/shared';
 import { defineCommand } from '@/core/command';
 

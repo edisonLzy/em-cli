@@ -1,5 +1,6 @@
 import { defineFeature } from '../';
 import { vscodeConfig } from './template';
+
 export default defineFeature({
   injectPrompt(cli) {
     cli.injectFeature({

@@ -1,5 +1,5 @@
-import fs from 'fs-extra';
 import path from 'path';
+import fs from 'fs-extra';
 import prettier from 'prettier';
 import { logger } from '@em-cli/shared';
 

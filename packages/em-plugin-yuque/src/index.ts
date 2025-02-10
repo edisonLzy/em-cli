@@ -12,7 +12,7 @@ export default defineCommand({
   subCommands: [
     {
       id: 'whoami',
-      description: 'get current user information',
+      description: 'get user',
       async run() {
         whoami().catch(logger.error);
       },

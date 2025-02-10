@@ -1,0 +1,45 @@
+{
+  "name": "@em-cli/em-plugin-ai",
+  "version": "1.1.0",
+  "description": "本地开发服务器",
+  "keywords": [
+    "vite",
+    "webpack"
+  ],
+  "author": "lizhiyu <656603136@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "typings": "dist",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "father build",
+    "start": "father dev"
+  },
+  "gitHead": "578c451a1e3b109bf4b32d2af188ee541b0f0ab7",
+  "devDependencies": {
+    "@types/node": "^18.7.3",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@em-cli/core": "workspace:^2.1.0",
+    "@em-cli/shared": "workspace:^2.1.0",
+    "fs-extra": "^10.1.0",
+    "vite": "^3.0.7"
+  }
+}

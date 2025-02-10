@@ -1,8 +1,8 @@
+import path from 'path';
 import simpleGit from 'simple-git';
 import inquirer from 'inquirer';
 import fg from 'fast-glob';
 import fs from 'fs-extra';
-import path from 'path';
 import signale from 'signale';
 import globalConfig from './config';
 import { formateContent } from './formate';
@@ -28,6 +28,7 @@ async function getFileChoice(workinDir: string) {
     };
   });
 }
+
 /**
  * commit信息
  * @param files
@@ -41,6 +42,7 @@ function getCommitMsg(
 ) {
   return files.map((it) => it.name).join(',');
 }
+
 /**
  * 获取仓库
  * @param remote
@@ -84,6 +86,7 @@ async function uploadFileToContent(
     signale.success('文件写入成功:' + filename);
   }
 }
+
 export async function syncToGithub(
   cachePath: string,
   files: {

@@ -1,12 +1,13 @@
+import path from 'path';
 import fs from 'fs-extra';
 import fg from 'fast-glob';
-import path from 'path';
 import ejs from 'ejs';
 import { logger } from '@em-cli/shared';
 import inquirer from 'inquirer';
-import { FileManager, FileOptions } from '@etools/fm';
+import { FileManager } from '@etools/fm';
 import { getRepoCacheDir } from '../../utils';
 const cacheDir = getRepoCacheDir();
+
 /**
  * 选择模版进行项目创建
  * @param project
@@ -19,6 +20,7 @@ function getChoices(dirs: string[]) {
     };
   });
 }
+
 /**
  * @param content 文件内容
  * @return 替换之后的内容
@@ -26,6 +28,7 @@ function getChoices(dirs: string[]) {
 function renderer(content: string, answers: Record<string, any> = {}) {
   return ejs.render(content, answers);
 }
+
 /**
  * @param template 模版目录
  */
@@ -64,6 +67,7 @@ async function getAllFiles(template: string) {
   files = files.filter((file) => path.basename(file) !== 'ask.json');
   return files;
 }
+
 export async function createProjectByTemplate(
   project: string,
   workinDir: string

@@ -1,8 +1,8 @@
+import path from 'path';
 import fg from 'fast-glob';
 import pMap from 'p-map';
-import path from 'path';
-import { FeatureOptions } from './';
 import { pathHelper } from '@em-cli/shared';
+import type { FeatureOptions } from './';
 
 async function loadFeature(p: string) {
   const feature = await import(p);
